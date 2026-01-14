@@ -13,6 +13,7 @@ import type { FoodItem } from '@/types/FoodItem';
 
 import { POPULAR_BATTLES } from '@/lib/constants';
 
+// Rebuild timestamp: 2026-01-14-1600
 export default function Home() {
   const router = useRouter();
   const { t } = useLanguage();
