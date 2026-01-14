@@ -66,15 +66,44 @@ export function generateBalancedMenu(): MenuSet {
     const meatFoods = allFoods.filter(f => f.category === 'Meat' || f.tags.includes('#Protein'));
     const sideFoods = allFoods.filter(f => f.category === 'Vegetable' || f.category === 'Side' || f.tags.includes('#Side'));
 
-    const maxAttempts = 200;
-    let bestSet: MenuSet | null = null;
+    // Helper to get a random item from an array
+    const getRandom = (arr: FoodItem[]) => arr[Math.floor(Math.random() * arr.length)];
 
-    if (!bestSet || score > bestSet.score) {
-        bestSet = completeSet;
-    }
+    // Fallback if empty (shouldn't happen with full data, but just in case use all foods)
+    const safeMains = carbFoods.length > 0 ? carbFoods : allFoods;
+    const safeProteins = meatFoods.length > 0 ? meatFoods : allFoods;
+    const safeSides = sideFoods.length > 0 ? sideFoods : allFoods;
 
-    if (score >= 90) break;
-}
+    const main = getRandom(safeMains);
+    const protein = getRandom(safeProteins);
+    const side = getRandom(safeSides);
 
-return bestSet!;
+    const totalCalories = (main?.calories || 0) + (protein?.calories || 0) + (side?.calories || 0);
+
+    // Calculate PFC (Simplified)
+    const totalP = (main?.protein || 0) + (protein?.protein || 0) + (side?.protein || 0);
+    const totalF = (main?.fat || 0) + (protein?.fat || 0) + (side?.fat || 0);
+    const totalC = (main?.carbs || 0) + (protein?.carbs || 0) + (side?.carbs || 0);
+
+    // Simple Score Logic (Target: 600-800kcal, High Protein)
+    let score = 70;
+    if (totalCalories >= 600 && totalCalories <= 850) score += 10;
+    if (totalP > 25) score += 10;
+    if (totalF < 25) score += 10;
+
+    return {
+        main: main || allFoods[0],
+        protein: protein || allFoods[1],
+        side: side || allFoods[2],
+        totalCalories,
+        totalProtein: totalP,
+        totalFat: totalF,
+        totalCarbs: totalC,
+        score,
+        pfcBalance: {
+            proteinPercent: Math.min(100, (totalP * 4 / (totalCalories || 1)) * 100),
+            fatPercent: Math.min(100, (totalF * 9 / (totalCalories || 1)) * 100),
+            carbsPercent: Math.min(100, (totalC * 4 / (totalCalories || 1)) * 100)
+        }
+    };
 }
