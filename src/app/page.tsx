@@ -27,6 +27,7 @@ export default function Home() {
   const [selectedA, setSelectedA] = useState<FoodItem | null>(null);
   const [selectedB, setSelectedB] = useState<FoodItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isConfessionOpen, setIsConfessionOpen] = useState(false);
   const [activeSide, setActiveSide] = useState<'A' | 'B'>('A');
   const [mounted, setMounted] = useState(false);
   const [foods, setFoods] = useState<FoodItem[]>([]);
@@ -196,9 +197,18 @@ export default function Home() {
           </div>
         </section>
 
-        <CalorieConfession />
+        <CalorieConfession isOpen={isConfessionOpen} onClose={() => setIsConfessionOpen(false)} />
 
       </main>
+
+      <footer className="fixed bottom-4 right-4 z-50">
+        <button
+          onClick={() => setIsConfessionOpen(true)}
+          className="text-xs text-gray-800 hover:text-[#d4af37] transition-colors opacity-50 hover:opacity-100"
+        >
+          ⚖️
+        </button>
+      </footer>
 
       <FoodSelectorModal
         isOpen={isModalOpen}
