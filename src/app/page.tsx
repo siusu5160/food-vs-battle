@@ -6,6 +6,7 @@ import { getAllFoods } from '@/lib/search';
 import { FoodSelectorModal } from '@/components/FoodSelectorModal';
 import { MenuGacha } from '@/components/MenuGacha';
 import { CalorieConfession } from '@/components/CalorieConfession';
+import { FoodPersonalityDiagnosis } from '@/components/FoodPersonalityDiagnosis';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { FoodItem } from '@/types/FoodItem';
@@ -14,7 +15,10 @@ import type { FoodItem } from '@/types/FoodItem';
 const POPULAR_BATTLES = [
   { a: 'beef-rib', b: 'beef-filet', emoji: '🥩', title: '牛バラ vs 牛ヒレ', desc: '脂質と赤身の戦い' },
   { a: 'chicken-tender', b: 'chicken-thigh-skin', emoji: '🍗', title: 'ささみ vs 鶏もも', desc: 'ヘルシー vs ジューシー' },
-  // Add more once confirmed, currently keeping it safe with checked IDs
+  { a: 'sushi-maguro', b: 'sushi-salmon', emoji: '🍣', title: 'マグロ vs サーモン', desc: '寿司ネタ人気対決' },
+  { a: 'cheeseburger', b: 'pizza-slice', emoji: '🍔', title: 'バーガー vs ピザ', desc: 'アメリカンジャンク対決' },
+  { a: 'gyudon', b: 'katsudon', emoji: '🥣', title: '牛丼 vs カツ丼', desc: '丼もの頂上決戦' },
+  { a: 'ice-cream-vanilla', b: 'chocolate-bar', emoji: '🍦', title: 'アイス vs チョコ', desc: '甘味対決' },
 ];
 
 export default function Home() {
@@ -24,6 +28,8 @@ export default function Home() {
   const [selectedB, setSelectedB] = useState<FoodItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isConfessionOpen, setIsConfessionOpen] = useState(false);
+  const [isGachaOpen, setIsGachaOpen] = useState(false);
+  const [isDiagnosisOpen, setIsDiagnosisOpen] = useState(false);
   const [activeSide, setActiveSide] = useState<'A' | 'B'>('A');
   const [mounted, setMounted] = useState(false);
   const [foods, setFoods] = useState<FoodItem[]>([]);
@@ -166,11 +172,11 @@ export default function Home() {
             </div>
 
             {/* Menu Gacha */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors group">
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => setIsGachaOpen(true)}>
               <div className="text-4xl mb-4 group-hover:rotate-12 transition-transform">🎲</div>
               <h3 className="text-xl text-[#d4af37] mb-4 font-serif">MENU GACHA</h3>
               <p className="text-gray-400 text-sm mb-6 font-sans">今日の食事に迷ったら。<br />運命の一皿を提案します。</p>
-              <MenuGacha />
+              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">GACHA START →</span>
             </div>
 
             {/* Confession */}
@@ -179,6 +185,14 @@ export default function Home() {
               <h3 className="text-xl text-[#d4af37] mb-4 font-serif">カロリー懺悔室</h3>
               <p className="text-gray-400 text-sm mb-6 font-sans">食べ過ぎてしまったあなたへ。<br />その罪、ここで清算しませんか？</p>
               <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">懺悔する →</span>
+            </div>
+
+            {/* Personality Diagnosis (New) */}
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => setIsDiagnosisOpen(true)}>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🔮</div>
+              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">診断</h3>
+              <p className="text-gray-400 text-sm mb-6 font-sans">あなたを食材に例えると？<br />性格からぴったりの食材を診断。</p>
+              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">診断する →</span>
             </div>
           </div>
         </section>
@@ -207,6 +221,8 @@ export default function Home() {
         </section>
 
         <CalorieConfession isOpen={isConfessionOpen} onClose={() => setIsConfessionOpen(false)} />
+        <MenuGacha isOpen={isGachaOpen} onClose={() => setIsGachaOpen(false)} />
+        <FoodPersonalityDiagnosis isOpen={isDiagnosisOpen} onClose={() => setIsDiagnosisOpen(false)} />
 
       </main>
 
