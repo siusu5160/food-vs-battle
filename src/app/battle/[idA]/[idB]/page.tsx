@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }: { params: { idA: string, idB: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ idA: string, idB: string }> }): Promise<Metadata> {
     const { idA, idB } = await Promise.resolve(params); // Handle both sync/async params for compatibility
     const foodA = getFoodById(idA);
     const foodB = getFoodById(idB);
@@ -36,7 +36,7 @@ export async function generateStaticParams() {
     return params;
 }
 
-export default async function BattlePage({ params }: { params: { idA: string, idB: string } }) {
+export default async function BattlePage({ params }: { params: Promise<{ idA: string, idB: string }> }) {
     const { idA, idB } = await Promise.resolve(params); // Ensure async access
     const foodA = getFoodById(idA);
     const foodB = getFoodById(idB);
