@@ -1,0 +1,199 @@
+chicken-tender : ささみ / Chicken Tender
+chicken-thigh-skin : 鶏もも肉(皮つき) / Chicken Thigh (With Skin)
+beef-rib : 牛バラ肉 / Beef Rib
+beef-loin : 牛ロース / Beef Loin
+beef-filet : 牛ヒレ肉 / Beef Filet
+pork-loin : 豚ロース / Pork Loin
+pork-belly : 豚バラ肉 / Pork Belly
+pork-filet : 豚ヒレ肉 / Pork Filet
+lamb-shoulder : ラム肉(肩) / Lamb Shoulder
+salmon : サーモン(生) / Salmon (Raw)
+tuna-lean : マグロ(赤身) / Tuna (Lean)
+tuna-fatty : マグロ(トロ) / Tuna (Fatty)
+mackerel : サバ / Mackerel
+horse-mackerel : アジ / Horse Mackerel
+squid : イカ / Squid
+octopus : タコ / Octopus
+shrimp : エビ / Shrimp
+egg : 全卵 / Whole Egg
+white-rice : 白米(炊飯後) / White Rice (Cooked)
+brown-rice : 玄米(炊飯後) / Brown Rice (Cooked)
+mochi-barley : もち麦(ゆで) / Mochi Barley (Boiled)
+bread : 食パン / White Bread
+croissant : クロワッサン / Croissant
+bagel : ベーグル / Bagel
+french-bread : フランスパン / French Bread
+butter-roll : バターロール / Butter Roll
+oatmeal : オートミール / Oatmeal
+corn-flakes : コーンフレーク / Corn Flakes
+pasta : スパゲッティ(ゆで) / Spaghetti (Boiled)
+udon : うどん(ゆで) / Udon Noodles (Boiled)
+soba : そば(ゆで) / Soba Noodles (Boiled)
+ramen-noodle : 中華麺(ゆで) / Ramen Noodles (Boiled)
+somen : そうめん(ゆで) / Somen Noodles (Boiled)
+mochi : 切り餅 / Mochi (Rice Cake)
+sweet-potato : さつまいも(焼き) / Sweet Potato (Baked)
+potato : じゃがいも(蒸し) / Potato (Steamed)
+banana : バナナ / Banana
+apple : リンゴ(皮つき) / Apple (With Skin)
+kiwi : キウイ / Kiwi
+orange : みかん / Mandarin Orange
+strawberry : いちご / Strawberry
+grape : ぶどう / Grape
+pineapple : パイナップル / Pineapple
+avocado : アボカド / Avocado
+peach : もも / Peach
+watermelon : スイカ / Watermelon
+melon : メロン / Melon
+pear : 和梨 / Japanese Pear
+grapefruit : グレープフルーツ / Grapefruit
+lemon : レモン(全果) / Lemon (Whole)
+mango : マンゴー / Mango
+blueberry : ブルーベリー / Blueberry
+broccoli : ブロッコリー / Broccoli
+cabbage : キャベツ / Cabbage
+lettuce : レタス / Lettuce
+cucumber : きゅうり / Cucumber
+tomato : トマト / Tomato
+carrot : にんじん / Carrot
+onion : 玉ねぎ / Onion
+spinach : ほうれん草(ゆで) / Spinach (Boiled)
+tofu-kinu : 絹ごし豆腐 / Silken Tofu
+natto : 納豆 / Natto
+edamame : 枝豆(ゆで) / Edamame (Boiled)
+frie-chicken : 鶏の唐揚げ / Fried Chicken
+yakitori-shio : 焼き鳥(もも塩) / Yakitori (Salt)
+gyoza : 焼き餃子 / Pan-Fried Gyoza
+french-fries : フライドポテト / French Fries
+potato-salad : ポテトサラダ / Potato Salad
+dashimaki : だし巻き卵 / Dashimaki Tamago
+curry-rice : カレーライス / Curry Rice
+ramen-soup : 醤油ラーメン / Soy Sauce Ramen
+pizza : ピザ(マルゲリータ) / Pizza (Margherita)
+hamburger : ハンバーガー / Hamburger
+shortcake : ショートケーキ / Shortcake
+pudding : プリン / Pudding
+cream-puff : シュークリーム / Cream Puff
+ice-cream : バニラアイス / Vanilla Ice Cream
+dorayaki : どら焼き / Dorayaki
+chocolate : ミルクチョコレート / Milk Chocolate
+potato-chips : ポテトチップス / Potato Chips
+almond : アーモンド / Almond
+cookie : クッキー / Cookie
+beer : ビール / Beer
+whisky : ウイスキー / Whisky
+wine-red : 赤ワイン / Red Wine
+wine-white : 白ワイン / White Wine
+sake : 日本酒(純米酒) / Sake (Junmai)
+shochu-otsu : 焼酎(乙類) / Shochu (Honkaku)
+chuhi-lemon : レモンサワー / Lemon Sour
+highball : ハイボール / Highball
+milk : 牛乳 / Milk
+cheese-processed : プロセスチーズ / Processed Cheese
+yogurt : ヨーグルト(全脂無糖) / Yogurt (Plain)
+butter : 有塩バター / Salted Butter
+mayonnaise : マヨネーズ / Mayonnaise
+ketchup : ケチャップ / Ketchup
+soy-sauce : 醤油 / Soy Sauce
+mcd-bigmac : ビッグマック / Big Mac
+mcd-teriyaki : てりやきマックバーガー / Teriyaki McBurger
+mcd-fries-m : マックフライポテト(M) / French Fries (M)
+mcd-nuggets-5 : チキンマックナゲット(5ピース) / Chicken McNuggets (5pcs)
+sbx-latte-tall : スターバックスラテ(Tall) / Caffe Latte (Tall)
+sbx-matcha-frapp-tall : 抹茶クリームフラペチーノ(Tall) / Matcha Cream Frappuccino (Tall)
+sbx-scone-choc : チョコレートチャンクスコーン / Chocolate Chunk Scone
+yoshi-gyudon-nami : 牛丼(並盛) / Gyudon (Regular)
+yoshi-curry-nami : 黒カレー(並盛) / Black Curry (Regular)
+sushiro-maguro : まぐろ(2貫) / Tuna (2pcs)
+sushiro-salmon : サーモン(2貫) / Salmon (2pcs)
+sushiro-ikura : いくら(2貫) / Salmon Roe (2pcs)
+sushiro-ebi-avocado : えびアボカド(2貫) / Shrimp Avocado (2pcs)
+saize-carbonara : カルボナーラ / Carbonara
+conv-onigiri-salmon : 手巻おにぎり(鮭) / Rice Ball (Salmon)
+conv-onigiri-tuna : 手巻おにぎり(ツナマヨ) / Rice Ball (Tuna Mayo)
+conv-onigiri-konbu : 手巻おにぎり(昆布) / Rice Ball (Kelp)
+conv-karaagekun-red : からあげクン(レッド) / Karaage-kun (Red)
+conv-famichiki : ファミチキ / Fami-Chiki
+conv-nanachiki : ななチキ / Nana-Chiki
+conv-salad-chicken-plain : サラダチキン(プレーン) / Salad Chicken (Plain)
+conv-salad-chicken-herb : サラダチキン(ハーブ) / Salad Chicken (Herb)
+supple-savas-milk : ザバス ミルクプロテイン / SAVAS Milk Protein
+supple-ippon-manzoku : 一本満足バー(シリアルチョコ) / 1pon Manzoku Bar
+supple-oikos-strawberry : オイコス(ストロベリー) / Oikos (Strawberry)
+goya-chanpuru : ゴーヤチャンプルー / Goya Chanpuru
+soko-soba : ソーキそば / Soki Soba
+hoto : ほうとう / Hoto (Pumpkin Noodle Soup)
+kiritanpo : きりたんぽ鍋 / Kiritanpo Nabe
+zunda-mochi : ずんだ餅 / Zunda Mochi
+basashi : 馬刺し / Basashi (Horse Sashimi)
+shiokara : イカの塩辛 / Ika no Shiokara (Squid)
+ankimo : あん肝 / Ankimo (Monkfish Liver)
+shirako : 白子ポン酢 / Shirako (Milt)
+eihire : エイヒレ / Eihire (Stingray Fin)
+kusaya : くさや / Kusaya
+umeboshi : 梅干し(1個) / Umeboshi
+venison-steak : 鹿肉ステーキ / Venison Steak
+boar-stew : 猪肉(ぼたん鍋) / Boar Meat
+umaibo : うまい棒(1本) / Umaibo
+big-katsu : ビッグカツ / Big Katsu
+baby-star : ベビースターラーメン / Baby Star Ramen
+natto-pack : 納豆(1パック) / Natto
+chikuwa : ちくわ(1本) / Chikuwa
+mozuku : もずく酢 / Mozuku Vinegar
+tacos-beef : タコス(ビーフ) / Beef Tacos
+burrito-bean : ブリトー(豆) / Bean Burrito
+pho-beef : フォー(牛肉) / Beef Pho
+kebab-sandwich : ケバブサンド / Kebab Sandwich
+tom-yum-kung : トムヤムクン / Tom Yum Kung
+butter-chicken-curry : バターチキンカレー / Butter Chicken Curry
+naan-plain : ナン(プレーン) / Naan Bread
+taiyaki : たい焼き / Taiyaki
+castella : カステラ(1切れ) / Castella Cake
+yokan-slice : 羊羹(1切れ) / Yokan
+shochu-rocks : 焼酎(ロック) / Shochu (Rocks)
+wine-red-glass : 赤ワイン(グラス) / Red Wine (Glass)
+ground-meat-mix : 合い挽き肉(生) / Ground Meat (Beef/Pork)
+pork-belly-raw : 豚バラ肉(生) / Pork Belly
+bacon-slice : ベーコン / Bacon
+sausage-wiener : ウインナー(1本) / Wiener Sausage
+ham-slice : ロースハム(1枚) / Ham Slice
+salmon-filet : 鮭の切り身(生) / Salmon Filet
+mackerel-raw : サバ(生) / Mackerel
+tuna-canned-oil : ツナ缶(オイル) / Canned Tuna (Oil)
+shrimp-raw : むきエビ(生) / Shrimp
+cucumber-raw : きゅうり(1本) / Cucumber
+eggplant-raw : なす(1個) / Eggplant
+moyashi-pack : もやし(1袋) / Bean Sprouts
+daikon-raw : 大根(100g) / Daikon Radish
+lettuce-leaf : レタス(葉) / Lettuce
+milk-glass : 牛乳(200ml) / Milk
+yogurt-plain : ヨーグルト(プレーン) / Yogurt
+butter-pat : バター(10g) / Butter
+mikan : みかん(1個) / Mandarin Orange
+grape-bunch : ぶどう(1房) / Grapes
+melon-slice : メロン(1切れ) / Melon
+peach-whole : 桃(1個) / Peach
+lemon-whole : レモン(1個) / Lemon
+kiwi-whole : キウイ(1個) / Kiwi
+pineapple-slice : パイナップル(カット) / Pineapple
+potato-raw : じゃがいも(1個) / Potato
+sweet-potato-raw : さつまいも(1本) / Sweet Potato
+pumpkin-slice : かぼちゃ(100g) / Pumpkin
+renkon-raw : レンコン(1節) / Lotus Root
+gobo-raw : ごぼう(1本) / Burdock Root
+green-pepper : ピーマン(1個) / Green Pepper
+corn-ear : とうもろこし(1本) / Corn
+shiitake : しいたけ(2個) / Shiitake Mushroom
+asparagus : アスパラガス(1束) / Asparagus
+garlic-clove : にんにく(1片) / Garlic
+octopus-raw : タコ(刺身) / Octopus
+squid-raw : イカ(刺身) / Squid
+scallop-raw : ホタテ(1個) / Scallop
+oyster-raw : カキ(1個) / Oyster
+eel-unagi : うなぎ蒲焼 / Eel (Unagi)
+ground-chicken : 鶏ひき肉 / Ground Chicken
+beef-tongue : 牛タン / Beef Tongue
+liver-pork : 豚レバー / Pork Liver
+cheese-camembert : カマンベールチーズ(1切) / Camembert Cheese
+konjac : こんにゃく / Konjac
+seaweed-nori : 海苔(1枚) / Nori Seaweed
