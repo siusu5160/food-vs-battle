@@ -69,49 +69,12 @@ export function generateBalancedMenu(): MenuSet {
     const maxAttempts = 200;
     let bestSet: MenuSet | null = null;
 
-    // Simple fallback if data is missing
-    if (carbFoods.length === 0 || meatFoods.length === 0 || sideFoods.length === 0) {
-        throw new Error("Not enough food data to generate menu");
+    if (!bestSet || score > bestSet.score) {
+        bestSet = completeSet;
     }
 
-    for (let i = 0; i < maxAttempts; i++) {
-        const main = carbFoods[Math.floor(Math.random() * carbFoods.length)];
-        const protein = meatFoods[Math.floor(Math.random() * meatFoods.length)];
-        const side = sideFoods[Math.floor(Math.random() * sideFoods.length)];
+    if (score >= 90) break;
+}
 
-        // Calculate totals
-        const totalCalories = main.calories + protein.calories + side.calories;
-        const totalProtein = main.protein + protein.protein + side.protein;
-        const totalFat = main.fat + protein.fat + side.fat;
-        const totalCarbs = main.carbs + protein.carbs + side.carbs;
-
-        // Skip if wildly off
-        if (Math.abs(totalCalories - TARGET_CALORIES) > CALORIE_TOLERANCE * 2) {
-            continue;
-        }
-
-        const pfcBalance = calculatePFCBalance(totalProtein, totalFat, totalCarbs);
-
-        const menuSet: Omit<MenuSet, 'score'> = {
-            main,
-            protein,
-            side,
-            totalCalories,
-            totalProtein,
-            totalFat,
-            totalCarbs,
-            pfcBalance,
-        };
-
-        const score = scoreMenuSet(menuSet);
-        const completeSet: MenuSet = { ...menuSet, score };
-
-        if (!bestSet || score > bestSet.score) {
-            bestSet = completeSet;
-        }
-
-        if (score >= 90) break;
-    }
-
-    return bestSet!;
+return bestSet!;
 }

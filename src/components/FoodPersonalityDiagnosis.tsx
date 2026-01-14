@@ -30,6 +30,24 @@ const QUESTIONS = [
             { text: "さっぱり薄味", value: "low_cal" },
             { text: "ピリ辛", value: "spicy" }
         ]
+    },
+    {
+        id: 4,
+        text: "理想のデートは？",
+        options: [
+            { text: "遊園地ではしゃぐ", value: "high_carb" },
+            { text: "高級ディナー", value: "high_fat" },
+            { text: "映画館でまったり", value: "sweet" }
+        ]
+    },
+    {
+        id: 5,
+        text: "朝ごはん派？",
+        options: [
+            { text: "しっかり食べる", value: "balanced" },
+            { text: "スムージーのみ", value: "vegetable" },
+            { text: "プロテイン", value: "high_protein" }
+        ]
     }
 ];
 

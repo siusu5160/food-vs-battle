@@ -24,19 +24,26 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-            <div className="bg-[#111] w-full max-w-md max-h-[80vh] flex flex-col shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-[#333]">
-                <div className="p-4 border-b border-[#333] flex justify-between items-center">
-                    <div className="flex flex-col">
-                        <h2 className="text-xl font-bold text-[#d4af37] font-serif">SELECT FOOD</h2>
-                        {opponentFood && (
-                            <div className="flex items-center gap-2 mt-1 text-sm text-gray-400">
-                                <span className="text-xs border border-gray-700 px-1 rounded">VS</span>
-                                <span>{opponentFood.emoji} {t(opponentFood.name, opponentFood.nameEn)}</span>
-                            </div>
-                        )}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={onClose}>
+            <div className="bg-[#1a1a1a] w-full max-w-4xl h-[90vh] rounded-3xl border border-[#333] flex flex-col overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
+
+                {/* Header & Opponent Info */}
+                <div className="p-6 border-b border-[#333] bg-[#0a0a0a]">
+                    <div className="flex justify-between items-center mb-4">
+                        <h2 className="text-2xl font-bold text-white font-serif tracking-wider">SELECT FIGHTER</h2>
+                        <button onClick={onClose} className="p-2 hover:bg-[#333] rounded-full transition-colors">✕</button>
                     </div>
-                    <button onClick={onClose} className="text-gray-500 hover:text-white">✕</button>
+
+                    {opponentFood && (
+                        <div className="flex items-center gap-4 bg-red-900/20 border border-red-500/30 p-4 rounded-xl animate-pulse">
+                            <div className="text-4xl">{opponentFood.emoji}</div>
+                            <div>
+                                <div className="text-xs text-red-400 font-bold uppercase tracking-widest">CURRENT ENEMY</div>
+                                <div className="text-xl font-bold text-white">{t(opponentFood.name, opponentFood.nameEn)}</div>
+                            </div>
+                            <div className="ml-auto text-red-500 font-black text-3xl italic">VS</div>
+                        </div>
+                    )}
                 </div>
 
                 <div className="p-4 border-b border-[#333]">
