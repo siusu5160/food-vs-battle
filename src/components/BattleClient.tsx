@@ -6,6 +6,7 @@ import { FoodItem } from '@/types/FoodItem';
 import { judgeBattle, BattleResult } from '@/lib/battleLogic';
 import { checkSynergy, Synergy } from '@/lib/synergies';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -33,6 +34,7 @@ interface Props {
 
 export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
     const router = useRouter();
+    const { t } = useLanguage();
     const [result, setResult] = useState<BattleResult | null>(null);
     const [synergy, setSynergy] = useState<Synergy | undefined>(undefined);
 
@@ -116,16 +118,16 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
 
             {/* Fighters */}
             <div className="grid grid-cols-2 gap-4 md:gap-8">
-                <FighterCard food={foodA} isWinner={result.winner === 'A'} result={result} side="A" />
+                <FighterCard food={foodA} isWinner={result.winner === 'A'} result={result} side="A" t={t} />
                 <div className="absolute left-1/2 top-48 -translate-x-1/2 -translate-y-1/2 z-10 text-xl font-bold bg-black/50 px-2 rounded-full border border-white/20">
                     VS
                 </div>
-                <FighterCard food={foodB} isWinner={result.winner === 'B'} result={result} side="B" />
+                <FighterCard food={foodB} isWinner={result.winner === 'B'} result={result} side="B" t={t} />
             </div>
 
             {/* Comparison Graph */}
             <div className="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
-                <h3 className="text-center text-gray-400 text-sm font-bold mb-4">成分バランス比較 (相対比)</h3>
+                <h3 className="text-center text-gray-400 text-sm font-bold mb-4">{t('成分バランス比較 (相対比)', 'Nutrient Balance (Relative)')}</h3>
                 <div className="h-[300px] w-full">
                     <Radar data={chartData} options={chartOptions} />
                 </div>
@@ -153,7 +155,7 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
 
             {/* Judgments */}
             <div className="space-y-4">
-                <h3 className="text-xl font-bold text-gray-400 border-b border-gray-700 pb-2">判定詳細</h3>
+                <h3 className="text-xl font-bold text-gray-400 border-b border-gray-700 pb-2">{t('判定詳細', 'Judgment Details')}</h3>
                 {result.judgments.map((judgment, i) => (
                     <motion.div
                         key={i}
@@ -179,7 +181,7 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
     );
 };
 
-const FighterCard = ({ food, isWinner, result, side }: { food: FoodItem, isWinner: boolean, result: BattleResult, side: 'A' | 'B' }) => {
+const FighterCard = ({ food, isWinner, result, side, t }: { food: FoodItem, isWinner: boolean, result: BattleResult, side: 'A' | 'B', t: (ja: string, en: string) => string }) => {
     const isLoser = !isWinner && result.winner !== 'Draw';
     const borderColor = isWinner ? 'border-yellow-500' : 'border-gray-700';
     const shadowClass = isWinner ? 'shadow-[0_0_20px_rgba(234,179,8,0.3)]' : '';
@@ -205,17 +207,22 @@ const FighterCard = ({ food, isWinner, result, side }: { food: FoodItem, isWinne
                 <div className="absolute bottom-2 right-3 text-white font-black text-2xl drop-shadow-md">
                     {food.calories}<span className="text-sm font-normal text-gray-300 ml-1">kcal</span>
                 </div>
+                <div className="absolute bottom-2 left-2 text-[10px] text-gray-400 bg-black/50 px-1 rounded backdrop-blur-sm">
+                    /100g
+                </div>
             </div>
 
             <div className="p-4 flex flex-col flex-1">
-                <h2 className="text-lg sm:text-xl font-bold text-white leading-tight mb-3 min-h-[3rem] flex items-center">{food.name}</h2>
+                <h2 className="text-lg sm:text-xl font-bold text-white leading-tight mb-3 min-h-[3rem] flex items-center">
+                    {t(food.name, food.nameEn)}
+                </h2>
 
                 <div className="space-y-2 text-sm flex-1">
-                    <StatRow label="Protein" value={food.protein} unit="g" highlight={true} />
-                    <StatRow label="Fat" value={food.fat} unit="g" />
-                    <StatRow label="Carb" value={food.carbs} unit="g" />
-                    <StatRow label="Fiber" value={food.fiber} unit="g" />
-                    <StatRow label="Salt" value={food.salt} unit="g" />
+                    <StatRow label={t('タンパク質', 'Protein')} value={food.protein} unit="g" highlight={true} />
+                    <StatRow label={t('脂質', 'Fat')} value={food.fat} unit="g" />
+                    <StatRow label={t('炭水化物', 'Carbs')} value={food.carbs} unit="g" />
+                    <StatRow label={t('食物繊維', 'Fiber')} value={food.fiber} unit="g" />
+                    <StatRow label={t('塩分', 'Salt')} value={food.salt} unit="g" />
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-1">

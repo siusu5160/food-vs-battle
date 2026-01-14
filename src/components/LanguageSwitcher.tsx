@@ -1,22 +1,30 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-// Simplified LanguageSwitcher (UI only for now as requested)
 export function LanguageSwitcher() {
+    const { language, setLanguage } = useLanguage();
+
     return (
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center bg-black/30 p-1 rounded-lg backdrop-blur-sm border border-white/10">
             <button
-                onClick={() => alert('多言語対応は現在調整中です。')}
-                className="px-3 py-1 rounded text-sm font-bold transition-colors bg-primary text-black"
+                onClick={() => setLanguage('ja')}
+                className={`px-3 py-1 rounded text-sm font-bold transition-all ${language === 'ja'
+                        ? 'bg-primary text-black shadow-lg scale-105'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
             >
-                🇯🇵 日本語
+                🇯🇵 JP
             </button>
             <button
-                onClick={() => alert('English support is coming soon!')}
-                className="px-3 py-1 rounded text-sm font-bold transition-colors bg-gray-700 text-gray-300 hover:bg-gray-600"
+                onClick={() => setLanguage('en')}
+                className={`px-3 py-1 rounded text-sm font-bold transition-all ${language === 'en'
+                        ? 'bg-blue-500 text-white shadow-lg scale-105'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
             >
-                🇺🇸 English
+                🇺🇸 EN
             </button>
         </div>
     );

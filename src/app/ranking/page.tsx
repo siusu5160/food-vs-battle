@@ -13,6 +13,9 @@ export default function RankingPage() {
     const highProtein = getRanking('high-protein', 50);
     const lowCalorie = getRanking('low-calorie', 50);
     const lowCarb = getRanking('low-carb', 50);
+    const highFiber = getRanking('high-fiber', 50);
+    const lowSalt = getRanking('low-salt', 50);
+    const lowFat = getRanking('low-fat', 50);
 
     return (
         <main className="min-h-screen bg-gray-900 pb-20 pt-8 px-4">
@@ -27,6 +30,9 @@ export default function RankingPage() {
                 <RankingCard result={highProtein} color="border-yellow-500" badgeColor="bg-yellow-500" />
                 <RankingCard result={lowCalorie} color="border-green-500" badgeColor="bg-green-500" />
                 <RankingCard result={lowCarb} color="border-blue-500" badgeColor="bg-blue-500" />
+                <RankingCard result={highFiber} color="border-emerald-500" badgeColor="bg-emerald-500" />
+                <RankingCard result={lowSalt} color="border-cyan-500" badgeColor="bg-cyan-500" />
+                <RankingCard result={lowFat} color="border-purple-500" badgeColor="bg-purple-500" />
             </div>
 
             <div className="text-center mt-12">
@@ -59,10 +65,12 @@ const RankingCard = ({ result, color, badgeColor }: { result: ReturnType<typeof 
                         <div className="font-mono font-bold text-white">
                             {result.type.includes('calorie') ? item.calories :
                                 result.type === 'high-protein' ? item.protein :
-                                    result.type === 'high-salt' ? item.salt :
-                                        result.type === 'low-carb' ? item.carbs : item.protein}
+                                    result.type === 'high-salt' || result.type === 'low-salt' ? item.salt :
+                                        result.type === 'high-fiber' ? item.fiber :
+                                            result.type === 'low-fat' ? item.fat :
+                                                result.type === 'low-carb' ? item.carbs : item.protein}
                             <span className="text-xs text-gray-500 ml-0.5">
-                                {result.type.includes('calorie') ? 'kcal' : (result.type === 'high-salt' ? 'g (塩分)' : 'g')}
+                                {result.type.includes('calorie') ? 'kcal' : (result.type.includes('salt') ? 'g (塩分)' : 'g')}
                             </span>
                         </div>
                     </div>
