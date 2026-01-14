@@ -31,23 +31,8 @@ export async function generateMetadata({ params }: { params: Promise<{ idA: stri
 }
 
 // ISR Strategy: Generate popular battles statically, others on demand
-export async function generateStaticParams() {
-    const foods = getAllFoods();
-    // Generate limited combinations to keep build time sane
-    // Example: Top 20 foods vs Top 20 foods
-    const topFoods = foods.slice(0, 20);
-    const params = [];
-
-    for (let i = 0; i < topFoods.length; i++) {
-        for (let j = i + 1; j < topFoods.length; j++) {
-            params.push({
-                idA: topFoods[i].id,
-                idB: topFoods[j].id,
-            });
-        }
-    }
-    return params;
-}
+// Update V5.8: Removed generateStaticParams to avoid build issues and rely fully on Edge Runtime for dynamic generation.
+// This ensures ALL combinations work without 404s.
 
 export default async function BattlePage({ params }: { params: Promise<{ idA: string, idB: string }> }) {
     const { idA, idB } = await params;
