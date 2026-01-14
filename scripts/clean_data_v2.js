@@ -6,25 +6,24 @@ const foods = require(dataPath);
 
 console.log(`Original Count: ${foods.length}`);
 
-// Keywords to REMOVE (Junk/Redundant)
+// Keywords to REMOVE (Specific junk/unwanted types)
 const REMOVE_KEYWORDS = [
-    'セット',
-    '弁当',
-    '定食',
-    '小', 'ミニ', 'ハーフ',
-    '大', '特盛', '倍', 'メガ',
-    '業務用',
+    // User specifically requested to remove these from *items*
+    '低糖質',
+    '特選',
+
+    // Valid junk/meaningless
     'トッピング',
     '追加',
     'ソース',
     'タレ',
     'ドレッシング',
-    'なし', // e.g. "肉なし" unless it's a valid dish
+    'なし', // e.g. "肉なし"
     'のみ', // e.g. "具のみ"
     '増量',
     '変更',
     '付き',
-    '入り', // Often implies a variant like "Cheese-iri"
+    '入り',
     '風', // "Style"
     '味', // "Flavor"
     '残り',
@@ -35,22 +34,21 @@ const REMOVE_KEYWORDS = [
     'お試し',
     'サンプル',
     'test',
-    'テスト'
+    'テスト',
+    '業務用'
 ];
 
-// Keywords to KEEP (Premium/Category markers to ensure we don't over-clean)
-// (Not strictly used for inclusion, but good for reference)
-// const KEEP_CATEGORIES = ['Sushi', 'Steak', 'Ramen', 'Burger', 'Dessert'];
+// Note: Removed 'set', 'bento' from ban list to increase variety as per request.
 
 let cleaned = foods.filter(food => {
     // 1. Remove if name contains removal keywords
     if (REMOVE_KEYWORDS.some(k => food.name.includes(k))) return false;
 
-    // 2. Remove if calories are 0 or suspicious (unless water/tea)
-    if (food.calories <= 0 && !['水', 'お茶', 'コーヒー'].some(n => food.name.includes(n))) return false;
+    // 2. Remove if calories are 0 or suspicious (unless water/tea/coffee)
+    if (food.calories <= 0 && !['水', 'お茶', 'コーヒー', '珈琲', 'ティー'].some(n => food.name.includes(n))) return false;
 
-    // 3. Remove if name is too long (often detailed product names)
-    if (food.name.length > 20) return false;
+    // 3. Remove if name is too long (Relaxed limit to 30)
+    if (food.name.length > 30) return false;
 
     return true;
 });

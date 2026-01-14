@@ -156,16 +156,26 @@ export default function Home() {
 
         {/* Feature Section (Ranking + Confession) */}
         <section className="mb-24 px-4 bg-[#0e0e0e] py-12 border-y border-[#222]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Ranking */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer" onClick={() => router.push('/ranking')}>
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => router.push('/ranking')}>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🏆</div>
               <h3 className="text-xl text-[#d4af37] mb-4 font-serif">FOOD RANKING</h3>
               <p className="text-gray-400 text-sm mb-6 font-sans">カロリー、タンパク質、脂質...。<br />あらゆる数値で食材を格付け。</p>
               <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">VIEW RANKING →</span>
             </div>
 
-            {/* Confession (Renamed/Replaced Menu Gacha) */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer" onClick={() => setIsConfessionOpen(true)}>
+            {/* Menu Gacha */}
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors group">
+              <div className="text-4xl mb-4 group-hover:rotate-12 transition-transform">🎲</div>
+              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">MENU GACHA</h3>
+              <p className="text-gray-400 text-sm mb-6 font-sans">今日の食事に迷ったら。<br />運命の一皿を提案します。</p>
+              <MenuGacha />
+            </div>
+
+            {/* Confession */}
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => setIsConfessionOpen(true)}>
+              <div className="text-4xl mb-4 group-hover:translate-y-1 transition-transform">😇</div>
               <h3 className="text-xl text-[#d4af37] mb-4 font-serif">カロリー懺悔室</h3>
               <p className="text-gray-400 text-sm mb-6 font-sans">食べ過ぎてしまったあなたへ。<br />その罪、ここで清算しませんか？</p>
               <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">懺悔する →</span>

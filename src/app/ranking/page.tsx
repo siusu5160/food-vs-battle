@@ -29,7 +29,7 @@ export default function RankingPage() {
                 <RankingCard result={highCalorie} color="border-red-500" badgeColor="bg-red-500" />
                 <RankingCard result={highProtein} color="border-yellow-500" badgeColor="bg-yellow-500" />
                 <RankingCard result={lowCalorie} color="border-green-500" badgeColor="bg-green-500" />
-                {/* Low Carb Removed */}
+                <RankingCard result={lowCarb} color="border-blue-500" badgeColor="bg-blue-500" />
                 <RankingCard result={highFiber} color="border-emerald-500" badgeColor="bg-emerald-500" />
                 <RankingCard result={lowSalt} color="border-cyan-500" badgeColor="bg-cyan-500" />
                 <RankingCard result={lowFat} color="border-purple-500" badgeColor="bg-purple-500" />
