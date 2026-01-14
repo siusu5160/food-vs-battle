@@ -6,17 +6,9 @@
 - 必要なパッケージ `@cloudflare/next-on-pages` をインストールしました。
 - `package.json` にビルド用スクリプトを追加しました。
 
-## 2. GitHub リポジトリの作成
-現在のフォルダにはまだリモートリポジトリが設定されていません。
-1. [GitHub](https://github.com/new) にログインし、新しいリポジトリ（例: `food-vs-battle`）を作成してください。
-2. 作成後、表示されるコマンドを使って現在のコードをプッシュします。
-
-```bash
-# ターミナルで実行（URLは作成した自分のものに置き換えてください）
-git remote add origin https://github.com/YOUR_USERNAME/food-vs-battle.git
-git branch -M main
-git push -u origin main
-```
+## 2. GitHub リポジトリの作成 (完了)
+以下のリポジトリにコードをプッシュしました。
+`https://github.com/siusu5160/food-vs-battle.git`
 
 ## 3. Cloudflare Pages での設定
 1. [Cloudflare Dashboard](https://dash.cloudflare.com/) にログインします。
