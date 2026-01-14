@@ -15,8 +15,9 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [language, setLanguage] = useState<Language>('ja');
 
-    const t = (ja: string, en: string) => {
-        return language === 'ja' ? ja : en;
+    const t = (ja: string, en?: string) => {
+        // Always prefer Japanese as per user request "Basic Japanese"
+        return ja;
     };
 
     return (

@@ -7,9 +7,10 @@ interface Props {
     onClose: () => void;
     onSelect: (food: FoodItem) => void;
     foods: FoodItem[];
+    opponentFood?: FoodItem | null;
 }
 
-export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, foods }) => {
+export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, foods, opponentFood }) => {
     const { t } = useLanguage();
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -26,7 +27,15 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
             <div className="bg-[#111] w-full max-w-md max-h-[80vh] flex flex-col shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-[#333]">
                 <div className="p-4 border-b border-[#333] flex justify-between items-center">
-                    <h2 className="text-xl font-bold text-[#d4af37] font-serif">SELECT FOOD</h2>
+                    <div className="flex flex-col">
+                        <h2 className="text-xl font-bold text-[#d4af37] font-serif">SELECT FOOD</h2>
+                        {opponentFood && (
+                            <div className="flex items-center gap-2 mt-1 text-sm text-gray-400">
+                                <span className="text-xs border border-gray-700 px-1 rounded">VS</span>
+                                <span>{opponentFood.emoji} {t(opponentFood.name, opponentFood.nameEn)}</span>
+                            </div>
+                        )}
+                    </div>
                     <button onClick={onClose} className="text-gray-500 hover:text-white">✕</button>
                 </div>
 

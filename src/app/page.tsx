@@ -10,15 +10,11 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import type { FoodItem } from '@/types/FoodItem';
 
-// Hardcoded Popular Battles (Replica of legacy data)
-// Ensure these IDs exist in your cleaned dataset!
+// Hardcoded Popular Battles (Fixed with valid IDs)
 const POPULAR_BATTLES = [
-  { a: 'white-rice', b: 'brown-rice', emoji: '🍚', title: '白米 vs 玄米', desc: '永遠のダイエット論争' },
-  { a: 'chicken-breast-skinless', b: 'beef-rib', emoji: '🥩', title: '鶏むね vs 牛バラ', desc: '筋肉最強はどっちだ' },
-  { a: 'banana', b: 'apple', emoji: '🍎', title: 'バナナ vs リンゴ', desc: '朝食の王座決定戦' },
-  { a: 'ramen-noodle', b: 'udon', emoji: '🍜', title: 'ラーメン vs うどん', desc: '麺類最強決定戦' },
-  { a: 'shortcake', b: 'mochi', emoji: '🍰', title: 'ケーキ vs 餅', desc: '洋菓子 vs 和菓子' },
-  { a: 'potato', b: 'sweet-potato', emoji: '🍟', title: 'ポテト vs さつまいも', desc: '芋対決' },
+  { a: 'beef-rib', b: 'beef-filet', emoji: '🥩', title: '牛バラ vs 牛ヒレ', desc: '脂質と赤身の戦い' },
+  { a: 'chicken-tender', b: 'chicken-thigh-skin', emoji: '🍗', title: 'ささみ vs 鶏もも', desc: 'ヘルシー vs ジューシー' },
+  // Add more once confirmed, currently keeping it safe with checked IDs
 ];
 
 export default function Home() {
@@ -76,7 +72,7 @@ export default function Home() {
               <a href="#popular" className="hover:text-[#d4af37] transition-colors">POPULAR</a>
               <a href="/ranking" className="hover:text-[#d4af37] transition-colors">RANKING</a>
             </nav>
-            <LanguageSwitcher />
+            {/* Language Switcher Removed as per 'Basic Japanese' request */}
           </div>
         </div>
       </header>
@@ -158,18 +154,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Feature Grid */}
+        {/* Feature Section (Ranking + Confession) */}
         <section className="mb-24 px-4 bg-[#0e0e0e] py-12 border-y border-[#222]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="p-8 border-l border-[#d4af37]/30">
-              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">Ranking</h3>
+            {/* Ranking */}
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer" onClick={() => router.push('/ranking')}>
+              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">FOOD RANKING</h3>
               <p className="text-gray-400 text-sm mb-6 font-sans">カロリー、タンパク質、脂質...。<br />あらゆる数値で食材を格付け。</p>
-              <a href="/ranking" className="text-white border-b border-[#d4af37] padding-b-1 text-sm hover:opacity-80">VIEW RANKING →</a>
+              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">VIEW RANKING →</span>
             </div>
-            <div className="p-8 border-l border-[#d4af37]/30">
-              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">Menu Gacha</h3>
-              <p className="text-gray-400 text-sm mb-6 font-sans">今日の食事に迷ったら。<br />運命の一皿を提案します。</p>
-              <MenuGacha />
+
+            {/* Confession (Renamed/Replaced Menu Gacha) */}
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer" onClick={() => setIsConfessionOpen(true)}>
+              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">カロリー懺悔室</h3>
+              <p className="text-gray-400 text-sm mb-6 font-sans">食べ過ぎてしまったあなたへ。<br />その罪、ここで清算しませんか？</p>
+              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">懺悔する →</span>
             </div>
           </div>
         </section>
@@ -201,15 +200,6 @@ export default function Home() {
 
       </main>
 
-      <footer className="fixed bottom-4 right-4 z-50">
-        <button
-          onClick={() => setIsConfessionOpen(true)}
-          className="text-xs text-gray-800 hover:text-[#d4af37] transition-colors opacity-50 hover:opacity-100"
-        >
-          ⚖️
-        </button>
-      </footer>
-
       <FoodSelectorModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -219,6 +209,7 @@ export default function Home() {
           setIsModalOpen(false);
         }}
         foods={foods}
+        opponentFood={activeSide === 'A' ? selectedB : selectedA}
       />
     </div>
   );
