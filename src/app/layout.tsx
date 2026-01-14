@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "FOOD VS BATTLEは、様々な食べ物同士を戦わせて最強を決めるエンターテインメント投票サイトです。あなたの推しフードを応援しよう！",
 };
 
+import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,6 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5409964582648687"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-gray-950 text-gray-100`}
       >
