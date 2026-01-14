@@ -52,7 +52,7 @@ export default function Home() {
     while (a.id === b.id) {
       b = foods[Math.floor(Math.random() * foods.length)];
     }
-    router.push(`/battle/${a.id}/${b.id}`);
+    router.push(`/battle/${encodeURIComponent(a.id)}/${encodeURIComponent(b.id)}`);
   };
 
   if (!mounted) return null;
