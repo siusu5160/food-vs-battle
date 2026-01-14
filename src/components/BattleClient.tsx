@@ -6,6 +6,25 @@ import { FoodItem } from '@/types/FoodItem';
 import { judgeBattle, BattleResult } from '@/lib/battleLogic';
 import { checkSynergy, Synergy } from '@/lib/synergies';
 import { useRouter } from 'next/navigation';
+import {
+    Chart as ChartJS,
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Radar } from 'react-chartjs-2';
+
+ChartJS.register(
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend
+);
 
 interface Props {
     foodA: FoodItem;
@@ -16,27 +35,72 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
     const router = useRouter();
     const [result, setResult] = useState<BattleResult | null>(null);
     const [synergy, setSynergy] = useState<Synergy | undefined>(undefined);
-    const [history, setHistory] = useState<FoodItem[]>([]);
 
     useEffect(() => {
         const battleRes = judgeBattle(foodA, foodB);
         setResult(battleRes);
         setSynergy(checkSynergy(foodA.id, foodB.id));
-
-        // Save history (simplified for now)
-        const saved = localStorage.getItem('battle_history');
-        if (saved) {
-            const parsed = JSON.parse(saved);
-            // Logic to append unique items
-            setHistory(parsed.slice(0, 5));
-        }
     }, [foodA, foodB]);
 
-    const handleNextBattle = () => {
-        router.push('/battle'); // Will redirect to random
+    if (!result) return <div className="p-8 text-center text-white">判定中...</div>;
+
+    // Normalization for Radar Chart
+    const maxP = Math.max(foodA.protein, foodB.protein, 1);
+    const maxF = Math.max(foodA.fat, foodB.fat, 1);
+    const maxC = Math.max(foodA.carbs, foodB.carbs, 1);
+    const maxFib = Math.max(foodA.fiber, foodB.fiber, 1);
+    const maxS = Math.max(foodA.salt, foodB.salt, 1);
+
+    const chartData = {
+        labels: ['Protein', 'Fat', 'Carbs', 'Fiber', 'Salt'],
+        datasets: [
+            {
+                label: foodA.name,
+                data: [
+                    (foodA.protein / maxP) * 100,
+                    (foodA.fat / maxF) * 100,
+                    (foodA.carbs / maxC) * 100,
+                    (foodA.fiber / maxFib) * 100,
+                    (foodA.salt / maxS) * 100,
+                ],
+                backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                borderColor: 'rgba(239, 68, 68, 1)',
+                borderWidth: 2,
+            },
+            {
+                label: foodB.name,
+                data: [
+                    (foodB.protein / maxP) * 100,
+                    (foodB.fat / maxF) * 100,
+                    (foodB.carbs / maxC) * 100,
+                    (foodB.fiber / maxFib) * 100,
+                    (foodB.salt / maxS) * 100,
+                ],
+                backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderWidth: 2,
+            },
+        ],
     };
 
-    if (!result) return <div className="p-8 text-center">判定中...</div>;
+    const chartOptions = {
+        scales: {
+            r: {
+                angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                pointLabels: { color: 'rgba(255, 255, 255, 0.7)', font: { size: 12 } },
+                ticks: { display: false, backdropColor: 'transparent' },
+                suggestedMin: 0,
+                suggestedMax: 100,
+            },
+        },
+        plugins: {
+            legend: {
+                labels: { color: 'white' },
+            },
+        },
+        maintainAspectRatio: false,
+    };
 
     return (
         <div className="w-full max-w-4xl mx-auto p-4 space-y-8 pb-20">
@@ -57,6 +121,14 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                     VS
                 </div>
                 <FighterCard food={foodB} isWinner={result.winner === 'B'} result={result} side="B" />
+            </div>
+
+            {/* Comparison Graph */}
+            <div className="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                <h3 className="text-center text-gray-400 text-sm font-bold mb-4">成分バランス比較 (相対比)</h3>
+                <div className="h-[300px] w-full">
+                    <Radar data={chartData} options={chartOptions} />
+                </div>
             </div>
 
             {/* Synergy Alert */}
@@ -109,37 +181,41 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
 
 const FighterCard = ({ food, isWinner, result, side }: { food: FoodItem, isWinner: boolean, result: BattleResult, side: 'A' | 'B' }) => {
     const isLoser = !isWinner && result.winner !== 'Draw';
+    const borderColor = isWinner ? 'border-yellow-500' : 'border-gray-700';
+    const shadowClass = isWinner ? 'shadow-[0_0_20px_rgba(234,179,8,0.3)]' : '';
 
     return (
         <motion.div
-            className={`relative bg-gray-800 rounded-2xl overflow-hidden border-2 ${isWinner ? 'border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)]' : 'border-gray-700'}`}
+            className={`relative bg-gray-800 rounded-2xl border-2 ${borderColor} ${shadowClass} flex flex-col h-full`}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: isLoser ? 0.6 : 1, scale: 1 }}
         >
-            <div className="aspect-square bg-gray-700 flex items-center justify-center relative overlow-hidden">
-                <span className="text-8xl drop-shadow-2xl filter">{food.emoji}</span>
+            {/* Header with Emoji */}
+            <div className="aspect-square bg-gray-700/50 flex items-center justify-center relative rounded-t-xl overflow-hidden shrink-0">
+                <span className="text-6xl sm:text-7xl drop-shadow-2xl filter">{food.emoji}</span>
+
+                {/* WIN Badge - Moved inside relative container but with absolute positioning that stays within bounds or on top */}
                 {isWinner && (
-                    <motion.div
-                        initial={{ scale: 0, rotate: -45 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        className="absolute -top-2 -right-2 bg-yellow-500 text-black font-black px-3 py-1 text-sm rotate-12 shadow-lg z-10"
-                    >
+                    <div className="absolute top-2 right-2 bg-yellow-500 text-black font-black px-2 py-1 text-xs rounded shadow-lg z-20 animate-bounce">
                         WIN!
-                    </motion.div>
+                    </div>
                 )}
+
                 <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-gray-900 to-transparent opacity-80" />
                 <div className="absolute bottom-2 right-3 text-white font-black text-2xl drop-shadow-md">
                     {food.calories}<span className="text-sm font-normal text-gray-300 ml-1">kcal</span>
                 </div>
             </div>
 
-            <div className="p-4 relative">
-                <h2 className="text-xl font-bold text-white leading-tight mb-2 min-h-[3.5rem] flex items-center">{food.name}</h2>
+            <div className="p-4 flex flex-col flex-1">
+                <h2 className="text-lg sm:text-xl font-bold text-white leading-tight mb-3 min-h-[3rem] flex items-center">{food.name}</h2>
 
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm flex-1">
                     <StatRow label="Protein" value={food.protein} unit="g" highlight={true} />
                     <StatRow label="Fat" value={food.fat} unit="g" />
                     <StatRow label="Carb" value={food.carbs} unit="g" />
+                    <StatRow label="Fiber" value={food.fiber} unit="g" />
+                    <StatRow label="Salt" value={food.salt} unit="g" />
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-1">
@@ -155,10 +231,10 @@ const FighterCard = ({ food, isWinner, result, side }: { food: FoodItem, isWinne
 };
 
 const StatRow = ({ label, value, unit, highlight }: { label: string, value: number, unit: string, highlight?: boolean }) => (
-    <div className="flex justify-between items-center">
-        <span className="text-gray-500">{label}</span>
-        <span className={`font-mono font-bold ${highlight ? 'text-white' : 'text-gray-400'}`}>
-            {value}<span className="text-xs text-gray-600 ml-0.5">{unit}</span>
+    <div className="flex justify-between items-center border-b border-gray-700/50 last:border-0 pb-1">
+        <span className="text-gray-500 text-xs sm:text-sm">{label}</span>
+        <span className={`font-mono font-bold text-sm sm:text-base ${highlight ? 'text-white' : 'text-gray-400'}`}>
+            {value}<span className="text-[10px] text-gray-600 ml-0.5">{unit}</span>
         </span>
     </div>
 );

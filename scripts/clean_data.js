@@ -22,7 +22,10 @@ const keywordsToRemove = [
     '業務用',
     '特選',
     '増量中',
-    'ロカボ生活', // User specifically mentioned this being broken (0g)
+    'ロカボ生活',
+    '残り',
+    '残',
+    '余り'
 ];
 
 // Heuristic: Keep items that do NOT match the keywords

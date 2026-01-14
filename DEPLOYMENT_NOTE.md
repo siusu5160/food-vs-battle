@@ -18,7 +18,10 @@
     - **フレームワーク プリセット**: `Next.js`
     - **ビルド コマンド**: `npx @cloudflare/next-on-pages`
     - **ビルド出力ディレクトリ**: `.vercel/output/static`
-    - **互換性フラグ (Compatibility Flags)**: 設定画面の「互換性フラグ」に `nodejs_compat` を追加してください（最近は自動設定されることもありますが、念のため推奨）。
+    - **互換性フラグ (Compatibility Flags)**: 
+        1. 「Settings」タブ > 左メニューの「Runtime」をクリックします。
+        2. 「Compatibility flags」の行にある鉛筆アイコン（編集）をクリックします。
+        3. `nodejs_compat` と入力して保存してください。
 
 ## 4. デプロイ
 - 「保存してデプロイ」をクリックすると、自動的にビルドが始まります。

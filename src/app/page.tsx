@@ -15,9 +15,7 @@ const POPULAR_BATTLES = [
   { a: 'chicken-breast-skinless', b: 'beef-rib', emoji: '🥩', title: '鶏むね vs 牛バラ', desc: '筋肉最強はどっちだ' },
   { a: 'banana', b: 'apple', emoji: '🍎', title: 'バナナ vs リンゴ', desc: '朝食の王座決定戦' },
   { a: 'broccoli', b: 'tomato', emoji: '🥦', title: 'ブロッコリー vs トマト', desc: 'ビタミン最強決定戦' },
-  // Replaced frie-chicken/beer with valid IDs (Chicken Thigh vs Highball/Beer alternative or just Rice)
-  // Assuming 'chicken-thigh-skin' exists. For 'beer', if not exists, we use 'white-rice' as combo
-  { a: 'chicken-thigh-skin', b: 'white-rice', emoji: '🍱', title: '唐揚げ vs 白米', desc: '定食の黄金比' },
+
   { a: 'ramen-noodle', b: 'udon', emoji: '🍜', title: 'ラーメン vs うどん', desc: '麺類最強決定戦' },
   { a: 'shortcake', b: 'mochi', emoji: '🍰', title: 'ケーキ vs 餅', desc: '洋菓子 vs 和菓子' }, // daifuku -> mochi
   { a: 'potato', b: 'sweet-potato', emoji: '🍟', title: 'ポテト vs さつまいも', desc: '芋対決' }, // chips/fries -> potato/sweet-potato
@@ -101,7 +99,7 @@ export default function Home() {
       <header className="py-12 md:py-16 relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl mb-8 border border-white/5">
         <div className="absolute top-4 left-4 z-20">
           <div className="bg-black/50 px-3 py-1 rounded-full text-xs text-gray-400 border border-white/10">
-            🥩 収録: 2,500件以上
+            🥩 厳選メニュー収録
           </div>
         </div>
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
