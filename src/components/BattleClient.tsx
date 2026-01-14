@@ -183,8 +183,8 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
 
 const FighterCard = ({ food, isWinner, result, side, t }: { food: FoodItem, isWinner: boolean, result: BattleResult, side: 'A' | 'B', t: (ja: string, en: string) => string }) => {
     const isLoser = !isWinner && result.winner !== 'Draw';
-    const borderColor = isWinner ? 'border-yellow-500' : 'border-gray-700';
-    const shadowClass = isWinner ? 'shadow-[0_0_20px_rgba(234,179,8,0.3)]' : '';
+    const borderColor = isWinner ? 'border-[#d4af37]' : 'border-[#333]';
+    const shadowClass = isWinner ? 'shadow-[0_0_30px_rgba(212,175,55,0.2)]' : '';
 
     return (
         <motion.div
