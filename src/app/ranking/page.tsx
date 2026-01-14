@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RankingPage() {
-    const highCalorie = getRanking('high-calorie', 10);
-    const highProtein = getRanking('high-protein', 10);
-    const lowCalorie = getRanking('low-calorie', 10);
-    const lowCarb = getRanking('low-carb', 10);
+    const highCalorie = getRanking('high-calorie', 50);
+    const highProtein = getRanking('high-protein', 50);
+    const lowCalorie = getRanking('low-calorie', 50);
+    const lowCarb = getRanking('low-carb', 50);
 
     return (
         <main className="min-h-screen bg-gray-900 pb-20 pt-8 px-4">
