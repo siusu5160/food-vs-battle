@@ -40,13 +40,24 @@ export default function Home() {
   };
 
   const getRandomBattle = () => {
-    if (foods.length < 2) return;
-    const a = foods[Math.floor(Math.random() * foods.length)];
+    if (!mounted || !foods || foods.length < 2) return;
+
+    const maxRetries = 10;
+    let a = foods[Math.floor(Math.random() * foods.length)];
     let b = foods[Math.floor(Math.random() * foods.length)];
-    while (a.id === b.id) {
+    let retries = 0;
+
+    // IDが存在し、かつ異なるアイテムになるまでリトライ（無限ループ防止付き）
+    while ((!a?.id || !b?.id || a.id === b.id) && retries < maxRetries) {
+      a = foods[Math.floor(Math.random() * foods.length)];
       b = foods[Math.floor(Math.random() * foods.length)];
+      retries++;
     }
-    router.push(`/battle/${encodeURIComponent(a.id)}/${encodeURIComponent(b.id)}`);
+
+    // 最終チェックして遷移
+    if (a?.id && b?.id && a.id !== b.id) {
+      router.push(`/battle/${encodeURIComponent(a.id)}/${encodeURIComponent(b.id)}`);
+    }
   };
 
   if (!mounted) return null;
