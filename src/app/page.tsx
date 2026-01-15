@@ -9,6 +9,7 @@ import { CalorieConfession } from '@/components/CalorieConfession';
 import { FoodPersonalityDiagnosis } from '@/components/FoodPersonalityDiagnosis';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
+import PopularBattles from '@/components/PopularBattles';
 import type { FoodItem } from '@/types/FoodItem';
 
 import { POPULAR_BATTLES } from '@/lib/constants';
@@ -191,27 +192,7 @@ export default function Home() {
         </section>
 
         {/* Popular Battles */}
-        <section id="popular" className="mb-24">
-          <h3 className="text-center text-2xl font-serif text-white mb-12 tracking-widest">
-            <span className="border-b-2 border-[#d4af37] pb-2">SPECTATOR FAVORITES</span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {POPULAR_BATTLES.map((battle, i) => (
-              <a
-                key={i}
-                href={`/battle/${battle.a}/${battle.b}`}
-                className="block bg-[#111] p-6 border border-[#222] hover:border-[#d4af37]/50 transition-all group"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="text-4xl filter grayscale group-hover:grayscale-0 transition-all duration-500">{battle.emoji}</div>
-                  <div className="text-[#333] group-hover:text-[#d4af37] transition-colors">↗</div>
-                </div>
-                <h4 className="text-lg font-bold text-gray-200 group-hover:text-white mb-2 font-serif">{battle.title}</h4>
-                <p className="text-xs text-gray-500 font-sans">{battle.desc}</p>
-              </a>
-            ))}
-          </div>
-        </section>
+        <PopularBattles />
 
         <CalorieConfession isOpen={isConfessionOpen} onClose={() => setIsConfessionOpen(false)} />
         <MenuGacha isOpen={isGachaOpen} onClose={() => setIsGachaOpen(false)} />
