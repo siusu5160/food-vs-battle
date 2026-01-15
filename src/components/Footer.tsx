@@ -11,6 +11,8 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-6 mb-4 text-sm text-gray-400">
+                    <Link href="/about" className="hover:text-[#d4af37] transition-colors">About</Link>
+                    <Link href="/faq" className="hover:text-[#d4af37] transition-colors">FAQ</Link>
                     <Link href="/privacy" className="hover:text-[#d4af37] transition-colors">プライバシーポリシー</Link>
                     <Link href="/terms" className="hover:text-[#d4af37] transition-colors">利用規約</Link>
                     <Link href="/contact" className="hover:text-[#d4af37] transition-colors">お問い合わせ</Link>
