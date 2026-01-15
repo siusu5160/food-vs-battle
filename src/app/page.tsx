@@ -89,11 +89,30 @@ export default function Home() {
             <span className="block text-[#d4af37] text-2xl md:text-3xl mb-4 tracking-[0.2em] font-light">究極の美食対決</span>
             Choose Your<br />Champion
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed font-sans">
+          <p className="text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
             カロリー、栄養素、塩分...。<br />
             あなたの健康を左右する「食」の選択。<br />
             データを武器に、最強の一皿を決めろ。
           </p>
+
+          {/* サイトの特徴 */}
+          <div className="max-w-4xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
+              <div className="text-2xl mb-2">⚔️</div>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-1">栄養素バトル</h3>
+              <p className="text-xs text-gray-500">2つの食品を比較して栄養素の違いを視覚化</p>
+            </div>
+            <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
+              <div className="text-2xl mb-2">🏆</div>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-1">ランキング</h3>
+              <p className="text-xs text-gray-500">カロリー・タンパク質・ダイエット向けで格付け</p>
+            </div>
+            <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
+              <div className="text-2xl mb-2">🎲</div>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-1">AIメニュー提案</h3>
+              <p className="text-xs text-gray-500">最適なバランスの食事メニューを自動生成</p>
+            </div>
+          </div>
 
           {/* Battle Arena (Selector) */}
           <div className="max-w-4xl mx-auto bg-[#111] border border-[#333] p-8 md:p-12 rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">

@@ -161,10 +161,6 @@ const MenuItemCard = ({ role, food, color, bg }: { role: string, food: any, colo
             <span className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">{role}</span>
             <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">{food.emoji}</div>
             <div className="font-bold text-white text-center leading-tight mb-1 h-12 flex items-center justify-center w-full">{food.name}</div>
-            <div className="text-sm text-gray-400">{food.calories} kcal</div>
-            <div className="flex gap-1 mt-3 justify-center flex-wrap">
-                {food.tags.slice(0, 2).map((t: string) => <span key={t} className="text-[10px] bg-black/40 px-2 py-0.5 rounded text-gray-500">{t}</span>)}
-            </div>
         </div>
     </div>
 );
