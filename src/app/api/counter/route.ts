@@ -11,8 +11,13 @@ export async function GET(request: Request) {
         const env = process.env as any;
         const KV = env.FOODVS_COUNTER;
 
+        // KVが設定されていない場合はダミーデータを返す
         if (!KV) {
-            return Response.json({ error: 'KV not configured' }, { status: 500 });
+            console.warn('FOODVS_COUNTER KV not configured, returning dummy data');
+            return Response.json({
+                total: 0,
+                daily: 0,
+            } as CounterResponse);
         }
 
         const today = new Date().toISOString().split('T')[0];
@@ -38,10 +43,10 @@ export async function GET(request: Request) {
         } as CounterResponse);
     } catch (error) {
         console.error('Counter error:', error);
+        // エラー時もダミーデータを返す
         return Response.json({
-            error: 'Failed to update counter',
             total: 0,
             daily: 0
-        }, { status: 500 });
+        } as CounterResponse);
     }
 }
