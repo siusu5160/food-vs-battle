@@ -60,11 +60,24 @@ function scoreMenuSet(set: Omit<MenuSet, 'score'>): number {
     return Math.max(0, Math.min(100, Math.round(score)));
 }
 
+// Safe tag checking helper
+function hasTags(food: FoodItem, tag: string): boolean {
+    return Array.isArray(food.tags) && food.tags.includes(tag);
+}
+
 export function generateBalancedMenu(): MenuSet {
     const allFoods = getAllFoods();
-    const carbFoods = allFoods.filter(f => f.category === 'Carb' || f.tags.includes('#Carb'));
-    const meatFoods = allFoods.filter(f => f.category === 'Meat' || f.tags.includes('#Protein'));
-    const sideFoods = allFoods.filter(f => f.category === 'Vegetable' || f.category === 'Side' || f.tags.includes('#Side'));
+
+    // Safe filtering with proper tag checks
+    const carbFoods = allFoods.filter(f =>
+        f.category === 'Carb' || hasTags(f, '#Carb')
+    );
+    const meatFoods = allFoods.filter(f =>
+        f.category === 'Meat' || hasTags(f, '#Protein')
+    );
+    const sideFoods = allFoods.filter(f =>
+        f.category === 'Vegetable' || f.category === 'Side' || hasTags(f, '#Side')
+    );
 
     // Helper to get a random item from an array
     const getRandom = (arr: FoodItem[]) => arr[Math.floor(Math.random() * arr.length)];
