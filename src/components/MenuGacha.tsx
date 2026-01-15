@@ -51,13 +51,13 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                         <div className="text-8xl mb-6 filter drop-shadow-lg">🎰</div>
                         <h3 className="text-3xl font-black mb-4 text-white">今日の黄金バランス定食</h3>
                         <p className="text-gray-400 mb-8 max-w-md mx-auto">
-                            2500種類の食品データから、600kcal前後・PFCバランスの最適な組み合わせをAIが提案します。
+                            600kcal前後・PFCバランスの最適な組み合わせをAIが提案します。
                         </p>
                         <button
                             onClick={handleSpin}
                             className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-black py-4 px-12 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:-translate-y-1 transition-all text-xl"
                         >
-                            ガチャを回す！
+                            メニューを提案してもらう
                         </button>
                     </motion.div>
                 )}
