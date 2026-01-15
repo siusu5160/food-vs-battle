@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +18,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "FOOD VS BATTLE | 食べ物同士の究極の対決",
   description: "FOOD VS BATTLEは、様々な食べ物同士を戦わせて最強を決めるエンターテインメント投票サイトです。あなたの推しフードを応援しよう！",
+  openGraph: {
+    title: "FOOD VS BATTLE | 食べ物同士の究極の対決",
+    description: "様々な食べ物同士を戦わせて最強を決めるエンターテインメント投票サイト",
+    images: ['/opengraph-image'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "FOOD VS BATTLE",
+    description: "食べ物同士の究極の対決",
+  },
 };
 
 import Script from "next/script";
@@ -45,6 +56,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </LanguageProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
       </body>
     </html>
   );
