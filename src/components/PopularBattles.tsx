@@ -12,14 +12,82 @@ interface PopularBattle {
 
 export default function PopularBattles() {
     const popularBattles: PopularBattle[] = [
+        // 寿司・魚介
         {
-            id1: 'chicken-tender',
-            id2: 'chicken-thigh-skin',
-            name1: 'ささみ',
-            name2: '鶏もも肉',
-            emoji1: '🐔',
-            emoji2: '🍗',
-            category: 'タンパク質',
+            id1: 'sushiro-maguro',
+            id2: 'sushiro-salmon',
+            name1: 'マグロ',
+            name2: 'サーモン',
+            emoji1: '🍣',
+            emoji2: '🍣',
+            category: '寿司',
+        },
+        {
+            id1: 'tuna-lean',
+            id2: 'tuna-fatty',
+            name1: 'マグロ赤身',
+            name2: 'マグロトロ',
+            emoji1: '🐟',
+            emoji2: '🍣',
+            category: '寿司',
+        },
+        // ファストフード・麺類
+        {
+            id1: 'hamburger',
+            id2: 'pizza',
+            name1: 'ハンバーガー',
+            name2: 'ピザ',
+            emoji1: '🍔',
+            emoji2: '🍕',
+            category: 'ジャンク',
+        },
+        {
+            id1: 'ramen',
+            id2: 'udon',
+            name1: 'ラーメン',
+            name2: 'うどん',
+            emoji1: '🍜',
+            emoji2: '🍜',
+            category: '麺類',
+        },
+        // スイーツ
+        {
+            id1: 'shortcake',
+            id2: 'cheesecake',
+            name1: 'ショートケーキ',
+            name2: 'チーズケーキ',
+            emoji1: '🍰',
+            emoji2: '🧀',
+            category: 'スイーツ',
+        },
+        {
+            id1: 'pudding',
+            id2: 'coffee-jelly',
+            name1: 'プリン',
+            name2: 'コーヒーゼリー',
+            emoji1: '🍮',
+            emoji2: '☕',
+            category: 'スイーツ',
+        },
+        // アルコール
+        {
+            id1: 'beer',
+            id2: 'highball',
+            name1: 'ビール',
+            name2: 'ハイボール',
+            emoji1: '🍺',
+            emoji2: '🥃',
+            category: 'お酒',
+        },
+        // 定番
+        {
+            id1: 'curry-rice',
+            id2: 'hashed-beef', // verifying IDs
+            name1: 'カレーライス',
+            name2: 'ハヤシライス',
+            emoji1: '🍛',
+            emoji2: '🍛',
+            category: 'ご飯もの',
         },
         {
             id1: 'white-rice',
@@ -38,15 +106,6 @@ export default function PopularBattles() {
             emoji1: '🥩',
             emoji2: '🥓',
             category: '脂質',
-        },
-        {
-            id1: 'cabbage',
-            id2: 'lettuce',
-            name1: 'キャベツ',
-            name2: 'レタス',
-            emoji1: '🥬',
-            emoji2: '🥬',
-            category: '野菜',
         },
     ];
 
