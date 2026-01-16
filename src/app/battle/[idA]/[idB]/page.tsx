@@ -35,19 +35,38 @@ export async function generateMetadata({ params }: { params: Promise<{ idA: stri
 // This ensures ALL combinations work without 404s.
 
 export default async function BattlePage({ params }: { params: Promise<{ idA: string, idB: string }> }) {
-    const { idA, idB } = await params;
-    const foodA = getFoodById(decodeURIComponent(idA));
-    const foodB = getFoodById(decodeURIComponent(idB));
+    try {
+        const resolvedParams = await params;
+        const { idA, idB } = resolvedParams;
 
-    if (!foodA || !foodB) {
+        // Decode and clean IDs
+        const cleanIdA = decodeURIComponent(idA).trim();
+        const cleanIdB = decodeURIComponent(idB).trim();
+
+        console.log('Battle Page - IDs:', { cleanIdA, cleanIdB });
+
+        const foodA = getFoodById(cleanIdA);
+        const foodB = getFoodById(cleanIdB);
+
+        console.log('Battle Page - Foods found:', {
+            foodA: foodA ? foodA.name : 'NOT FOUND',
+            foodB: foodB ? foodB.name : 'NOT FOUND'
+        });
+
+        if (!foodA || !foodB) {
+            console.error('Food not found:', { cleanIdA, cleanIdB, foodA: !!foodA, foodB: !!foodB });
+            notFound();
+        }
+
+        return (
+            <main className="min-h-screen bg-gray-900 pb-20">
+                <BattleClient foodA={foodA} foodB={foodB} />
+            </main>
+        );
+    } catch (error) {
+        console.error('Battle Page Error:', error);
         notFound();
     }
-
-    return (
-        <main className="min-h-screen bg-gray-900 pb-20">
-            <BattleClient foodA={foodA} foodB={foodB} />
-        </main>
-    );
 }
 
 // Revalidate every week (data is mostly static)

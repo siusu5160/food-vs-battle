@@ -45,23 +45,33 @@ export default function Home() {
   };
 
   const getRandomBattle = () => {
-    if (!mounted || !foods || foods.length < 2) return;
+    try {
+      if (!mounted || !foods || foods.length < 2) {
+        console.error('Random Battle - Invalid state:', { mounted, foodsLength: foods?.length });
+        return;
+      }
 
-    const maxRetries = 10;
-    let a = foods[Math.floor(Math.random() * foods.length)];
-    let b = foods[Math.floor(Math.random() * foods.length)];
-    let retries = 0;
+      const maxRetries = 10;
+      let a = foods[Math.floor(Math.random() * foods.length)];
+      let b = foods[Math.floor(Math.random() * foods.length)];
+      let retries = 0;
 
-    // IDが存在し、かつ異なるアイテムになるまでリトライ（無限ループ防止付き）
-    while ((!a?.id || !b?.id || a.id === b.id) && retries < maxRetries) {
-      a = foods[Math.floor(Math.random() * foods.length)];
-      b = foods[Math.floor(Math.random() * foods.length)];
-      retries++;
-    }
+      // IDが存在し、かつ異なるアイテムになるまでリトライ（無限ループ防止付き）
+      while ((!a?.id || !b?.id || a.id === b.id) && retries < maxRetries) {
+        a = foods[Math.floor(Math.random() * foods.length)];
+        b = foods[Math.floor(Math.random() * foods.length)];
+        retries++;
+      }
 
-    // 最終チェックして遷移
-    if (a?.id && b?.id && a.id !== b.id) {
-      router.push(`/battle/${encodeURIComponent(a.id)}/${encodeURIComponent(b.id)}`);
+      // 最終チェックして遷移
+      if (a?.id && b?.id && a.id !== b.id) {
+        console.log('Random Battle - Navigating to:', { idA: a.id, idB: b.id });
+        router.push(`/battle/${encodeURIComponent(a.id)}/${encodeURIComponent(b.id)}`);
+      } else {
+        console.error('Random Battle - Failed to find valid pair after retries');
+      }
+    } catch (error) {
+      console.error('Random Battle Error:', error);
     }
   };
 
