@@ -1,3 +1,4 @@
+```
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -15,6 +16,7 @@ interface PopularBattle {
 }
 
 export default function PopularBattles() {
+    const { t } = useLanguage();
     const { t } = useLanguage();
 
     const popularBattles: PopularBattle[] = [
@@ -79,15 +81,19 @@ export default function PopularBattles() {
             emoji1: '🍰',
             emoji2: '🧀',
             category: 'スイーツ',
+            categoryEn: 'Sweets',
         },
         {
             id1: 'pudding',
             id2: 'coffee-jelly',
             name1: 'プリン',
             name2: 'コーヒーゼリー',
+            name1En: 'Pudding',
+            name2En: 'Coffee Jelly',
             emoji1: '🍮',
             emoji2: '☕',
             category: 'スイーツ',
+            categoryEn: 'Sweets',
         },
         // アルコール
         {
@@ -95,9 +101,12 @@ export default function PopularBattles() {
             id2: 'highball',
             name1: 'ビール',
             name2: 'ハイボール',
+            name1En: 'Beer',
+            name2En: 'Highball',
             emoji1: '🍺',
             emoji2: '🥃',
             category: 'お酒',
+            categoryEn: 'Alcohol',
         },
         // 定番
         {
@@ -105,27 +114,36 @@ export default function PopularBattles() {
             id2: 'hashed-beef', // verifying IDs
             name1: 'カレーライス',
             name2: 'ハヤシライス',
+            name1En: 'Curry Rice',
+            name2En: 'Hashed Beef',
             emoji1: '🍛',
             emoji2: '🍛',
             category: 'ご飯もの',
+            categoryEn: 'Rice Dish',
         },
         {
             id1: 'white-rice',
             id2: 'bread',
             name1: 'ご飯',
             name2: 'パン',
+            name1En: 'Rice',
+            name2En: 'Bread',
             emoji1: '🍚',
             emoji2: '🍞',
             category: '炭水化物',
+            categoryEn: 'Carbs',
         },
         {
             id1: 'beef-rib',
             id2: 'pork-belly',
             name1: '牛バラ肉',
             name2: '豚バラ肉',
+            name1En: 'Beef Rib',
+            name2En: 'Pork Belly',
             emoji1: '🥩',
             emoji2: '🥓',
             category: '脂質',
+            categoryEn: 'Fat Source',
         },
     ];
 
@@ -140,45 +158,42 @@ export default function PopularBattles() {
                     className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors"
                 >
                     ランキングを見る →
+                    {t('ランキングを見る', 'View Ranking')} →
                 </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {popularBattles.map((battle, index) => (
                     <Link
                         key={index}
-                        href={`/battle/${battle.id1}/${battle.id2}`}
-                        className="group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-900/20"
-                    >
-                        <div className="flex items-center justify-between mb-3">
+                        href={`/ battle / ${ battle.id1 }/${battle.id2}`}
+className = "group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-900/20 relative overflow-hidden"
+    >
+                        <div className="absolute top-2 right-2 text-xs text-gray-500 font-mono border border-gray-700 px-2 py-0.5 rounded-full">
+                            {t(battle.category, battle.categoryEn)}
+                        </div>
+                        <div className="flex items-center justify-between mb-0 mt-2">
                             <div className="flex items-center gap-3">
                                 <span className="text-4xl">{battle.emoji1}</span>
                                 <div>
                                     <div className="font-bold text-lg text-white group-hover:text-emerald-400 transition-colors">
-                                        {battle.name1}
+                                        {t(battle.name1, battle.name1En)}
                                     </div>
                                 </div>
                             </div>
-                            <div className="text-2xl font-black text-gray-600">VS</div>
-                            <div className="flex items-center gap-3">
+                            <div className="text-xl font-black text-gray-600 italic px-2">VS</div>
+                            <div className="flex items-center gap-3 justify-end">
                                 <div className="text-right">
                                     <div className="font-bold text-lg text-white group-hover:text-emerald-400 transition-colors">
-                                        {battle.name2}
+                                        {t(battle.name2, battle.name2En)}
                                     </div>
                                 </div>
                                 <span className="text-4xl">{battle.emoji2}</span>
                             </div>
                         </div>
-                        <div className="flex items-center justify-between">
-                            <span className="text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full">
-                                {battle.category}
-                            </span>
-                            <span className="text-sm text-gray-400 group-hover:text-emerald-400/70 transition-colors">
-                                比較する →
-                            </span>
-                        </div>
-                    </Link>
+                        </div >
+                    </Link >
                 ))}
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }
