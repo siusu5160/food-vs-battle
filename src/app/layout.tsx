@@ -69,6 +69,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-gray-950 text-gray-100`}
       >
         <LanguageProvider>
+          {/* Global Language Switcher - Fixed Top Right (Max Z-Index) */}
+          <div className="fixed top-4 right-4 z-[9999]">
+            <LanguageSwitcher />
+          </div>
+
           <main className="flex-grow">
             {children}
           </main>
