@@ -51,7 +51,7 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
         }
     }, [foodA.id, foodB.id]);
 
-    if (!result) return <div className="p-8 text-center text-white">判定中...</div>;
+    if (!result) return <div className="p-8 text-center text-white">{t('判定中...', 'Judging...')}</div>;
 
     // Normalization for Radar Chart
     const maxP = Math.max(foodA.protein, foodB.protein, 1);
@@ -61,7 +61,13 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
     const maxS = Math.max(foodA.salt, foodB.salt, 1);
 
     const chartData = {
-        labels: ['Protein', 'Fat', 'Carbs', 'Fiber', 'Salt'],
+        labels: [
+            t('タンパク質', 'Protein'),
+            t('脂質', 'Fat'),
+            t('炭水化物', 'Carbs'),
+            t('食物繊維', 'Fiber'),
+            t('塩分', 'Salt')
+        ],
         datasets: [
             {
                 label: foodA.name,
