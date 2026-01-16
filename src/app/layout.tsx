@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -8,16 +8,32 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
+
+export const viewport: Viewport = {
+  themeColor: "#d4af37",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "FOOD VS BATTLE | 食べ物同士の究極の対決",
   description: "FOOD VS BATTLEは、様々な食べ物同士を戦わせて最強を決めるエンターテインメント投票サイトです。あなたの推しフードを応援しよう！",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/icon-192.png",
+    apple: "/icon-192.png",
+  },
   openGraph: {
     title: "FOOD VS BATTLE | 食べ物同士の究極の対決",
     description: "様々な食べ物同士を戦わせて最強を決めるエンターテインメント投票サイト",

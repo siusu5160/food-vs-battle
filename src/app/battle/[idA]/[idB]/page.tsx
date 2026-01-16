@@ -83,8 +83,59 @@ export default async function BattlePage({ params }: { params: Promise<{ idA: st
             notFound();
         }
 
+        // Generate Structured Data (JSON-LD)
+        const jsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            'mainEntity': [
+                {
+                    '@type': 'Question',
+                    'name': `${foodA.name}と${foodB.name}、カロリーが高いのはどっち？`,
+                    'acceptedAnswer': {
+                        '@type': 'Answer',
+                        'text': `${foodA.calories > foodB.calories ? foodA.name : foodB.name}の方がカロリーが高いです。${foodA.name}は${foodA.calories}kcal、${foodB.name}は${foodB.calories}kcalです。`
+                    }
+                },
+                {
+                    '@type': 'Question',
+                    'name': `${foodA.name}と${foodB.name}のタンパク質量の違いは？`,
+                    'acceptedAnswer': {
+                        '@type': 'Answer',
+                        'text': `${foodA.name}は${foodA.protein}g、${foodB.name}は${foodB.protein}gのタンパク質を含んでいます。`
+                    }
+                }
+            ]
+        };
+
+        const breadcrumbJsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'name': 'Home',
+                    'item': 'https://food-vs-battle.pages.dev'
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': 'Battle',
+                    'item': `https://food-vs-battle.pages.dev/battle/${cleanIdA}/${cleanIdB}`
+                }
+            ]
+        };
+
         return (
             <main className="min-h-screen bg-gray-900 pb-20">
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+                />
                 <BattleClient foodA={foodA} foodB={foodB} />
             </main>
         );
