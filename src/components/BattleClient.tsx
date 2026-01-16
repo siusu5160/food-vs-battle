@@ -191,8 +191,7 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                 <button
                     onClick={() => {
                         try {
-                            // Import foods directly instead of using sessionStorage
-                            const { getAllFoods } = require('@/lib/search');
+                            // Use imported getAllFoods function
                             const allFoods = getAllFoods();
 
                             if (allFoods && allFoods.length >= 2) {
