@@ -438,7 +438,7 @@
     "id": "butter-roll",
     "name": "バターロール",
     "nameEn": "Butter Roll",
-    "category": "Carb",
+    "category": "Dairy",
     "calories": 316,
     "protein": 9.5,
     "fat": 8.5,
@@ -447,7 +447,8 @@
     "salt": 1,
     "emoji": "🥨",
     "tags": [
-      "Carb"
+      "Carb",
+      "Dairy"
     ]
   },
   {
@@ -927,7 +928,7 @@
     "id": "onion",
     "name": "玉ねぎ",
     "nameEn": "Onion",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 37,
     "protein": 1,
     "fat": 0.1,
@@ -937,14 +938,15 @@
     "emoji": "🧅",
     "tags": [
       "Side",
-      "LowCalorie"
+      "LowCalorie",
+      "Vegetable"
     ]
   },
   {
     "id": "spinach",
     "name": "ほうれん草(ゆで)",
     "nameEn": "Spinach (Boiled)",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 23,
     "protein": 2.6,
     "fat": 0.5,
@@ -955,7 +957,8 @@
     "tags": [
       "Side",
       "LowCalorie",
-      "LowCarb"
+      "LowCarb",
+      "Vegetable"
     ]
   },
   {
@@ -1009,106 +1012,6 @@
     ]
   },
   {
-    "id": "frie-chicken",
-    "name": "鶏の唐揚げ",
-    "nameEn": "Fried Chicken",
-    "category": "Side",
-    "calories": 290,
-    "protein": 13,
-    "fat": 20,
-    "carbs": 14,
-    "fiber": 0.5,
-    "salt": 1.8,
-    "emoji": "🍗",
-    "tags": [
-      "Side",
-      "HighFat"
-    ]
-  },
-  {
-    "id": "yakitori-shio",
-    "name": "焼き鳥(もも塩)",
-    "nameEn": "Yakitori (Salt)",
-    "category": "Side",
-    "calories": 197,
-    "protein": 18.2,
-    "fat": 12.5,
-    "carbs": 1,
-    "fiber": 0,
-    "salt": 1.5,
-    "emoji": "🍡",
-    "tags": [
-      "Side",
-      "LowCarb"
-    ]
-  },
-  {
-    "id": "gyoza",
-    "name": "焼き餃子",
-    "nameEn": "Pan-Fried Gyoza",
-    "category": "Side",
-    "calories": 197,
-    "protein": 6.5,
-    "fat": 9.6,
-    "carbs": 22,
-    "fiber": 1.8,
-    "salt": 1.2,
-    "emoji": "🥟",
-    "tags": [
-      "Side"
-    ]
-  },
-  {
-    "id": "french-fries",
-    "name": "フライドポテト",
-    "nameEn": "French Fries",
-    "category": "Side",
-    "calories": 237,
-    "protein": 3.5,
-    "fat": 10.5,
-    "carbs": 32.5,
-    "fiber": 3.2,
-    "salt": 0.8,
-    "emoji": "🍟",
-    "tags": [
-      "Side"
-    ]
-  },
-  {
-    "id": "potato-salad",
-    "name": "ポテトサラダ",
-    "nameEn": "Potato Salad",
-    "category": "Side",
-    "calories": 170,
-    "protein": 2.5,
-    "fat": 11,
-    "carbs": 15,
-    "fiber": 1.5,
-    "salt": 1.1,
-    "emoji": "🥗",
-    "tags": [
-      "Side"
-    ]
-  },
-  {
-    "id": "dashimaki",
-    "name": "だし巻き卵",
-    "nameEn": "Dashimaki Tamago",
-    "category": "Side",
-    "calories": 100,
-    "protein": 7,
-    "fat": 6.5,
-    "carbs": 3,
-    "fiber": 0,
-    "salt": 1.2,
-    "emoji": "🍳",
-    "tags": [
-      "Side",
-      "LowCalorie",
-      "LowCarb"
-    ]
-  },
-  {
     "id": "shortcake",
     "name": "ショートケーキ",
     "nameEn": "Shortcake",
@@ -1144,7 +1047,7 @@
     "id": "cream-puff",
     "name": "シュークリーム",
     "nameEn": "Cream Puff",
-    "category": "Snack",
+    "category": "Dairy",
     "calories": 250,
     "protein": 6,
     "fat": 15,
@@ -1153,14 +1056,15 @@
     "salt": 0.2,
     "emoji": "🧁",
     "tags": [
-      "Snack"
+      "Snack",
+      "Dairy"
     ]
   },
   {
     "id": "ice-cream",
     "name": "バニラアイス",
     "nameEn": "Vanilla Ice Cream",
-    "category": "Snack",
+    "category": "Dairy",
     "calories": 180,
     "protein": 3.5,
     "fat": 10,
@@ -1169,7 +1073,8 @@
     "salt": 0.1,
     "emoji": "🍦",
     "tags": [
-      "Snack"
+      "Snack",
+      "Dairy"
     ]
   },
   {
@@ -1261,24 +1166,6 @@
     ]
   },
   {
-    "id": "beer",
-    "name": "ビール",
-    "nameEn": "Beer",
-    "category": "Alcohol",
-    "calories": 40,
-    "protein": 0.3,
-    "fat": 0,
-    "carbs": 3.1,
-    "fiber": 0,
-    "salt": 0,
-    "emoji": "🍺",
-    "tags": [
-      "Alcohol",
-      "LowCalorie",
-      "LowCarb"
-    ]
-  },
-  {
     "id": "whisky",
     "name": "ウイスキー",
     "nameEn": "Whisky",
@@ -1299,7 +1186,7 @@
     "id": "wine-red",
     "name": "赤ワイン",
     "nameEn": "Red Wine",
-    "category": "Alcohol",
+    "category": "Drink",
     "calories": 73,
     "protein": 0.2,
     "fat": 0,
@@ -1310,14 +1197,15 @@
     "tags": [
       "Alcohol",
       "LowCalorie",
-      "LowCarb"
+      "LowCarb",
+      "Drink"
     ]
   },
   {
     "id": "wine-white",
     "name": "白ワイン",
     "nameEn": "White Wine",
-    "category": "Alcohol",
+    "category": "Drink",
     "calories": 73,
     "protein": 0.1,
     "fat": 0,
@@ -1328,31 +1216,15 @@
     "tags": [
       "Alcohol",
       "LowCalorie",
-      "LowCarb"
-    ]
-  },
-  {
-    "id": "sake",
-    "name": "日本酒(純米酒)",
-    "nameEn": "Sake (Junmai)",
-    "category": "Alcohol",
-    "calories": 103,
-    "protein": 0.4,
-    "fat": 0,
-    "carbs": 3.6,
-    "fiber": 0,
-    "salt": 0,
-    "emoji": "🍶",
-    "tags": [
-      "Alcohol",
-      "LowCarb"
+      "LowCarb",
+      "Drink"
     ]
   },
   {
     "id": "shochu-otsu",
     "name": "焼酎(乙類)",
     "nameEn": "Shochu (Honkaku)",
-    "category": "Alcohol",
+    "category": "Drink",
     "calories": 146,
     "protein": 0,
     "fat": 0,
@@ -1362,50 +1234,15 @@
     "emoji": "🍶",
     "tags": [
       "Alcohol",
-      "LowCarb"
-    ]
-  },
-  {
-    "id": "chuhi-lemon",
-    "name": "レモンサワー",
-    "nameEn": "Lemon Sour",
-    "category": "Alcohol",
-    "calories": 50,
-    "protein": 0,
-    "fat": 0,
-    "carbs": 4,
-    "fiber": 0,
-    "salt": 0.1,
-    "emoji": "🍋",
-    "tags": [
-      "Alcohol",
-      "LowCalorie",
-      "LowCarb"
-    ]
-  },
-  {
-    "id": "highball",
-    "name": "ハイボール",
-    "nameEn": "Highball",
-    "category": "Alcohol",
-    "calories": 50,
-    "protein": 0,
-    "fat": 0,
-    "carbs": 0,
-    "fiber": 0,
-    "salt": 0,
-    "emoji": "🥃",
-    "tags": [
-      "Alcohol",
-      "LowCalorie",
-      "LowCarb"
+      "LowCarb",
+      "Drink"
     ]
   },
   {
     "id": "milk",
     "name": "牛乳",
     "nameEn": "Milk",
-    "category": "Side",
+    "category": "Dairy",
     "calories": 67,
     "protein": 3.3,
     "fat": 3.8,
@@ -1416,14 +1253,15 @@
     "tags": [
       "Side",
       "LowCalorie",
-      "LowCarb"
+      "LowCarb",
+      "Dairy"
     ]
   },
   {
     "id": "cheese-processed",
     "name": "プロセスチーズ",
     "nameEn": "Processed Cheese",
-    "category": "Side",
+    "category": "Dairy",
     "calories": 339,
     "protein": 22.7,
     "fat": 26,
@@ -1435,14 +1273,15 @@
       "Side",
       "HighProtein",
       "LowCarb",
-      "HighFat"
+      "HighFat",
+      "Dairy"
     ]
   },
   {
     "id": "yogurt",
     "name": "ヨーグルト(全脂無糖)",
     "nameEn": "Yogurt (Plain)",
-    "category": "Side",
+    "category": "Dairy",
     "calories": 62,
     "protein": 3.6,
     "fat": 3,
@@ -1453,14 +1292,15 @@
     "tags": [
       "Side",
       "LowCalorie",
-      "LowCarb"
+      "LowCarb",
+      "Dairy"
     ]
   },
   {
     "id": "butter",
     "name": "有塩バター",
     "nameEn": "Salted Butter",
-    "category": "Side",
+    "category": "Dairy",
     "calories": 745,
     "protein": 0.6,
     "fat": 81,
@@ -1472,76 +1312,8 @@
       "Side",
       "HighCalorie",
       "LowCarb",
-      "HighFat"
-    ]
-  },
-  {
-    "id": "mayonnaise",
-    "name": "マヨネーズ",
-    "nameEn": "Mayonnaise",
-    "category": "Side",
-    "calories": 703,
-    "protein": 1.5,
-    "fat": 76.8,
-    "carbs": 4.5,
-    "fiber": 0,
-    "salt": 1.8,
-    "emoji": "🥚",
-    "tags": [
-      "Side",
-      "HighCalorie",
-      "LowCarb",
-      "HighFat"
-    ]
-  },
-  {
-    "id": "ketchup",
-    "name": "ケチャップ",
-    "nameEn": "Ketchup",
-    "category": "Side",
-    "calories": 119,
-    "protein": 1.7,
-    "fat": 0.2,
-    "carbs": 27.4,
-    "fiber": 1.3,
-    "salt": 3.3,
-    "emoji": "🍅",
-    "tags": [
-      "Side"
-    ]
-  },
-  {
-    "id": "soy-sauce",
-    "name": "醤油",
-    "nameEn": "Soy Sauce",
-    "category": "Side",
-    "calories": 71,
-    "protein": 7.7,
-    "fat": 0.1,
-    "carbs": 7.9,
-    "fiber": 0,
-    "salt": 14.5,
-    "emoji": "🥢",
-    "tags": [
-      "Side",
-      "LowCalorie"
-    ]
-  },
-  {
-    "id": "mcd-bigmac",
-    "name": "ビッグマック",
-    "nameEn": "Big Mac",
-    "category": "FastFood",
-    "calories": 525,
-    "protein": 26,
-    "fat": 28.3,
-    "carbs": 41.8,
-    "fiber": 2.8,
-    "salt": 2.8,
-    "emoji": "🍔",
-    "tags": [
-      "#McDonalds",
-      "#Beef"
+      "HighFat",
+      "Dairy"
     ]
   },
   {
@@ -1769,7 +1541,7 @@
     "id": "conv-onigiri-salmon",
     "name": "手巻おにぎり(鮭)",
     "nameEn": "Rice Ball (Salmon)",
-    "category": "Conbini",
+    "category": "Convenience",
     "calories": 174,
     "protein": 4.5,
     "fat": 1.5,
@@ -1779,14 +1551,15 @@
     "emoji": "🍙",
     "tags": [
       "#Conbini",
-      "#Rice"
+      "#Rice",
+      "Convenience"
     ]
   },
   {
     "id": "conv-onigiri-tuna",
     "name": "手巻おにぎり(ツナマヨ)",
     "nameEn": "Rice Ball (Tuna Mayo)",
-    "category": "Conbini",
+    "category": "Convenience",
     "calories": 235,
     "protein": 4.8,
     "fat": 8.5,
@@ -1796,14 +1569,15 @@
     "emoji": "🍙",
     "tags": [
       "#Conbini",
-      "#Rice"
+      "#Rice",
+      "Convenience"
     ]
   },
   {
     "id": "conv-onigiri-konbu",
     "name": "手巻おにぎり(昆布)",
     "nameEn": "Rice Ball (Kelp)",
-    "category": "Conbini",
+    "category": "Convenience",
     "calories": 182,
     "protein": 3.5,
     "fat": 0.5,
@@ -1813,7 +1587,8 @@
     "emoji": "🍙",
     "tags": [
       "#Conbini",
-      "#Rice"
+      "#Rice",
+      "Convenience"
     ]
   },
   {
@@ -1837,7 +1612,7 @@
     "id": "conv-famichiki",
     "name": "ファミチキ",
     "nameEn": "Fami-Chiki",
-    "category": "Conbini",
+    "category": "Convenience",
     "calories": 251,
     "protein": 12.7,
     "fat": 15.7,
@@ -1847,14 +1622,15 @@
     "emoji": "🍗",
     "tags": [
       "#FamilyMart",
-      "#Chicken"
+      "#Chicken",
+      "Convenience"
     ]
   },
   {
     "id": "conv-nanachiki",
     "name": "ななチキ",
     "nameEn": "Nana-Chiki",
-    "category": "Conbini",
+    "category": "Convenience",
     "calories": 173,
     "protein": 14.3,
     "fat": 9.8,
@@ -1864,14 +1640,15 @@
     "emoji": "🍗",
     "tags": [
       "#SevenEleven",
-      "#Chicken"
+      "#Chicken",
+      "Convenience"
     ]
   },
   {
     "id": "conv-salad-chicken-plain",
     "name": "サラダチキン(プレーン)",
     "nameEn": "Salad Chicken (Plain)",
-    "category": "Conbini",
+    "category": "Convenience",
     "calories": 115,
     "protein": 24.5,
     "fat": 1.2,
@@ -1881,14 +1658,15 @@
     "emoji": "🐔",
     "tags": [
       "#Conbini",
-      "#HighProtein"
+      "#HighProtein",
+      "Convenience"
     ]
   },
   {
     "id": "conv-salad-chicken-herb",
     "name": "サラダチキン(ハーブ)",
     "nameEn": "Salad Chicken (Herb)",
-    "category": "Conbini",
+    "category": "Convenience",
     "calories": 118,
     "protein": 23.8,
     "fat": 1.5,
@@ -1898,14 +1676,15 @@
     "emoji": "🐔",
     "tags": [
       "#Conbini",
-      "#HighProtein"
+      "#HighProtein",
+      "Convenience"
     ]
   },
   {
     "id": "supple-savas-milk",
     "name": "ザバス ミルクプロテイン",
     "nameEn": "SAVAS Milk Protein",
-    "category": "Supplement",
+    "category": "Dairy",
     "calories": 102,
     "protein": 15,
     "fat": 0,
@@ -1915,7 +1694,8 @@
     "emoji": "🥤",
     "tags": [
       "#SAVAS",
-      "#HighProtein"
+      "#HighProtein",
+      "Dairy"
     ]
   },
   {
@@ -2040,45 +1820,6 @@
     "carbs": 5,
     "fiber": 0,
     "salt": 0.8,
-    "emoji": "🐟",
-    "category": "Side"
-  },
-  {
-    "id": "shirako",
-    "name": "白子ポン酢",
-    "nameEn": "Shirako (Milt)",
-    "calories": 62,
-    "protein": 13,
-    "fat": 0.8,
-    "carbs": 0.2,
-    "fiber": 0,
-    "salt": 1.5,
-    "emoji": "🥢",
-    "category": "Side"
-  },
-  {
-    "id": "eihire",
-    "name": "エイヒレ",
-    "nameEn": "Eihire (Stingray Fin)",
-    "calories": 300,
-    "protein": 30,
-    "fat": 1,
-    "carbs": 40,
-    "fiber": 0,
-    "salt": 4,
-    "emoji": "🍶",
-    "category": "Side"
-  },
-  {
-    "id": "kusaya",
-    "name": "くさや",
-    "nameEn": "Kusaya",
-    "calories": 180,
-    "protein": 35,
-    "fat": 4,
-    "carbs": 1,
-    "fiber": 0,
-    "salt": 3,
     "emoji": "🐟",
     "category": "Side"
   },
@@ -2327,7 +2068,7 @@
     "fiber": 0,
     "salt": 0,
     "emoji": "🍶",
-    "category": "Alcohol"
+    "category": "Drink"
   },
   {
     "id": "wine-red-glass",
@@ -2340,7 +2081,7 @@
     "fiber": 0,
     "salt": 0,
     "emoji": "🍷",
-    "category": "Alcohol"
+    "category": "Drink"
   },
   {
     "id": "ground-meat-mix",
@@ -2535,7 +2276,7 @@
     "fiber": 0,
     "salt": 0.2,
     "emoji": "🥛",
-    "category": "Ingredient"
+    "category": "Dairy"
   },
   {
     "id": "yogurt-plain",
@@ -2548,7 +2289,7 @@
     "fiber": 0,
     "salt": 0.1,
     "emoji": "🥣",
-    "category": "Ingredient"
+    "category": "Dairy"
   },
   {
     "id": "butter-pat",
@@ -2561,7 +2302,7 @@
     "fiber": 0,
     "salt": 0.2,
     "emoji": "🧈",
-    "category": "Ingredient"
+    "category": "Dairy"
   },
   {
     "id": "mikan",
@@ -3171,7 +2912,7 @@
     "id": "starbucks-cheesecake",
     "name": "ニューヨークチーズケーキ",
     "nameEn": "Starbucks NY Cheesecake",
-    "category": "Dessert",
+    "category": "Dairy",
     "calories": 414,
     "protein": 7.2,
     "fat": 30.1,
@@ -3181,7 +2922,8 @@
     "emoji": "🍰",
     "tags": [
       "HighFat",
-      "Dessert"
+      "Dessert",
+      "Dairy"
     ]
   },
   {

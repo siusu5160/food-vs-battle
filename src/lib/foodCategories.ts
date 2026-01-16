@@ -20,6 +20,7 @@ export const SUB_CATEGORIES = {
     // 調理済みサブカテゴリー
     fastfood: { label: 'ファストフード', icon: '🍔', parent: 'prepared' as const },
     restaurant: { label: 'レストラン', icon: '🍽️', parent: 'prepared' as const },
+    convenience: { label: 'コンビニ', icon: '🏪', parent: 'prepared' as const },
     dessert: { label: 'デザート', icon: '🍰', parent: 'prepared' as const },
     snack: { label: 'スナック', icon: '🍿', parent: 'prepared' as const },
 } as const;
@@ -45,6 +46,15 @@ export function categorizeFoodItem(food: FoodItem): {
     if (food.id.includes('mac-') || food.id.includes('mos-') ||
         food.id.includes('kfc-') || food.id.includes('subway-')) {
         return { foodType: 'prepared', subCategory: 'fastfood' };
+    }
+
+    // カテゴリーベースの判定（コンビニ）
+    if (food.category === 'Convenience' || food.tags?.includes('Convenience') ||
+        food.id.includes('onigiri') || food.id.includes('karaage-kun') ||
+        food.id.includes('famichiki') || food.id.includes('nanachiki') ||
+        food.id.includes('salad-chicken') || food.id.includes('lawson') ||
+        food.id.includes('familymart') || food.id.includes('seven')) {
+        return { foodType: 'prepared', subCategory: 'convenience' };
     }
 
     // カテゴリーベースの判定
