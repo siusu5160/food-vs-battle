@@ -233,6 +233,14 @@ export default function Home() {
               <p className="text-gray-400 text-sm mb-6 font-sans">あなたを食材に例えると？<br />性格からぴったりの食材を診断。</p>
               <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">診断する →</span>
             </div>
+
+            {/* Food Column (New) */}
+            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => router.push('/columns')}>
+              <div className="text-4xl mb-4 group-hover:translate-x-1 transition-transform">📰</div>
+              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">FOOD COLUMNS</h3>
+              <p className="text-gray-400 text-sm mb-6 font-sans">食に関する豆知識や<br />ダイエット情報を発信中。</p>
+              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">READ MORE →</span>
+            </div>
           </div>
         </section>
 
