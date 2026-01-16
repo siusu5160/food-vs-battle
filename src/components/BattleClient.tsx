@@ -189,20 +189,31 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
             <div className="mt-8 flex justify-center">
                 <button
                     onClick={() => {
-                        // Get all foods and select two random different ones
-                        const allFoods = JSON.parse(sessionStorage.getItem('allFoods') || '[]');
-                        if (allFoods.length >= 2) {
-                            let newA = allFoods[Math.floor(Math.random() * allFoods.length)];
-                            let newB = allFoods[Math.floor(Math.random() * allFoods.length)];
-                            let retries = 0;
-                            while (newA.id === newB.id && retries < 10) {
-                                newB = allFoods[Math.floor(Math.random() * allFoods.length)];
-                                retries++;
+                        try {
+                            // Import foods directly instead of using sessionStorage
+                            const { getAllFoods } = require('@/lib/search');
+                            const allFoods = getAllFoods();
+
+                            if (allFoods && allFoods.length >= 2) {
+                                let newA = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                let newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                let retries = 0;
+
+                                while (newA.id === newB.id && retries < 10) {
+                                    newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                    retries++;
+                                }
+
+                                if (newA.id !== newB.id) {
+                                    router.push(`/battle/${newA.id}/${newB.id}`);
+                                } else {
+                                    router.push('/');
+                                }
+                            } else {
+                                router.push('/');
                             }
-                            if (newA.id !== newB.id) {
-                                router.push(`/battle/${newA.id}/${newB.id}`);
-                            }
-                        } else {
+                        } catch (error) {
+                            console.error('Random Match Error:', error);
                             router.push('/');
                         }
                     }}
