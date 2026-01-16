@@ -109,31 +109,33 @@ export default function Home() {
           <div className="absolute top-1/2 right-0 w-1/4 h-[1px] bg-gradient-to-l from-transparent to-[#333]"></div>
 
           <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight leading-tight">
-            <span className="block text-[#d4af37] text-2xl md:text-3xl mb-4 tracking-[0.2em] font-light">究極の美食対決</span>
+            <span className="block text-[#d4af37] text-2xl md:text-3xl mb-4 tracking-[0.2em] font-light">
+              {t('究極の美食対決', 'The Ultimate Food Battle')}
+            </span>
             Choose Your<br />Champion
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
-            カロリー、栄養素、塩分...。<br />
-            あなたの健康を左右する「食」の選択。<br />
-            データを武器に、最強の一皿を決めろ。
+            {t('カロリー、栄養素、塩分...。', 'Calories, Nutrients, Salt...')}<br />
+            {t('あなたの健康を左右する「食」の選択。', 'Food choices that define your health.')}<br />
+            {t('データを武器に、最強の一皿を決めろ。', 'Use data as your weapon to decide the champion.')}
           </p>
 
           {/* サイトの特徴 */}
           <div className="max-w-4xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
               <div className="text-2xl mb-2">⚔️</div>
-              <h3 className="text-sm font-bold text-[#d4af37] mb-1">栄養素バトル</h3>
-              <p className="text-xs text-gray-500">2つの食品を比較して栄養素の違いを視覚化</p>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-1">{t('栄養素バトル', 'Nutrient Battle')}</h3>
+              <p className="text-xs text-gray-500">{t('2つの食品を比較して栄養素の違いを視覚化', 'Visualize nutrient differences between two foods')}</p>
             </div>
             <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
               <div className="text-2xl mb-2">🏆</div>
-              <h3 className="text-sm font-bold text-[#d4af37] mb-1">ランキング</h3>
-              <p className="text-xs text-gray-500">カロリー・タンパク質・ダイエット向けで格付け</p>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-1">{t('ランキング', 'Ranking')}</h3>
+              <p className="text-xs text-gray-500">{t('カロリー・タンパク質・ダイエット向けで格付け', 'Rankings by calories, protein, and diet suitability')}</p>
             </div>
             <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
               <div className="text-2xl mb-2">🎲</div>
-              <h3 className="text-sm font-bold text-[#d4af37] mb-1">AIメニュー提案</h3>
-              <p className="text-xs text-gray-500">最適なバランスの食事メニューを自動生成</p>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-1">{t('AIメニュー提案', 'AI Menu Suggestion')}</h3>
+              <p className="text-xs text-gray-500">{t('最適なバランスの食事メニューを自動生成', 'Automatically generate balanced meal plans')}</p>
             </div>
           </div>
 
@@ -150,15 +152,28 @@ export default function Home() {
               >
                 {selectedA ? (
                   <>
-                    <span className="text-8xl mb-4 group-hover/card:scale-110 transition-transform duration-500">{selectedA.emoji}</span>
-                    <span className="text-lg font-bold text-gray-200 font-sans">{t(selectedA.name, selectedA.nameEn)}</span>
+                    <div className="text-6xl mb-4 group-hover/card:scale-110 transition-transform">{selectedA.emoji}</div>
+                    <div className="font-bold text-xl text-white">{t(selectedA.name, selectedA.nameEn)}</div>
+                    <div className="text-xs text-gray-500 mt-2 font-mono">CHALLENGER A</div>
                   </>
                 ) : (
-                  <span className="text-gray-600 text-sm tracking-widest group-hover/card:text-[#d4af37] transition-colors">SELECT FIGHTER 1</span>
+                  <>
+                    <div className="text-4xl text-[#333] mb-4 group-hover/card:text-[#d4af37] transition-colors">+</div>
+                    <div className="text-gray-500 text-sm tracking-widest">{t('選手Aを選択', 'Select Food A')}</div>
+                  </>
                 )}
               </button>
 
-              <div className="text-4xl text-[#d4af37] font-serif italic">VS</div>
+              {/* VS Badge */}
+              <div className="flex flex-col items-center">
+                <div className="text-5xl font-black text-[#d4af37] italic tracking-tighter drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]">VS</div>
+                <button
+                  onClick={getRandomBattle}
+                  className="mt-4 text-xs text-gray-500 hover:text-[#d4af37] transition-colors border-b border-gray-700 hover:border-[#d4af37] pb-0.5"
+                >
+                  {t('ランダムに対戦', 'Random Match')} 🎲
+                </button>
+              </div>
 
               {/* Right Fighter */}
               <button
@@ -167,89 +182,108 @@ export default function Home() {
               >
                 {selectedB ? (
                   <>
-                    <span className="text-8xl mb-4 group-hover/card:scale-110 transition-transform duration-500">{selectedB.emoji}</span>
-                    <span className="text-lg font-bold text-gray-200 font-sans">{t(selectedB.name, selectedB.nameEn)}</span>
+                    <div className="text-6xl mb-4 group-hover/card:scale-110 transition-transform">{selectedB.emoji}</div>
+                    <div className="font-bold text-xl text-white">{t(selectedB.name, selectedB.nameEn)}</div>
+                    <div className="text-xs text-gray-500 mt-2 font-mono">CHALLENGER B</div>
                   </>
                 ) : (
-                  <span className="text-gray-600 text-sm tracking-widest group-hover/card:text-[#d4af37] transition-colors">SELECT FIGHTER 2</span>
+                  <>
+                    <div className="text-4xl text-[#333] mb-4 group-hover/card:text-[#d4af37] transition-colors">+</div>
+                    <div className="text-gray-500 text-sm tracking-widest">{t('選手Bを選択', 'Select Food B')}</div>
+                  </>
                 )}
               </button>
             </div>
 
-            {/* Primary Actions */}
-            <div className="mt-12 flex flex-col md:flex-row gap-4 justify-center items-center">
+            {/* Battle Button */}
+            <div className="mt-12 text-center">
               <button
-                disabled={!selectedA || !selectedB}
                 onClick={handleBattleStart}
-                className="px-12 py-4 bg-[#d4af37] text-black font-bold tracking-widest hover:bg-[#ffe066] disabled:opacity-30 disabled:cursor-not-allowed transition-colors shadow-[0_0_20px_rgba(212,175,55,0.3)] w-full md:w-auto"
+                disabled={!selectedA || !selectedB}
+                className={`
+                  px-16 py-4 text-xl font-bold tracking-widest transition-all duration-500 relative overflow-hidden group/btn
+                  ${selectedA && selectedB
+                    ? 'bg-[#d4af37] text-black hover:bg-[#fff] hover:scale-105 cursor-pointer shadow-[0_0_30px_rgba(212,175,55,0.3)]'
+                    : 'bg-[#1a1a1a] text-[#444] cursor-not-allowed border border-[#333]'
+                  }
+                `}
               >
-                BATTLE START
-              </button>
-              <span className="text-[#333] hidden md:inline">- OR -</span>
-              <button
-                onClick={getRandomBattle}
-                className="px-8 py-4 border border-[#333] text-gray-400 hover:text-white hover:border-white transition-colors w-full md:w-auto text-sm tracking-widest"
-              >
-                RANDOM MATCH
+                <span className="relative z-10">{t('BATTLE START!', 'BATTLE START!')}</span>
+                {selectedA && selectedB && (
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+                )}
               </button>
             </div>
           </div>
         </section>
 
-        {/* Feature Section (Ranking + Confession) */}
-        <section className="mb-24 px-4 bg-[#0e0e0e] py-12 border-y border-[#222]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Ranking */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => router.push('/ranking')}>
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🏆</div>
-              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">FOOD RANKING</h3>
-              <p className="text-gray-400 text-sm mb-6 font-sans">カロリー、タンパク質、脂質...。<br />あらゆる数値で食材を格付け。</p>
-              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">VIEW RANKING →</span>
-            </div>
-
-            {/* Menu Gacha */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => setIsGachaOpen(true)}>
-              <div className="text-4xl mb-4 group-hover:rotate-12 transition-transform">🎲</div>
-              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">MENU GACHA</h3>
-              <p className="text-gray-400 text-sm mb-6 font-sans">今日の食事に迷ったら。<br />運命の一皿を提案します。</p>
-              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">GACHA START →</span>
-            </div>
-
-            {/* Confession */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => setIsConfessionOpen(true)}>
-              <div className="text-4xl mb-4 group-hover:translate-y-1 transition-transform">😇</div>
-              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">カロリー懺悔室</h3>
-              <p className="text-gray-400 text-sm mb-6 font-sans">食べ過ぎてしまったあなたへ。<br />その罪、ここで清算しませんか？</p>
-              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">懺悔する →</span>
-            </div>
-
-            {/* Personality Diagnosis (New) */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => setIsDiagnosisOpen(true)}>
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">🔮</div>
-              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">診断</h3>
-              <p className="text-gray-400 text-sm mb-6 font-sans">あなたを食材に例えると？<br />性格からぴったりの食材を診断。</p>
-              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">診断する →</span>
-            </div>
-
-            {/* Food Column (New) */}
-            <div className="p-8 border-l border-[#d4af37]/30 hover:bg-[#111] transition-colors cursor-pointer group" onClick={() => router.push('/columns')}>
-              <div className="text-4xl mb-4 group-hover:translate-x-1 transition-transform">📰</div>
-              <h3 className="text-xl text-[#d4af37] mb-4 font-serif">FOOD COLUMNS</h3>
-              <p className="text-gray-400 text-sm mb-6 font-sans">食に関する豆知識や<br />ダイエット情報を発信中。</p>
-              <span className="text-white border-b border-[#d4af37] padding-b-1 text-sm">READ MORE →</span>
-            </div>
-          </div>
-        </section>
-
-        {/* Popular Battles */}
+        {/* Popular Battles Section */}
         <PopularBattles />
 
-        <CalorieConfession isOpen={isConfessionOpen} onClose={() => setIsConfessionOpen(false)} />
-        <MenuGacha isOpen={isGachaOpen} onClose={() => setIsGachaOpen(false)} />
-        <FoodPersonalityDiagnosis isOpen={isDiagnosisOpen} onClose={() => setIsDiagnosisOpen(false)} />
+        {/* Features Links */}
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24 max-w-6xl mx-auto">
+          {/* Ranking */}
+          <div className="group bg-[#111] border border-[#333] p-8 hover:border-[#d4af37] transition-colors relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:scale-110 transition-transform">🏆</div>
+            <h3 className="text-xl font-bold text-white mb-2">{t('ランキング', 'Ranking')}</h3>
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              {t('低カロリー、高タンパク、塩分控えめ...。', 'Low calorie, high protein, low salt...')} <br />
+              {t('全食品の頂点を確認しよう。', 'See the best foods in every category.')}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['low-calorie', 'high-protein', 'low-carb'].map(type => (
+                <a href={`/ranking?type=${type}`} key={type} className="text-xs border border-[#333] px-2 py-1 text-gray-500 hover:text-[#d4af37] hover:border-[#d4af37] transition-colors">
+                  {type === 'low-calorie' && t('#低カロリー', '#LowCalorie')}
+                  {type === 'high-protein' && t('#高タンパク', '#HighProtein')}
+                  {type === 'low-carb' && t('#低糖質', '#LowCarb')}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Gacha */}
+          <div
+            onClick={() => setIsGachaOpen(true)}
+            className="group bg-[#111] border border-[#333] p-8 hover:border-[#d4af37] transition-colors relative overflow-hidden cursor-pointer"
+          >
+            <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:rotate-12 transition-transform">🎲</div>
+            <h3 className="text-xl font-bold text-white mb-2">{t('AI栄養ガチャ', 'AI Nutrition Gacha')}</h3>
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              {t('今日の食事が決まらない？', 'Can\'t decide what to eat?')} <br />
+              {t('AIがあなたの気分に合わせて提案。', 'AI suggests the perfect meal for your mood.')}
+            </p>
+            <span className="text-[#d4af37] text-sm font-bold group-hover:underline">{t('ガチャを回す →', 'Spin Gacha →')}</span>
+          </div>
+
+          {/* Diagnosis */}
+          <div
+            onClick={() => setIsDiagnosisOpen(true)}
+            className="group bg-[#111] border border-[#333] p-8 hover:border-[#d4af37] transition-colors relative overflow-hidden cursor-pointer"
+          >
+            <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:scale-110 transition-transform">🧠</div>
+            <h3 className="text-xl font-bold text-white mb-2">{t('食の性格診断', 'Food Personality')}</h3>
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              {t('あなたの食事の好みから性格を分析。', 'Analyze your personality from food choices.')} <br />
+              {t('隠された本性が明らかに？', 'Reveal your hidden true self?')}
+            </p>
+            <span className="text-[#d4af37] text-sm font-bold group-hover:underline">{t('診断する →', 'Start Diagnosis →')}</span>
+          </div>
+        </section>
+
+        {/* Calorie Confession (Footer-ish) */}
+        <section className="text-center py-12 border-t border-[#333]">
+          <p className="text-gray-500 text-sm mb-4">{t('昨日食べ過ぎてしまったあなたへ...', 'Did you overeat yesterday?')}</p>
+          <button
+            onClick={() => setIsConfessionOpen(true)}
+            className="text-[#d4af37] border-b border-[#d4af37] hover:text-white hover:border-white transition-colors pb-0.5 text-sm"
+          >
+            {t('カロリー懺悔室へ行く', 'Enter Calorie Confessional')}
+          </button>
+        </section>
 
       </main>
 
+      {/* Modals */}
       <FoodSelectorModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

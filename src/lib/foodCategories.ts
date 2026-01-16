@@ -2,28 +2,28 @@ import { FoodItem } from '@/types/FoodItem';
 
 // メインカテゴリー定義
 export const FOOD_CATEGORIES = {
-    all: { label: 'すべて', icon: '🌟' },
-    ingredient: { label: '食材', icon: '🥬' },
-    prepared: { label: '調理済み', icon: '🍽️' },
+    all: { label: 'すべて', labelEn: 'All', icon: '🌟' },
+    ingredient: { label: '食材', labelEn: 'Ingredients', icon: '🥬' },
+    prepared: { label: '調理済み', labelEn: 'Prepared Food', icon: '🍽️' },
 } as const;
 
 // サブカテゴリー定義
 export const SUB_CATEGORIES = {
     // 食材サブカテゴリー
-    meat: { label: '肉・魚', icon: '🥩', parent: 'ingredient' as const },
-    carb: { label: '炭水化物', icon: '🍚', parent: 'ingredient' as const },
-    vegetable: { label: '野菜', icon: '🥬', parent: 'ingredient' as const },
-    fruit: { label: 'フルーツ', icon: '🍎', parent: 'ingredient' as const },
-    dairy: { label: '乳製品', icon: '🥛', parent: 'ingredient' as const },
-    alcohol: { label: '酒', icon: '🍺', parent: 'ingredient' as const },
-    other: { label: 'その他', icon: '🌾', parent: 'ingredient' as const },
+    meat: { label: '肉・魚', labelEn: 'Meat/Fish', icon: '🥩', parent: 'ingredient' as const },
+    carb: { label: '炭水化物', labelEn: 'Carbs', icon: '🍚', parent: 'ingredient' as const },
+    vegetable: { label: '野菜', labelEn: 'Vegetables', icon: '🥬', parent: 'ingredient' as const },
+    fruit: { label: 'フルーツ', labelEn: 'Fruits', icon: '🍎', parent: 'ingredient' as const },
+    dairy: { label: '乳製品', labelEn: 'Dairy', icon: '🥛', parent: 'ingredient' as const },
+    alcohol: { label: '酒', labelEn: 'Alcohol', icon: '🍺', parent: 'ingredient' as const },
+    other: { label: 'その他', labelEn: 'Others', icon: '🌾', parent: 'ingredient' as const },
 
     // 調理済みサブカテゴリー
-    fastfood: { label: 'ファストフード', icon: '🍔', parent: 'prepared' as const },
-    restaurant: { label: 'レストラン', icon: '🍽️', parent: 'prepared' as const },
-    convenience: { label: 'コンビニ', icon: '🏪', parent: 'prepared' as const },
-    dessert: { label: 'デザート', icon: '🍰', parent: 'prepared' as const },
-    snack: { label: 'スナック', icon: '🍿', parent: 'prepared' as const },
+    fastfood: { label: 'ファストフード', labelEn: 'Fast Food', icon: '🍔', parent: 'prepared' as const },
+    restaurant: { label: 'レストラン', labelEn: 'Restaurant', icon: '🍽️', parent: 'prepared' as const },
+    convenience: { label: 'コンビニ', labelEn: 'Convenience', icon: '🏪', parent: 'prepared' as const },
+    dessert: { label: 'デザート', labelEn: 'Dessert', icon: '🍰', parent: 'prepared' as const },
+    snack: { label: 'スナック', labelEn: 'Snacks', icon: '🍿', parent: 'prepared' as const },
 } as const;
 
 export type FoodCategoryKey = keyof typeof FOOD_CATEGORIES;

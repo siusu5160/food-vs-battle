@@ -113,7 +113,7 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                                     }`}
                             >
                                 <span>{config.icon}</span>
-                                <span className="text-sm">{config.label}</span>
+                                <span className="text-sm">{t(config.label, config.labelEn)}</span>
                             </button>
                         ))}
                     </div>
@@ -130,7 +130,7 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                                     : 'bg-[#1a1a1a] text-gray-500 hover:text-gray-300'
                                     }`}
                             >
-                                すべて
+                                {t('すべて', 'All')}
                             </button>
                             {availableSubCategories.map(key => (
                                 <button
@@ -142,7 +142,7 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                                         }`}
                                 >
                                     <span>{SUB_CATEGORIES[key].icon}</span>
-                                    <span>{SUB_CATEGORIES[key].label}</span>
+                                    <span>{t(SUB_CATEGORIES[key].label, SUB_CATEGORIES[key].labelEn)}</span>
                                 </button>
                             ))}
                         </div>
@@ -153,7 +153,7 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                 <div className="flex-1 overflow-y-auto p-2 space-y-1">
                     {filteredFoods.length === 0 ? (
                         <div className="text-center text-gray-500 py-8">
-                            該当する食品が見つかりません
+                            {t('該当する食品が見つかりません', 'No foods found')}
                         </div>
                     ) : (
                         filteredFoods.map(food => (
