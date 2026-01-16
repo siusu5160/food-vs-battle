@@ -1,5 +1,7 @@
 'use client';
 
+export const runtime = 'edge';
+
 import { ARTICLES } from '@/data/articles';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';

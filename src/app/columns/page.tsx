@@ -1,5 +1,7 @@
 'use client';
 
+export const runtime = 'edge';
+
 import Link from 'next/link';
 import { ARTICLES } from '@/data/articles';
 import { useLanguage } from '@/contexts/LanguageContext';

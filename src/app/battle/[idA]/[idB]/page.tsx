@@ -5,6 +5,8 @@ import { Metadata } from 'next';
 
 import { POPULAR_BATTLES } from '@/lib/constants';
 
+export const runtime = 'edge';
+
 // Generate metadata for SEO
 export async function generateMetadata({ params }: { params: Promise<{ idA: string, idB: string }> }): Promise<Metadata> {
     const { idA, idB } = await Promise.resolve(params);
