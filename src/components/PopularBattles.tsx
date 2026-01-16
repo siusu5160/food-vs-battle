@@ -1,16 +1,22 @@
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PopularBattle {
     id1: string;
     id2: string;
     name1: string;
     name2: string;
+    name1En: string;
+    name2En: string;
     emoji1: string;
     emoji2: string;
     category: string;
+    categoryEn: string;
 }
 
 export default function PopularBattles() {
+    const { t } = useLanguage();
+
     const popularBattles: PopularBattle[] = [
         // 寿司・魚介
         {
@@ -18,18 +24,24 @@ export default function PopularBattles() {
             id2: 'sushiro-salmon',
             name1: 'マグロ',
             name2: 'サーモン',
+            name1En: 'Tuna',
+            name2En: 'Salmon',
             emoji1: '🍣',
             emoji2: '🍣',
             category: '寿司',
+            categoryEn: 'Sushi',
         },
         {
             id1: 'tuna-lean',
             id2: 'tuna-fatty',
             name1: 'マグロ赤身',
             name2: 'マグロトロ',
+            name1En: 'Lean Tuna',
+            name2En: 'Fatty Tuna',
             emoji1: '🐟',
             emoji2: '🍣',
             category: '寿司',
+            categoryEn: 'Sushi',
         },
         // ファストフード・麺類
         {
@@ -37,18 +49,24 @@ export default function PopularBattles() {
             id2: 'pizza',
             name1: 'ハンバーガー',
             name2: 'ピザ',
+            name1En: 'Hamburger',
+            name2En: 'Pizza',
             emoji1: '🍔',
             emoji2: '🍕',
             category: 'ジャンク',
+            categoryEn: 'Junk Food',
         },
         {
             id1: 'ramen',
             id2: 'udon',
             name1: 'ラーメン',
             name2: 'うどん',
+            name1En: 'Ramen',
+            name2En: 'Udon',
             emoji1: '🍜',
             emoji2: '🍜',
             category: '麺類',
+            categoryEn: 'Noodles',
         },
         // スイーツ
         {
@@ -56,6 +74,8 @@ export default function PopularBattles() {
             id2: 'cheesecake',
             name1: 'ショートケーキ',
             name2: 'チーズケーキ',
+            name1En: 'Shortcake',
+            name2En: 'Cheesecake',
             emoji1: '🍰',
             emoji2: '🧀',
             category: 'スイーツ',
