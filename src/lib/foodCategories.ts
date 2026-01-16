@@ -52,6 +52,11 @@ export function categorizeFoodItem(food: FoodItem): {
         return { foodType: 'prepared', subCategory: 'dessert' };
     }
 
+    // カフェ・ドーナツチェーンはデザートとして扱う
+    if (food.id.includes('starbucks-') || food.id.includes('mister-')) {
+        return { foodType: 'prepared', subCategory: 'dessert' };
+    }
+
     // Snackカテゴリーの細分化
     if (food.category === 'Snack' || food.tags?.includes('Snack')) {
         // デザート系（ケーキ、プリン、アイスなど）
