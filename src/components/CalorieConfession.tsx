@@ -5,12 +5,15 @@ import { getAllFoods } from '@/lib/search';
 import { calculateAllExercises, formatDuration } from '@/lib/exerciseCalculator';
 import type { FoodItem } from '@/types/FoodItem';
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 interface CalorieConfessionProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
 export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, onClose }) => {
+    const { t } = useLanguage();
     const [selectedFoods, setSelectedFoods] = useState<string[]>([]);
     const [showResult, setShowResult] = useState(false);
     const [foods, setFoods] = useState<FoodItem[]>([]);
@@ -55,7 +58,7 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                     <div className="flex items-center justify-between">
                         <h2 className="text-2xl md:text-3xl font-black flex items-center gap-3">
                             <span className="text-4xl">😇</span>
-                            <span>カロリー懺悔室</span>
+                            <span>{t('カロリー懺悔室', 'Calorie Confession Room')}</span>
                         </h2>
                         <button
                             onClick={onClose}
@@ -64,7 +67,7 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                             ✕
                         </button>
                     </div>
-                    <p className="text-gray-300 mt-2">今日食べたものを正直に選んでください...</p>
+                    <p className="text-gray-300 mt-2">{t('今日食べたものを正直に選んでください...', 'Please honestly select what you ate today...')}</p>
                 </div>
 
                 <div className="p-6">
@@ -73,7 +76,7 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                             {/* Food Selection */}
                             <div className="mb-6">
                                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                    <span>🍽️</span> 食べたものを選択
+                                    <span>🍽️</span> {t('食べたものを選択', 'Select food you ate')}
                                 </h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-96 overflow-y-auto p-2">
                                     {foods.slice(0, 100).map(food => (
@@ -99,9 +102,9 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                             {/* Selected Summary */}
                             {selectedFoods.length > 0 && (
                                 <div className="bg-gray-800/50 p-4 rounded-lg mb-4">
-                                    <div className="text-sm text-gray-400 mb-2">選択中: {selectedFoods.length}品</div>
+                                    <div className="text-sm text-gray-400 mb-2">{t('選択中:', 'Selected:')} {selectedFoods.length}{t('品', 'items')}</div>
                                     <div className="text-2xl font-black text-red-400">
-                                        合計: {totalCalories} kcal
+                                        {t('合計:', 'Total:')} {totalCalories} kcal
                                     </div>
                                 </div>
                             )}
@@ -113,13 +116,13 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                                     disabled={selectedFoods.length === 0}
                                     className="flex-1 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 disabled:from-gray-700 disabled:to-gray-700 text-white font-bold py-4 rounded-xl transition-all disabled:cursor-not-allowed"
                                 >
-                                    懺悔する
+                                    {t('懺悔する', 'Confess')}
                                 </button>
                                 <button
                                     onClick={onClose}
                                     className="px-6 bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 rounded-xl transition-all"
                                 >
-                                    キャンセル
+                                    {t('キャンセル', 'Cancel')}
                                 </button>
                             </div>
                         </>
@@ -128,7 +131,7 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                             {/* Result */}
                             <div className="text-center mb-8">
                                 <div className="text-6xl mb-4">⚖️</div>
-                                <h3 className="text-3xl font-black mb-4">あなたの罪</h3>
+                                <h3 className="text-3xl font-black mb-4">{t('あなたの罪', 'Your Sin')}</h3>
                                 <div className="text-6xl font-black text-red-500 mb-2">
                                     {totalCalories}
                                 </div>
@@ -137,7 +140,7 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
 
                             {/* Exercise Requirements */}
                             <div className="mb-8">
-                                <h3 className="text-2xl font-bold mb-4 text-center">償うには...</h3>
+                                <h3 className="text-2xl font-bold mb-4 text-center">{t('償うには...', 'To atone...')}</h3>
                                 <div className="space-y-3">
                                     {exercises.map(exercise => {
                                         const { hours, mins } = formatDuration(exercise.minutes);
@@ -152,8 +155,8 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                                                 </div>
                                                 <div className="text-right">
                                                     <div className="text-2xl font-black text-orange-400">
-                                                        {hours > 0 && `${hours}時間`}
-                                                        {mins > 0 && `${mins}分`}
+                                                        {hours > 0 && `${hours}${t('時間', 'h')} `}
+                                                        {mins > 0 && `${mins}${t('分', 'm')}`}
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,13 +171,13 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                                     onClick={handleReset}
                                     className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-xl transition-all"
                                 >
-                                    もう一度懺悔する
+                                    {t('もう一度懺悔する', 'Confess again')}
                                 </button>
                                 <button
                                     onClick={onClose}
                                     className="px-6 bg-primary hover:bg-primary/80 text-black font-bold py-3 rounded-xl transition-all"
                                 >
-                                    閉じる
+                                    {t('閉じる', 'Close')}
                                 </button>
                             </div>
                         </>

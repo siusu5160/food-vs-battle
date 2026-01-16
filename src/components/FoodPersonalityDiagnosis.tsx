@@ -68,23 +68,83 @@ interface Props {
     onClose: () => void;
 }
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export const FoodPersonalityDiagnosis: React.FC<Props> = ({ isOpen, onClose }) => {
+    const { language, t } = useLanguage();
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState<string[]>([]);
     const [result, setResult] = useState<string | null>(null);
+
+    const questions = language === 'en' ? [
+        {
+            id: 1,
+            text: "How do you spend your day off?",
+            options: [
+                { text: "Chilling at home", value: "high_carb" },
+                { text: "Going out actively", value: "high_protein" },
+                { text: "Cafe hopping", value: "sweet" }
+            ]
+        },
+        {
+            id: 2,
+            text: "When you feel stressed?",
+            options: [
+                { text: "Eat everything", value: "high_fat" },
+                { text: "Sleep", value: "balanced" },
+                { text: "Talk to someone", value: "vegetable" }
+            ]
+        },
+        {
+            id: 3,
+            text: "Favorite seasoning?",
+            options: [
+                { text: "Rich and heavy", value: "high_salt" },
+                { text: "Light and refreshing", value: "low_cal" },
+                { text: "Spicy", value: "spicy" }
+            ]
+        },
+        {
+            id: 4,
+            text: "Ideal date?",
+            options: [
+                { text: "Theme park fun", value: "high_carb" },
+                { text: "Luxury dinner", value: "high_fat" },
+                { text: "Relaxing at movies", value: "sweet" }
+            ]
+        },
+        {
+            id: 5,
+            text: "Breakfast style?",
+            options: [
+                { text: "Big breakfast", value: "balanced" },
+                { text: "Smoothie only", value: "vegetable" },
+                { text: "Protein shake", value: "high_protein" }
+            ]
+        }
+    ] : QUESTIONS;
+
+    const results = language === 'en' ? {
+        high_carb: { title: "Ramen Energy", emoji: "🍜", desc: "Explosive power but maybe low endurance? Keep stable energy." },
+        high_protein: { title: "Steak Toughness", emoji: "🥩", desc: "Stoic and muscular. A leader type!" },
+        sweet: { title: "Shortcake Healing", emoji: "🍰", desc: "Everyone's idol. But don't spoil yourself too much!" },
+        high_fat: { title: "Pizza Party", emoji: "🍕", desc: "Loves fun! But watch out for regret (heartburn) later." },
+        balanced: { title: "Set Meal Stability", emoji: "🍱", desc: "Great balance. A common-sense person who gets along with everyone." },
+        vegetable: { title: "Salad Consciousness", emoji: "🥗", desc: "High awareness and self-improvement. Good influence on others." },
+        high_salt: { title: "Salted Squid Stubbornness", emoji: "🦑", desc: "Strong character! Once hooked, irresistible charm." },
+        low_cal: { title: "Konjac Flexibility", emoji: "🍢", desc: "Flexible in any environment. High stress tolerance." },
+        spicy: { title: "Mapo Tofu Stimulation", emoji: "🌶️", desc: "Challenger seeking stimulation. Hot-headed but cools down fast." }
+    } : RESULTS;
 
     const handleAnswer = (value: string) => {
         const newAnswers = [...answers, value];
         setAnswers(newAnswers);
 
-        if (step + 1 < QUESTIONS.length) {
+        if (step + 1 < questions.length) {
             setStep(step + 1);
         } else {
-            // Simple logic: determine most frequent or last choice as dominant
-            // For simplicity, using the first choice as primary trait, modified by others
             const finalType = newAnswers[0];
-            // Better logic could be voted count, but this is simple "Diagnosis"
-            const type = Object.keys(RESULTS).includes(finalType) ? finalType : 'balanced';
+            const type = Object.keys(results).includes(finalType) ? finalType : 'balanced';
             setResult(type);
         }
     };
@@ -102,7 +162,7 @@ export const FoodPersonalityDiagnosis: React.FC<Props> = ({ isOpen, onClose }) =
             <div className="bg-[#111] w-full max-w-lg rounded-2xl border border-[#d4af37] overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.2)]" onClick={e => e.stopPropagation()}>
                 <div className="bg-[#d4af37] p-4 flex justify-between items-center text-black">
                     <h3 className="font-bold text-lg flex items-center gap-2">
-                        <span>🔮</span> 食材性格診断
+                        <span>🔮</span> {t('食材性格診断', 'Food Personality Diagnosis')}
                     </h3>
                     <button onClick={onClose} className="hover:bg-black/10 rounded-full p-1 transition-colors">✕</button>
                 </div>
@@ -111,11 +171,11 @@ export const FoodPersonalityDiagnosis: React.FC<Props> = ({ isOpen, onClose }) =
                     {!result ? (
                         <div className="text-center">
                             <div className="mb-8">
-                                <span className="text-[#d4af37] text-sm tracking-widest">QUESTION {step + 1}/{QUESTIONS.length}</span>
-                                <h4 className="text-2xl text-white font-bold mt-2">{QUESTIONS[step].text}</h4>
+                                <span className="text-[#d4af37] text-sm tracking-widest">QUESTION {step + 1}/{questions.length}</span>
+                                <h4 className="text-2xl text-white font-bold mt-2">{questions[step].text}</h4>
                             </div>
                             <div className="space-y-3">
-                                {QUESTIONS[step].options.map((opt, i) => (
+                                {questions[step].options.map((opt, i) => (
                                     <button
                                         key={i}
                                         onClick={() => handleAnswer(opt.value)}
@@ -128,17 +188,17 @@ export const FoodPersonalityDiagnosis: React.FC<Props> = ({ isOpen, onClose }) =
                         </div>
                     ) : (
                         <div className="text-center animate-fadeIn">
-                            <div className="text-6xl mb-4">{RESULTS[result].emoji}</div>
-                            <div className="text-[#d4af37] font-bold mb-2">あなたを食材に例えると...</div>
-                            <h3 className="text-3xl font-black text-white mb-6">{RESULTS[result].title}</h3>
+                            <div className="text-6xl mb-4">{results[result].emoji}</div>
+                            <div className="text-[#d4af37] font-bold mb-2">{t('あなたを食材に例えると...', 'If you were a food...')}</div>
+                            <h3 className="text-3xl font-black text-white mb-6">{results[result].title}</h3>
                             <p className="text-gray-400 leading-relaxed mb-8 bg-gray-900 p-4 rounded-xl">
-                                {RESULTS[result].desc}
+                                {results[result].desc}
                             </p>
                             <button
                                 onClick={reset}
                                 className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black font-bold py-3 px-8 rounded-full transition-all"
                             >
-                                もう一度診断する
+                                {t('もう一度診断する', 'Diagnose Again')}
                             </button>
                         </div>
                     )}

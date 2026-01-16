@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { generateBalancedMenu, type MenuSet } from '@/lib/gachaLogic';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface MenuGachaProps {
     isOpen?: boolean;
@@ -10,6 +11,7 @@ interface MenuGachaProps {
 }
 
 export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
+    const { t } = useLanguage();
     const [menu, setMenu] = useState<MenuSet | null>(null);
     const [isSpinning, setIsSpinning] = useState(false);
 
@@ -35,7 +37,7 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
             {onClose && (
                 <div className="w-full flex justify-end mb-4">
                     <button onClick={onClose} className="bg-gray-800 p-2 rounded-full hover:bg-gray-700 text-white transition-colors">
-                        ✕ 閉じる
+                        ✕ {t('閉じる', 'Close')}
                     </button>
                 </div>
             )}
@@ -49,15 +51,15 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                         className="text-center py-12 bg-gray-800/80 rounded-3xl p-8 border border-gray-700 shadow-2xl backdrop-blur-md"
                     >
                         <div className="text-8xl mb-6 filter drop-shadow-lg">🎰</div>
-                        <h3 className="text-3xl font-black mb-4 text-white">今日の黄金バランス定食</h3>
+                        <h3 className="text-3xl font-black mb-4 text-white">{t('今日の黄金バランス定食', 'Today\'s Balanced Menu')}</h3>
                         <p className="text-gray-400 mb-8 max-w-md mx-auto">
-                            600kcal前後・PFCバランスの最適な組み合わせをAIが提案します。
+                            {t('600kcal前後・PFCバランスの最適な組み合わせをAIが提案します。', 'AI suggests the optimal combination around 600kcal with perfect PFC balance.')}
                         </p>
                         <button
                             onClick={handleSpin}
                             className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-black py-4 px-12 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:-translate-y-1 transition-all text-xl"
                         >
-                            メニューを提案してもらう
+                            {t('メニューを提案してもらう', 'Generate Menu')}
                         </button>
                     </motion.div>
                 )}
@@ -71,7 +73,7 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                         className="text-center py-20"
                     >
                         <div className="text-8xl mb-6 animate-bounce">🎲</div>
-                        <h3 className="text-2xl font-bold text-emerald-400 animate-pulse">メニューを構築中...</h3>
+                        <h3 className="text-2xl font-bold text-emerald-400 animate-pulse">{t('メニューを構築中...', 'Generating menu...')}</h3>
                     </motion.div>
                 )}
 
@@ -86,7 +88,7 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                         <div className="bg-emerald-900/30 p-6 border-b border-emerald-500/30 flex justify-between items-center flex-wrap gap-4">
                             <div>
                                 <div className="text-emerald-400 text-sm font-bold tracking-widest uppercase mb-1">Generated Menu</div>
-                                <h3 className="text-2xl font-black text-white">本日のラッキーセット</h3>
+                                <h3 className="text-2xl font-black text-white">{t('本日のラッキーセット', 'Today\'s Lucky Set')}</h3>
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="bg-black/40 px-4 py-2 rounded-full border border-emerald-500/30">
@@ -100,9 +102,9 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                         <div className="p-6 md:p-8">
                             {/* Comparison Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                                <MenuItemCard role="主食" food={menu.main} color="border-orange-500/50" bg="from-orange-500/10" />
-                                <MenuItemCard role="主菜" food={menu.protein} color="border-red-500/50" bg="from-red-500/10" />
-                                <MenuItemCard role="副菜" food={menu.side} color="border-green-500/50" bg="from-green-500/10" />
+                                <MenuItemCard role={t('主食', 'Main')} food={menu.main} color="border-orange-500/50" bg="from-orange-500/10" />
+                                <MenuItemCard role={t('主菜', 'Protein')} food={menu.protein} color="border-red-500/50" bg="from-red-500/10" />
+                                <MenuItemCard role={t('副菜', 'Side')} food={menu.side} color="border-green-500/50" bg="from-green-500/10" />
                             </div>
 
                             {/* Nutrition Summary */}
@@ -124,13 +126,13 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                                     onClick={handleSpin}
                                     className="flex-1 bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 rounded-xl transition-all border border-gray-600"
                                 >
-                                    🔄 もう一度回す
+                                    🔄 {t('もう一度回す', 'Spin Again')}
                                 </button>
                                 <button
-                                    onClick={() => alert('保存機能は準備中です')}
+                                    onClick={() => alert(t('保存機能は準備中です', 'Save feature coming soon'))}
                                     className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-emerald-900/20"
                                 >
-                                    💾 メニューを保存
+                                    💾 {t('メニューを保存', 'Save Menu')}
                                 </button>
                             </div>
                         </div>
