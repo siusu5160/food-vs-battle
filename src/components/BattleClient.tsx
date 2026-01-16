@@ -188,7 +188,24 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
             {/* Random Match Button */}
             <div className="mt-8 flex justify-center">
                 <button
-                    onClick={() => router.push('/')}
+                    onClick={() => {
+                        // Get all foods and select two random different ones
+                        const allFoods = JSON.parse(sessionStorage.getItem('allFoods') || '[]');
+                        if (allFoods.length >= 2) {
+                            let newA = allFoods[Math.floor(Math.random() * allFoods.length)];
+                            let newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                            let retries = 0;
+                            while (newA.id === newB.id && retries < 10) {
+                                newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                retries++;
+                            }
+                            if (newA.id !== newB.id) {
+                                router.push(`/battle/${newA.id}/${newB.id}`);
+                            }
+                        } else {
+                            router.push('/');
+                        }
+                    }}
                     className="group bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-emerald-500/50 transition-all transform hover:scale-105"
                 >
                     <span className="flex items-center gap-2">

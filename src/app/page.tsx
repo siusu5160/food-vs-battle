@@ -30,7 +30,12 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
-    setFoods(getAllFoods());
+    const allFoods = getAllFoods();
+    setFoods(allFoods);
+    // Store in sessionStorage for random match button
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('allFoods', JSON.stringify(allFoods));
+    }
   }, []);
 
   const handleBattleStart = () => {
