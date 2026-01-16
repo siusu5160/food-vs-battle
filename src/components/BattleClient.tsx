@@ -8,6 +8,7 @@ import { checkSynergy, Synergy } from '@/lib/synergies';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ProductRecommendations } from './ProductRecommendations';
+import { getAllFoods } from '@/lib/search';
 import {
     Chart as ChartJS,
     RadialLinearScale,
