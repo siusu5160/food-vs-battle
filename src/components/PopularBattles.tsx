@@ -1,4 +1,3 @@
-```
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -16,7 +15,6 @@ interface PopularBattle {
 }
 
 export default function PopularBattles() {
-    const { t } = useLanguage();
     const { t } = useLanguage();
 
     const popularBattles: PopularBattle[] = [
@@ -165,9 +163,9 @@ export default function PopularBattles() {
                 {popularBattles.map((battle, index) => (
                     <Link
                         key={index}
-                        href={`/ battle / ${ battle.id1 }/${battle.id2}`}
-className = "group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-900/20 relative overflow-hidden"
-    >
+                        href={`/ battle / ${battle.id1}/${battle.id2}`}
+                        className="group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-900/20 relative overflow-hidden"
+                    >
                         <div className="absolute top-2 right-2 text-xs text-gray-500 font-mono border border-gray-700 px-2 py-0.5 rounded-full">
                             {t(battle.category, battle.categoryEn)}
                         </div>
@@ -190,10 +188,10 @@ className = "group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-8
                                 <span className="text-4xl">{battle.emoji2}</span>
                             </div>
                         </div>
-                        </div >
+                    </div >
                     </Link >
                 ))}
-            </div >
+        </div >
         </section >
     );
 }
