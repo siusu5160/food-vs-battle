@@ -237,10 +237,18 @@ const FighterCard = ({ food, isWinner, result, side, t }: { food: FoodItem, isWi
             <div className="aspect-square bg-gray-700/50 flex items-center justify-center relative rounded-t-xl overflow-hidden shrink-0">
                 <span className="text-6xl sm:text-7xl drop-shadow-2xl filter">{food.emoji}</span>
 
-                {/* WIN Badge - Moved inside relative container but with absolute positioning that stays within bounds or on top */}
-                {isWinner && (
-                    <div className="absolute top-2 right-2 bg-yellow-500 text-black font-black px-2 py-1 text-xs rounded shadow-lg z-20 animate-bounce">
-                        WIN!
+                {/* WIN/LOSE Badge - Always show for non-draw results */}
+                {result.winner !== 'Draw' && (
+                    <div className="absolute top-2 right-2 z-20">
+                        {isWinner ? (
+                            <div className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-4 py-2 rounded-lg shadow-xl animate-pulse">
+                                🏆 WIN
+                            </div>
+                        ) : (
+                            <div className="bg-gray-700/90 text-gray-300 font-bold px-4 py-2 rounded-lg shadow-lg">
+                                LOSE
+                            </div>
+                        )}
                     </div>
                 )}
 
