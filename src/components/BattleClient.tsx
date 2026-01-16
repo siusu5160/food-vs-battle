@@ -173,7 +173,7 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                         <div className="bg-black/30 p-3 rounded text-sm text-gray-400 leading-relaxed border-l-2 border-gray-600">
                             {judgment.reason}
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 
