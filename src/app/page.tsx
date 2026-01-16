@@ -221,7 +221,7 @@ export default function Home() {
         <PopularBattles />
 
         {/* Features Links */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24 max-w-6xl mx-auto">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-7xl mx-auto">
           {/* Ranking */}
           <div className="group bg-[#111] border border-[#333] p-8 hover:border-[#d4af37] transition-colors relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:scale-110 transition-transform">🏆</div>
@@ -267,6 +267,20 @@ export default function Home() {
               {t('隠された本性が明らかに？', 'Reveal your hidden true self?')}
             </p>
             <span className="text-[#d4af37] text-sm font-bold group-hover:underline">{t('診断する →', 'Start Diagnosis →')}</span>
+          </div>
+
+          {/* Columns (Restored) */}
+          <div
+            onClick={() => router.push('/columns')}
+            className="group bg-[#111] border border-[#333] p-8 hover:border-[#d4af37] transition-colors relative overflow-hidden cursor-pointer"
+          >
+            <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:translate-x-1 transition-transform">📰</div>
+            <h3 className="text-xl font-bold text-white mb-2">{t('コラム', 'Columns')}</h3>
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              {t('食に関する豆知識やダイエット情報を発信中。', 'Food trivia and diet tips.')} <br />
+              {t('賢く食べて健康に。', 'Eat smart, stay healthy.')}
+            </p>
+            <span className="text-[#d4af37] text-sm font-bold group-hover:underline">{t('記事を読む →', 'Read Articles →')}</span>
           </div>
         </section>
 
