@@ -109,7 +109,7 @@ export default function PopularBattles() {
         // 定番
         {
             id1: 'curry-rice',
-            id2: 'hashed-beef', // verifying IDs
+            id2: 'hashed-beef',
             name1: 'カレーライス',
             name2: 'ハヤシライス',
             name1En: 'Curry Rice',
@@ -149,13 +149,12 @@ export default function PopularBattles() {
         <section className="mb-16">
             <div className="flex items-center justify-between mb-6">
                 <h2 className="text-3xl font-black text-white">
-                    🔥 人気のバトル
+                    🔥 {t('人気バトル', 'Popular Battles')}
                 </h2>
                 <Link
                     href="/ranking"
                     className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors"
                 >
-                    ランキングを見る →
                     {t('ランキングを見る', 'View Ranking')} →
                 </Link>
             </div>
@@ -163,7 +162,7 @@ export default function PopularBattles() {
                 {popularBattles.map((battle, index) => (
                     <Link
                         key={index}
-                        href={`/ battle / ${battle.id1}/${battle.id2}`}
+                        href={`/battle/${battle.id1}/${battle.id2}`}
                         className="group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-900/20 relative overflow-hidden"
                     >
                         <div className="absolute top-2 right-2 text-xs text-gray-500 font-mono border border-gray-700 px-2 py-0.5 rounded-full">
@@ -188,10 +187,9 @@ export default function PopularBattles() {
                                 <span className="text-4xl">{battle.emoji2}</span>
                             </div>
                         </div>
-                    </div >
-                    </Link >
+                    </Link>
                 ))}
-        </div >
-        </section >
+            </div>
+        </section>
     );
 }

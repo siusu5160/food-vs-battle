@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Host
+Host: https://food-vs-battle.pages.dev
+
+# Sitemaps
+Sitemap: https://food-vs-battle.pages.dev/sitemap.xml
