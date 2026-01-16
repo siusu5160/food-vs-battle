@@ -41,10 +41,14 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
     const [synergy, setSynergy] = useState<Synergy | undefined>(undefined);
 
     useEffect(() => {
-        const battleRes = judgeBattle(foodA, foodB);
-        setResult(battleRes);
-        setSynergy(checkSynergy(foodA.id, foodB.id));
-    }, [foodA, foodB]);
+        try {
+            const battleRes = judgeBattle(foodA, foodB);
+            setResult(battleRes);
+            setSynergy(checkSynergy(foodA.id, foodB.id));
+        } catch (error) {
+            console.error('Battle judgment error:', error);
+        }
+    }, [foodA.id, foodB.id]);
 
     if (!result) return <div className="p-8 text-center text-white">判定中...</div>;
 
@@ -194,22 +198,30 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                             // Use imported getAllFoods function
                             const allFoods = getAllFoods();
 
-                            if (allFoods && allFoods.length >= 2) {
-                                let newA = allFoods[Math.floor(Math.random() * allFoods.length)];
-                                let newB = allFoods[Math.floor(Math.random() * allFoods.length)];
-                                let retries = 0;
+                            if (!allFoods || allFoods.length < 2) {
+                                console.error('Not enough foods available');
+                                router.push('/');
+                                return;
+                            }
 
-                                while (newA.id === newB.id && retries < 10) {
-                                    newB = allFoods[Math.floor(Math.random() * allFoods.length)];
-                                    retries++;
-                                }
+                            let newA = allFoods[Math.floor(Math.random() * allFoods.length)];
+                            let newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                            let retries = 0;
 
-                                if (newA.id !== newB.id) {
-                                    router.push(`/battle/${newA.id}/${newB.id}`);
-                                } else {
-                                    router.push('/');
-                                }
+                            // Ensure different foods
+                            while ((!newA?.id || !newB?.id || newA.id === newB.id) && retries < 10) {
+                                newA = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                retries++;
+                            }
+
+                            // Final validation
+                            if (newA?.id && newB?.id && newA.id !== newB.id) {
+                                console.log('Random match:', { a: newA.id, b: newB.id });
+                                // Use replace instead of push to avoid history buildup
+                                router.replace(`/battle/${encodeURIComponent(newA.id)}/${encodeURIComponent(newB.id)}`);
                             } else {
+                                console.error('Failed to generate valid random match');
                                 router.push('/');
                             }
                         } catch (error) {
