@@ -94,10 +94,7 @@ export default function Home() {
             </h1>
           </div>
           <div className="flex items-center gap-6">
-            <nav className="hidden md:flex gap-6 text-sm tracking-widest text-gray-400">
-              <a href="#popular" className="hover:text-[#d4af37] transition-colors">POPULAR</a>
-              <a href="/ranking" className="hover:text-[#d4af37] transition-colors">RANKING</a>
-            </nav>
+
             {/* Language Switcher Removed as per 'Basic Japanese' request */}
           </div>
         </div>
