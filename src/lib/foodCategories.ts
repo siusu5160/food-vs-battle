@@ -32,15 +32,19 @@ export function categorizeFoodItem(food: FoodItem): {
     foodType: FoodCategoryKey;
     subCategory: SubCategoryKey;
 } {
-    // IDベースの判定（調理済みメニュー）
+    // IDベースの判定（レストランチェーン）
+    if (food.id.includes('yoshi-') || food.id.includes('saize-') ||
+        food.id.includes('sushiro-') || food.id.includes('gusto-') ||
+        food.id.includes('sukiya-') || food.id.includes('matsuya-') ||
+        food.id.includes('kura-') || food.id.includes('hama-') ||
+        food.id.includes('marugame-')) {
+        return { foodType: 'prepared', subCategory: 'restaurant' };
+    }
+
+    // IDベースの判定（ファストフード）
     if (food.id.includes('mac-') || food.id.includes('mos-') ||
         food.id.includes('kfc-') || food.id.includes('subway-')) {
         return { foodType: 'prepared', subCategory: 'fastfood' };
-    }
-
-    if (food.id.includes('yoshi-') || food.id.includes('saize-') ||
-        food.id.includes('sushiro-') || food.id.includes('gusto-')) {
-        return { foodType: 'prepared', subCategory: 'restaurant' };
     }
 
     // カテゴリーベースの判定
@@ -48,9 +52,16 @@ export function categorizeFoodItem(food: FoodItem): {
         return { foodType: 'prepared', subCategory: 'dessert' };
     }
 
-    // Snackカテゴリーもデザートとして扱う
+    // Snackカテゴリーの細分化
     if (food.category === 'Snack' || food.tags?.includes('Snack')) {
-        return { foodType: 'prepared', subCategory: 'dessert' };
+        // デザート系（ケーキ、プリン、アイスなど）
+        if (food.id.includes('cake') || food.id.includes('pudding') ||
+            food.id.includes('ice-cream') || food.id.includes('cream-puff') ||
+            food.id.includes('gateau') || food.id.includes('parfait')) {
+            return { foodType: 'prepared', subCategory: 'dessert' };
+        }
+        // それ以外はスナック（チョコ、クッキー、ポテチなど）
+        return { foodType: 'prepared', subCategory: 'snack' };
     }
 
     // 一般的な調理済み食品（pizza, hamburger等）
