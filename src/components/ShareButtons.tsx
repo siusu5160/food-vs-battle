@@ -1,70 +1,76 @@
 'use client';
 
+import { useState } from 'react';
+
 interface ShareButtonsProps {
-    title: string;
-    url?: string;
+  title: string;
+  url?: string;
+  // Battle-specific props
+  battleText?: string; // Custom text for battle results
 }
 
-export default function ShareButtons({ title, url }: ShareButtonsProps) {
-    const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
+export default function ShareButtons({ title, url, battleText }: ShareButtonsProps) {
+  const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
+  const [copied, setCopied] = useState(false);
 
-    const shareToTwitter = () => {
-        const text = encodeURIComponent(title);
-        const encodedUrl = encodeURIComponent(shareUrl);
-        window.open(
-            `https://twitter.com/intent/tweet?text=${text}&url=${encodedUrl}`,
-            '_blank',
-            'width=550,height=420'
-        );
-    };
+  const shareToTwitter = () => {
+    const text = encodeURIComponent(battleText || title);
+    const encodedUrl = encodeURIComponent(shareUrl);
+    window.open(
+      `https://twitter.com/intent/tweet?text=${text}&url=${encodedUrl}`,
+      '_blank',
+      'width=550,height=420'
+    );
+  };
 
-    const shareToLine = () => {
-        const encodedUrl = encodeURIComponent(shareUrl);
-        window.open(
-            `https://social-plugins.line.me/lineit/share?url=${encodedUrl}`,
-            '_blank',
-            'width=550,height=420'
-        );
-    };
+  const shareToLine = () => {
+    const text = battleText || title;
+    const message = encodeURIComponent(`${text}\n${shareUrl}`);
+    window.open(
+      `https://line.me/R/msg/text/?${message}`,
+      '_blank'
+    );
+  };
 
-    const shareToFacebook = () => {
-        const encodedUrl = encodeURIComponent(shareUrl);
-        window.open(
-            `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
-            '_blank',
-            'width=550,height=420'
-        );
-    };
+  const shareToFacebook = () => {
+    const encodedUrl = encodeURIComponent(shareUrl);
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      '_blank',
+      'width=550,height=420'
+    );
+  };
 
-    const copyToClipboard = async () => {
-        try {
-            await navigator.clipboard.writeText(shareUrl);
-            alert('URLをコピーしました！');
-        } catch (err) {
-            console.error('Failed to copy:', err);
-        }
-    };
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
-    return (
-        <div className="share-buttons">
-            <button onClick={shareToTwitter} className="share-btn twitter">
-                <span className="icon">🐦</span>
-                <span className="text">Xでシェア</span>
-            </button>
-            <button onClick={shareToLine} className="share-btn line">
-                <span className="icon">💬</span>
-                <span className="text">LINEでシェア</span>
-            </button>
-            <button onClick={shareToFacebook} className="share-btn facebook">
-                <span className="icon">📘</span>
-                <span className="text">Facebookでシェア</span>
-            </button>
-            <button onClick={copyToClipboard} className="share-btn copy">
-                <span className="icon">🔗</span>
-                <span className="text">URLをコピー</span>
-            </button>
+  return (
+    <div className="share-buttons">
+      <button onClick={shareToTwitter} className="share-btn twitter">
+        <span className="icon">🐦</span>
+        <span className="text">Xでシェア</span>
+      </button>
+      <button onClick={shareToLine} className="share-btn line">
+        <span className="icon">💬</span>
+        <span className="text">LINEでシェア</span>
+      </button>
+      <button onClick={shareToFacebook} className="share-btn facebook">
+        <span className="icon">📘</span>
+        <span className="text">Facebookでシェア</span>
+      </button>
+      <button onClick={copyToClipboard} className="share-btn copy">
+        <span className="icon">🔗</span>
+        <span className="text">URLをコピー</span>
+      </button>
 
-            <style jsx>{`
+      <style jsx>{`
         .share-buttons {
           display: flex;
           gap: 0.5rem;
@@ -107,6 +113,10 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
           background: #6B7280;
         }
         
+        .share-btn.copy.copied {
+          background: #10B981;
+        }
+        
         .icon {
           font-size: 1.2rem;
         }
@@ -122,6 +132,6 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
           }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 }

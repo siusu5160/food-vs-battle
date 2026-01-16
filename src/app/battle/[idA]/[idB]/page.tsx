@@ -7,7 +7,7 @@ import { POPULAR_BATTLES } from '@/lib/constants';
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: { params: Promise<{ idA: string, idB: string }> }): Promise<Metadata> {
-    const { idA, idB } = await Promise.resolve(params); // Handle both sync/async params for compatibility
+    const { idA, idB } = await Promise.resolve(params);
     const foodA = getFoodById(decodeURIComponent(idA));
     const foodB = getFoodById(decodeURIComponent(idB));
 
@@ -15,18 +15,43 @@ export async function generateMetadata({ params }: { params: Promise<{ idA: stri
 
     // SEO Strategy:
     // Only index "Popular Battles" to prevent "Low Value Content" penalty from millions of auto-generated pages.
-    // Dynamic/Random combinations will be accessible but not indexed by search engines.
     const isPopular = POPULAR_BATTLES.some(p =>
         (p.a === idA && p.b === idB) || (p.a === idB && p.b === idA)
     );
 
+    const title = `${foodA.name} vs ${foodB.name} | カロリー対決`;
+    const description = `${foodA.name}(${foodA.calories}kcal)と${foodB.name}(${foodB.calories}kcal)、どっちが太る？栄養素を徹底比較！タンパク質、脂質、炭水化物の詳細データで勝敗を判定。`;
+    const url = `https://food-vs-battle.pages.dev/battle/${idA}/${idB}`;
+
     return {
-        title: `${foodA.name} vs ${foodB.name} | カロリー対決`,
-        description: `${foodA.name}と${foodB.name}、どっちが太る？栄養素を徹底比較！`,
+        title,
+        description,
         robots: {
             index: isPopular,
-            follow: isPopular, // Don't waste crawl budget on random links
-        }
+            follow: isPopular,
+        },
+        openGraph: {
+            title,
+            description,
+            url,
+            siteName: 'FOOD VS BATTLE',
+            locale: 'ja_JP',
+            type: 'website',
+            images: [
+                {
+                    url: '/og-image.png', // TODO: Generate dynamic OG image
+                    width: 1200,
+                    height: 630,
+                    alt: `${foodA.name} vs ${foodB.name}`,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: ['/og-image.png'],
+        },
     };
 }
 

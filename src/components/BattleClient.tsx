@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ProductRecommendations } from './ProductRecommendations';
 import { getAllFoods } from '@/lib/search';
+import ShareButtons from './ShareButtons';
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -189,6 +190,12 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                     title={`${result.winner === 'A' ? foodA.name : foodB.name}をもっと楽しむために`}
                 />
             )}
+
+            {/* Share Buttons */}
+            <ShareButtons
+                title={`${foodA.name} VS ${foodB.name} | FOOD VS BATTLE`}
+                battleText={`${foodA.emoji}${foodA.name} VS ${foodB.emoji}${foodB.name} の対決結果！\n勝者は...【${result.winner === 'A' ? foodA.name : result.winner === 'B' ? foodB.name : '引き分け'}】${result.winner === 'A' ? foodA.emoji : result.winner === 'B' ? foodB.emoji : '🤝'}🏆\n\n#FOODVS #カロリー対決 #栄養比較`}
+            />
 
             {/* Random Match Button */}
             <div className="mt-8 flex justify-center">
