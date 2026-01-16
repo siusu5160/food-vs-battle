@@ -1,14 +1,13 @@
+'use client';
+
 import { getRanking, RankingType } from '@/lib/rankingLogic';
 import type { FoodItem } from '@/types/FoodItem';
-import { Metadata } from 'next';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-    title: '食品ランキング | Food Battle',
-    description: 'カロリー、タンパク質など、様々な角度から食品をランキング形式で紹介します。',
-};
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function RankingPage() {
+    const { t } = useLanguage();
+
     const highCalorie = getRanking('high-calorie', 50);
     const highProtein = getRanking('high-protein', 50);
     const lowCalorie = getRanking('low-calorie', 50);
@@ -21,7 +20,7 @@ export default function RankingPage() {
         <main className="min-h-screen bg-gray-900 pb-20 pt-8 px-4">
             <h1 className="text-4xl font-black text-center text-white mb-8">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
-                    FOOD RANKING
+                    {t('FOOD RANKING', 'FOOD RANKING')}
                 </span>
             </h1>
 
@@ -37,7 +36,7 @@ export default function RankingPage() {
 
             <div className="text-center mt-12">
                 <Link href="/" className="text-gray-400 hover:text-white underline">
-                    トップに戻る
+                    {t('トップに戻る', 'Back to Top')}
                 </Link>
             </div>
         </main>
