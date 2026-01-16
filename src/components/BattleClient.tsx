@@ -58,6 +58,18 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
     const maxF = Math.max(foodA.fat, foodB.fat, 1);
     const maxC = Math.max(foodA.carbs, foodB.carbs, 1);
     const maxFib = Math.max(foodA.fiber, foodB.fiber, 1);
+
+    // Helper for score display
+    const calculateOverallScore = (target: FoodItem, opponent: FoodItem) => {
+        let baseScore = 50;
+        // Simple heuristic: better if higher protein, lower fat/calories relative to opponent
+        if (target.protein > opponent.protein) baseScore += 15;
+        if (target.fat < opponent.fat) baseScore += 10;
+        if (target.calories < opponent.calories) baseScore += 10;
+        if (target.fiber > opponent.fiber) baseScore += 5;
+        // Cap at 99
+        return Math.min(99, Math.max(10, baseScore + Math.floor(Math.random() * 10)));
+    };
     const maxS = Math.max(foodA.salt, foodB.salt, 1);
 
     const chartData = {

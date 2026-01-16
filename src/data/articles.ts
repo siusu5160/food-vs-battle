@@ -167,5 +167,172 @@ export const ARTICLES: Article[] = [
             <p>In the "Golden Time" within 30 minutes after training, let's take fast-absorbing whey protein and carbohydrates (rice balls or Japanese sweets) to secrete insulin.</p>
         `
         }
+    },
+    {
+        slug: 'protein-bar-comparison',
+        title: {
+            ja: '【徹底比較】コンビニで買えるプロテインバー、最強はどれだ！？',
+            en: '[Comparison] Which is the strongest Utility Bar you can buy at convenience stores!?'
+        },
+        emoji: '🍫',
+        excerpt: {
+            ja: '一本満足バー、INバー、マツキヨ...人気プロテインバーを「タンパク質量」「コスパ」「味」でガチ格付けしました。',
+            en: 'Satisfied Bar, IN Bar, Matsukiyo... We rated popular protein bars by "Protein Content", "Cost Performance", and "Taste".'
+        },
+        date: '2025-01-17',
+        tags: {
+            ja: ['比較', 'プロテイン', 'おやつ'],
+            en: ['Comparison', 'Protein', 'Snack']
+        },
+        content: {
+            ja: `
+            <h2>いつでもどこでもタンパク質チャージ！</h2>
+            <p>手軽にタンパク質を摂取できる「プロテインバー」。種類が多すぎてどれを選べばいいか迷っていませんか？成分と味を徹底調査しました。</p>
+
+            <h3>1. アサヒ「一本満足バー プロテイン」</h3>
+            <p><strong>タンパク質：15g / 糖質：11g</strong><br>圧倒的な「お菓子感」。ザクザクした食感で満足度が高いです。ただし、脂質がやや高めなので食べ過ぎ注意！</p>
+            
+            <h3>2. 森永製菓「inバー プロテイン ベイクドチョコ」</h3>
+            <p><strong>タンパク質：15g / 糖質：11.1g</strong><br>溶けにくいので夏場の持ち歩きに最適。甘さ控えめでビターな味わいは、コーヒーとの相性が抜群です。</p>
+
+            <h3>3. マツモトキヨシ「matsukiyo LAB プロテインバー」</h3>
+            <p><strong>タンパク質：15g / 価格：約150円</strong><br>隠れた名品。コスパ最強です。味もストロベリーやチョコなど豊富で、毎日続けても飽きません。</p>
+
+            <h3>結論</h3>
+            <p>迷ったら「一本満足バー」が間違いなし。コスパ重視なら「マツキヨ」。シーンに合わせて使い分けましょう！</p>
+        `,
+            en: `
+            <h2>Charge protein anytime, anywhere!</h2>
+            <p>"Protein bars" allow you to easily intake protein. Are you lost on which one to choose because there are too many types? We thoroughly investigated ingredients and taste.</p>
+
+            <h3>1. Asahi "Ippon Manzoku Bar Protein"</h3>
+            <p><strong>Protein: 15g / Carbs: 11g</strong><br>Overwhelming "snack feeling". The crunchy texture gives high satisfaction. However, be careful not to overeat as the fat content is slightly high!</p>
+            
+            <h3>2. Morinaga "in Bar Protein Baked Choco"</h3>
+            <p><strong>Protein: 15g / Carbs: 11.1g</strong><br>Perfect for carrying around in summer as it doesn't melt easily. The modest sweetness and bitter taste go perfectly with coffee.</p>
+
+            <h3>3. Matsumotokiyoshi "matsukiyo LAB Protein Bar"</h3>
+            <p><strong>Protein: 15g / Price: approx. 150 yen</strong><br>A hidden masterpiece. Best cost performance. Flavors like strawberry and chocolate are abundant, so you won't get bored even if you eat it every day.</p>
+
+            <h3>Conclusion</h3>
+            <p>If you are unsure, "Ippon Manzoku Bar" is a sure bet. If you value cost performance, "Matsukiyo". Let's use them according to the scene!</p>
+        `
+        }
+    },
+    {
+        slug: 'izakaya-diet-menu',
+        title: {
+            ja: 'ダイエット中でも安心！太らない居酒屋メニューの選び方',
+            en: 'Safe even during a diet! How to choose non-fattening Izakaya menu'
+        },
+        emoji: '🍺',
+        excerpt: {
+            ja: '飲み会を断る必要はありません。「何を食べるか」を知っていれば、居酒屋はダイエットの味方になります。',
+            en: 'No need to refuse drinking parties. If you know "what to eat", Izakaya becomes a diet ally.'
+        },
+        date: '2025-01-17',
+        tags: {
+            ja: ['居酒屋', 'ダイエット', 'お酒'],
+            en: ['Izakaya', 'Diet', 'Alcohol']
+        },
+        content: {
+            ja: `
+            <h2>「とりあえず唐揚げ」は卒業しよう</h2>
+            <p>楽しい飲み会、ついつい揚げ物や締めのご飯を食べ過ぎていませんか？注文のセンスを変えるだけで、翌日の罪悪感はゼロになります。</p>
+
+            <h3>最初のオーダー：食物繊維とタンパク質</h3>
+            <ul>
+                <li><strong>枝豆</strong>：高タンパクで代謝を助けるビタミンB1が豊富。</li>
+                <li><strong>冷奴</strong>：低カロリーでお腹にたまります。</li>
+                <li><strong>刺身盛り合わせ</strong>：良質な脂質のみ。醤油のつけすぎに注意！</li>
+            </ul>
+
+            <h3>中盤：焼き物を中心に</h3>
+            <p>焼き鳥（塩）、ホッケの開き、焼きイカなどがおすすめ。油を使わない調理法を選びましょう。</p>
+            
+            <h3>お酒の選び方</h3>
+            <p>「ビール」は最初の一杯だけ。2杯目からは糖質の少ない「ハイボール」「焼酎（水割り・お茶割り）」「赤ワイン」に切り替えましょう。</p>
+
+            <h3>NGメニュー</h3>
+            <p>ポテトフライ、シーザーサラダ（ドレッシングが高カロリー）、ピザ、締めのラーメン。</p>
+        `,
+            en: `
+            <h2>Let's graduate from "Fried Chicken for now"</h2>
+            <p>Fun drinking party, do you end up eating too much fried food and finishing rice? Just changing your order sense will make tomorrow's guilt zero.</p>
+
+            <h3>First Order: Dietary Fiber and Protein</h3>
+            <ul>
+                <li><strong>Edamame</strong>: High protein and rich in Vitamin B1 which helps metabolism.</li>
+                <li><strong>Hiyayakko (Cold Tofu)</strong>: Low calorie and fills your stomach.</li>
+                <li><strong>Sashimi Assortment</strong>: Only good quality fat. Be careful not to use too much soy sauce!</li>
+            </ul>
+
+            <h3>Middle Stage: Focus on Grilled Items</h3>
+            <p>Yakitori (Salt), Grilled Atka Mackerel, Grilled Squid are recommended. Choose cooking methods that do not use oil.</p>
+            
+            <h3>How to choose Alcohol</h3>
+            <p>"Beer" for the first glass only. From the second glass, switch to "Highball", "Shochu (Water/Tea split)", "Red Wine" which have less sugar.</p>
+
+            <h3>NG Menu</h3>
+            <p>French fries, Caesar salad (high calorie dressing), Pizza, Ramen to finish.</p>
+        `
+        }
+    },
+    {
+        slug: 'late-night-snack-ranking',
+        title: {
+            ja: '夜中に食べても許される！罪悪感ゼロの夜食ベスト5',
+            en: 'Permissible even in the middle of the night! Top 5 guilt-free late night snacks'
+        },
+        emoji: '🌙',
+        excerpt: {
+            ja: 'お腹が空いて眠れない...そんな時の救世主。200kcal以下で満足感のある最強の夜食を紹介します。',
+            en: 'Hungry and can\'t sleep... Savior for such times. Introducing the strongest late night snacks with satisfaction under 200kcal.'
+        },
+        date: '2025-01-17',
+        tags: {
+            ja: ['夜食', 'ダイエット', 'ランキング'],
+            en: ['Late Night Snack', 'Diet', 'Ranking']
+        },
+        content: {
+            ja: `
+            <h2>空腹を我慢してストレスを溜めるのは逆効果！</h2>
+            <p>「夜食べると太る」は真実ですが、空腹で眠りの質が下がるのもダイエットには悪影響。ポイントは「消化の良さ」と「温かさ」です。</p>
+
+            <h3>第1位：お茶漬け（ご飯少なめ）</h3>
+            <p>水分で満腹感が得られ、体も温まります。ご飯を半分にして、豆腐やこんにゃく米を混ぜるとなお良し！</p>
+
+            <h3>第2位：ギリシャヨーグルト</h3>
+            <p>濃厚な食感でスイーツ欲を満たせます。高タンパクなので、就寝中の筋肉修復にも役立ちます。</p>
+
+            <h3>第3位：春雨スープ</h3>
+            <p>麺を食べている感覚があり、満足度が高いです。市販のカップスープならカロリー計算も楽チン。</p>
+
+            <h3>第4位：ゆで卵</h3>
+            <p>手軽さNo.1。消化に少し時間がかかりますが、良質なタンパク源です。</p>
+
+            <h3>第5位：ホットミルク</h3>
+            <p>トリプトファンという成分が安眠をサポート。ハチミツを少し垂らすとリラックス効果アップ。</p>
+        `,
+            en: `
+            <h2>Enduring hunger and accumulating stress is counterproductive!</h2>
+            <p>"Eating at night makes you fat" is true, but poor sleep quality due to hunger is also bad for diet. The points are "Digestibility" and "Warmth".</p>
+
+            <h3>1st Place: Ochazuke (Less Rice)</h3>
+            <p>You get a feeling of fullness from moisture, and your body warms up. Even better if you halve the rice and mix tofu or konjac rice!</p>
+
+            <h3>2nd Place: Greek Yogurt</h3>
+            <p>Fulfills sweet cravings with rich texture. Since it is high protein, it also helps muscle repair during sleep.</p>
+
+            <h3>3rd Place: Glass Noodle Soup</h3>
+            <p>It feels like eating noodles and has high satisfaction. Calorie calculation is easy with commercial cup soup.</p>
+
+            <h3>4th Place: Boiled Egg</h3>
+            <p>No.1 for convenience. It takes a little time to digest, but it is a good quality protein source.</p>
+
+            <h3>5th Place: Hot Milk</h3>
+            <p>Ingredient called Tryptophan supports good sleep. Adding a little honey increases relaxation effect.</p>
+        `
+        }
     }
 ];
