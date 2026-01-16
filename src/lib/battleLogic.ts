@@ -21,7 +21,9 @@ export function judgeBattle(foodA: FoodItem, foodB: FoodItem): BattleResult {
 
     // 1. Calorie check (Diet)
     const calDiff = foodA.calories - foodB.calories;
-    if (Math.abs(calDiff) > 30) {
+    const calorieThreshold = 10; // Stricter threshold (was 30)
+
+    if (Math.abs(calDiff) > calorieThreshold) {
         const winner = calDiff < 0 ? foodA : foodB;
         const diff = Math.abs(calDiff);
 
@@ -31,42 +33,36 @@ export function judgeBattle(foodA: FoodItem, foodB: FoodItem): BattleResult {
             content: `重量あたりのカロリーが低く、同じ量を食べても太りにくいのはこちらです。(-${diff}kcal)`,
             reason: "【判定の根拠】摂取カロリー < 消費カロリーが減量の基本原則です。カロリー密度の低い食品を選ぶことで、満腹感を維持しながら総摂取エネルギーを抑制できるため、ダイエットにおいて有利と判定されました。"
         });
-        if (calDiff < 0) scoreA++; else scoreB++;
+        if (calDiff < 0) scoreA += 2; else scoreB += 2; // Increased weight
     } else {
         judgments.push({
             badge: "🤝 ダイエット",
-            title: "カロリー対決: 引き分け",
-            content: "どちらを選んでも摂取エネルギーに大差はありません。好きな方を楽しみましょう！",
-            reason: "【判定の根拠】カロリー差が規定値(30kcal/100g)未満のため、体重変動への影響差は統計的に無視できる範囲と判断されました。"
+            title: "カロリー: 互角",
+            content: "どちらを選んでも摂取エネルギーに大差はありません。",
+            reason: "【判定の根拠】カロリー差が僅差(10kcal/100g未満)のため、誤差範囲内です。"
         });
     }
 
     // 2. Protein check (Muscle)
     const proteinDiff = foodA.protein - foodB.protein;
-    if (Math.abs(proteinDiff) > 5) {
+    const proteinThreshold = 2; // Stricter threshold (was 5)
+
+    if (Math.abs(proteinDiff) > proteinThreshold) {
         const winner = proteinDiff > 0 ? foodA : foodB;
         const diff = Math.abs(proteinDiff).toFixed(1);
 
         judgments.push({
             badge: "💪 筋肥大",
-            title: `タンパク質含有量: 『${winner.name}』の圧勝`,
-            content: `筋肉の材料となるタンパク質が豊富に含まれています。(+${diff}g)。筋トレ効果を最大化するなら間違いなくこちら。`,
+            title: `タンパク質含有量: 『${winner.name}』の勝利`,
+            content: `筋肉の材料となるタンパク質が豊富に含まれています。(+${diff}g)。`,
             reason: "【判定の根拠】筋タンパク質合成（MPS）を活性化させるには、血中アミノ酸濃度を十分に高める必要があります。より多くのタンパク質を含む食品は、このアナボリック反応を強く引き起こすため、筋肥大に有利と判定されました。"
         });
-        if (proteinDiff > 0) scoreA++; else scoreB++;
-    } else if (Math.abs(proteinDiff) > 1) {
-        const winner = proteinDiff > 0 ? foodA : foodB;
-        judgments.push({
-            badge: "🤏 筋肥大",
-            title: `タンパク質: 僅差で『${winner.name}』`,
-            content: `わずかにタンパク質が多いですが、決定的な差ではありません。卵などを追加トッピングすると良いでしょう。`,
-            reason: "【判定の根拠】有意な差は認められましたが、単体で筋肥大を劇的に促進するほどの差（5g以上）ではないため、補助的な優位性として判定されました。"
-        });
+        if (proteinDiff > 0) scoreA += 2; else scoreB += 2;
     }
 
     // 3. Fiber check (Gut Health)
     const fiberDiff = foodA.fiber - foodB.fiber;
-    if (Math.abs(fiberDiff) > 1) {
+    if (Math.abs(fiberDiff) > 0.5) { // Stricter threshold (was 1)
         const winner = fiberDiff > 0 ? foodA : foodB;
         const diff = Math.abs(fiberDiff).toFixed(1);
 

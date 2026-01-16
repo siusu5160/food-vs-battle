@@ -108,8 +108,8 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                                 key={key}
                                 onClick={() => handleCategoryChange(key as FoodCategoryKey)}
                                 className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${selectedCategory === key
-                                        ? 'bg-[#d4af37] text-black font-bold'
-                                        : 'bg-[#222] text-gray-400 hover:bg-[#333] hover:text-white'
+                                    ? 'bg-[#d4af37] text-black font-bold'
+                                    : 'bg-[#222] text-gray-400 hover:bg-[#333] hover:text-white'
                                     }`}
                             >
                                 <span>{config.icon}</span>
@@ -126,8 +126,8 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                             <button
                                 onClick={() => setSelectedSubCategory(null)}
                                 className={`flex items-center gap-1 px-3 py-1 rounded text-xs whitespace-nowrap transition-colors ${selectedSubCategory === null
-                                        ? 'bg-[#d4af37]/20 text-[#d4af37] border border-[#d4af37]'
-                                        : 'bg-[#1a1a1a] text-gray-500 hover:text-gray-300'
+                                    ? 'bg-[#d4af37]/20 text-[#d4af37] border border-[#d4af37]'
+                                    : 'bg-[#1a1a1a] text-gray-500 hover:text-gray-300'
                                     }`}
                             >
                                 すべて
@@ -137,8 +137,8 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                                     key={key}
                                     onClick={() => setSelectedSubCategory(key)}
                                     className={`flex items-center gap-1 px-3 py-1 rounded text-xs whitespace-nowrap transition-colors ${selectedSubCategory === key
-                                            ? 'bg-[#d4af37]/20 text-[#d4af37] border border-[#d4af37]'
-                                            : 'bg-[#1a1a1a] text-gray-500 hover:text-gray-300'
+                                        ? 'bg-[#d4af37]/20 text-[#d4af37] border border-[#d4af37]'
+                                        : 'bg-[#1a1a1a] text-gray-500 hover:text-gray-300'
                                         }`}
                                 >
                                     <span>{SUB_CATEGORIES[key].icon}</span>
@@ -164,10 +164,10 @@ export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, 
                             >
                                 <span className="text-3xl group-hover:scale-110 transition-transform">{food.emoji}</span>
                                 <div>
-                                    <div className="font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors font-sans">
+                                    <div className="font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors font-sans py-2">
                                         {t(food.name, food.nameEn)}
                                     </div>
-                                    <div className="text-xs text-gray-500 font-mono">{food.calories}kcal</div>
+                                    {/* <div className="text-xs text-gray-500 font-mono">{food.calories}kcal</div> */}
                                 </div>
                             </button>
                         ))
