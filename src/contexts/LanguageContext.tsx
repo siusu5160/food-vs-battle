@@ -16,7 +16,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const [language, setLanguage] = useState<Language>('ja');
 
     const t = (ja: string, en?: string) => {
-        // Always prefer Japanese as per user request "Basic Japanese"
+        if (language === 'en' && en) {
+            return en;
+        }
         return ja;
     };
 

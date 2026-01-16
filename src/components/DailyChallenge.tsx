@@ -99,7 +99,7 @@ export function DailyChallenge() {
                             {/* CTA */}
                             <div className="mt-6 text-center">
                                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold px-6 py-3 rounded-xl group-hover:from-purple-500 group-hover:to-pink-500 transition-all shadow-lg">
-                                    <span>対決結果を見る</span>
+                                    <span>{t('対決結果を見る', 'See Battle Result')}</span>
                                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
@@ -111,7 +111,7 @@ export function DailyChallenge() {
                     {/* シェア促進 */}
                     <div className="mt-4 text-center">
                         <p className="text-xs text-gray-400">
-                            💡 友達と予想を共有して盛り上がろう！
+                            {t('💡 友達と予想を共有して盛り上がろう！', '💡 Share your prediction with friends!')}
                         </p>
                     </div>
                 </div>
