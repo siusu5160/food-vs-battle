@@ -298,7 +298,7 @@ const FighterCard = ({ food, isWinner, result, side, t }: { food: FoodItem, isWi
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-1">
-                    {food.tags.slice(0, 3).map(tag => (
+                    {food.tags?.slice(0, 3).map(tag => (
                         <span key={tag} className="text-[10px] bg-gray-700 text-gray-400 px-2 py-0.5 rounded-full">
                             {tag}
                         </span>
