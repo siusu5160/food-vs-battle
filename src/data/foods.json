@@ -162,7 +162,7 @@
     "id": "salmon",
     "name": "サーモン(生)",
     "nameEn": "Salmon (Raw)",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 139,
     "protein": 20.1,
     "fat": 4.5,
@@ -180,7 +180,7 @@
     "id": "tuna-lean",
     "name": "マグロ(赤身)",
     "nameEn": "Tuna (Lean)",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 125,
     "protein": 26.4,
     "fat": 1.4,
@@ -198,7 +198,7 @@
     "id": "tuna-fatty",
     "name": "マグロ(トロ)",
     "nameEn": "Tuna (Fatty)",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 344,
     "protein": 20.1,
     "fat": 27.5,
@@ -217,7 +217,7 @@
     "id": "mackerel",
     "name": "サバ",
     "nameEn": "Mackerel",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 202,
     "protein": 20.7,
     "fat": 12.1,
@@ -235,7 +235,7 @@
     "id": "horse-mackerel",
     "name": "アジ",
     "nameEn": "Horse Mackerel",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 121,
     "protein": 20.7,
     "fat": 3.5,
@@ -253,7 +253,7 @@
     "id": "squid",
     "name": "イカ",
     "nameEn": "Squid",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 88,
     "protein": 18.1,
     "fat": 1.2,
@@ -271,7 +271,7 @@
     "id": "octopus",
     "name": "タコ",
     "nameEn": "Octopus",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 76,
     "protein": 16.4,
     "fat": 0.7,
@@ -289,7 +289,7 @@
     "id": "shrimp",
     "name": "エビ",
     "nameEn": "Shrimp",
-    "category": "Meat",
+    "category": "Fish",
     "calories": 91,
     "protein": 19.6,
     "fat": 0.7,
@@ -704,7 +704,7 @@
     "id": "watermelon",
     "name": "スイカ",
     "nameEn": "Watermelon",
-    "category": "Fruit",
+    "category": "Fish",
     "calories": 37,
     "protein": 0.6,
     "fat": 0.1,
@@ -823,7 +823,7 @@
     "id": "broccoli",
     "name": "ブロッコリー",
     "nameEn": "Broccoli",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 33,
     "protein": 4.3,
     "fat": 0.5,
@@ -840,7 +840,7 @@
     "id": "cabbage",
     "name": "キャベツ",
     "nameEn": "Cabbage",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 23,
     "protein": 1.3,
     "fat": 0.2,
@@ -857,7 +857,7 @@
     "id": "lettuce",
     "name": "レタス",
     "nameEn": "Lettuce",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 12,
     "protein": 0.6,
     "fat": 0.1,
@@ -875,7 +875,7 @@
     "id": "cucumber",
     "name": "きゅうり",
     "nameEn": "Cucumber",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 14,
     "protein": 1,
     "fat": 0.1,
@@ -893,7 +893,7 @@
     "id": "tomato",
     "name": "トマト",
     "nameEn": "Tomato",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 19,
     "protein": 0.7,
     "fat": 0.1,
@@ -911,7 +911,7 @@
     "id": "carrot",
     "name": "にんじん",
     "nameEn": "Carrot",
-    "category": "Side",
+    "category": "Vegetable",
     "calories": 39,
     "protein": 0.7,
     "fat": 0.1,
@@ -1186,7 +1186,7 @@
     "id": "wine-red",
     "name": "赤ワイン",
     "nameEn": "Red Wine",
-    "category": "Drink",
+    "category": "Alcohol",
     "calories": 73,
     "protein": 0.2,
     "fat": 0,
@@ -1205,7 +1205,7 @@
     "id": "wine-white",
     "name": "白ワイン",
     "nameEn": "White Wine",
-    "category": "Drink",
+    "category": "Alcohol",
     "calories": 73,
     "protein": 0.1,
     "fat": 0,
@@ -1224,7 +1224,7 @@
     "id": "shochu-otsu",
     "name": "焼酎(乙類)",
     "nameEn": "Shochu (Honkaku)",
-    "category": "Drink",
+    "category": "Alcohol",
     "calories": 146,
     "protein": 0,
     "fat": 0,
@@ -1317,108 +1317,6 @@
     ]
   },
   {
-    "id": "mcd-teriyaki",
-    "name": "てりやきマックバーガー",
-    "nameEn": "Teriyaki McBurger",
-    "category": "FastFood",
-    "calories": 478,
-    "protein": 14.5,
-    "fat": 30.2,
-    "carbs": 36.4,
-    "fiber": 1.5,
-    "salt": 2.2,
-    "emoji": "🍔",
-    "tags": [
-      "#McDonalds",
-      "#Pork"
-    ]
-  },
-  {
-    "id": "mcd-fries-m",
-    "name": "マックフライポテト(M)",
-    "nameEn": "French Fries (M)",
-    "category": "FastFood",
-    "calories": 410,
-    "protein": 5.3,
-    "fat": 20.6,
-    "carbs": 51,
-    "fiber": 4.8,
-    "salt": 0.8,
-    "emoji": "🍟",
-    "tags": [
-      "#McDonalds",
-      "#Side"
-    ]
-  },
-  {
-    "id": "mcd-nuggets-5",
-    "name": "チキンマックナゲット(5ピース)",
-    "nameEn": "Chicken McNuggets (5pcs)",
-    "category": "FastFood",
-    "calories": 270,
-    "protein": 15.8,
-    "fat": 17.2,
-    "carbs": 13.1,
-    "fiber": 0.9,
-    "salt": 1.3,
-    "emoji": "🍗",
-    "tags": [
-      "#McDonalds",
-      "#Chicken"
-    ]
-  },
-  {
-    "id": "sbx-latte-tall",
-    "name": "スターバックスラテ(Tall)",
-    "nameEn": "Caffe Latte (Tall)",
-    "category": "Cafe",
-    "calories": 223,
-    "protein": 12.5,
-    "fat": 11.7,
-    "carbs": 17.1,
-    "fiber": 0,
-    "salt": 0.4,
-    "emoji": "☕",
-    "tags": [
-      "#Starbucks",
-      "#Drink"
-    ]
-  },
-  {
-    "id": "sbx-matcha-frapp-tall",
-    "name": "抹茶クリームフラペチーノ(Tall)",
-    "nameEn": "Matcha Cream Frappuccino (Tall)",
-    "category": "Cafe",
-    "calories": 322,
-    "protein": 4.5,
-    "fat": 12.5,
-    "carbs": 48.3,
-    "fiber": 0.5,
-    "salt": 0.3,
-    "emoji": "🥤",
-    "tags": [
-      "#Starbucks",
-      "#Sweet"
-    ]
-  },
-  {
-    "id": "sbx-scone-choc",
-    "name": "チョコレートチャンクスコーン",
-    "nameEn": "Chocolate Chunk Scone",
-    "category": "Cafe",
-    "calories": 358,
-    "protein": 6.2,
-    "fat": 17.5,
-    "carbs": 43.8,
-    "fiber": 1.5,
-    "salt": 0.7,
-    "emoji": "🍪",
-    "tags": [
-      "#Starbucks",
-      "#Sweet"
-    ]
-  },
-  {
     "id": "yoshi-gyudon-nami",
     "name": "牛丼(並盛)",
     "nameEn": "Gyudon (Regular)",
@@ -1473,7 +1371,7 @@
     "id": "sushiro-salmon",
     "name": "サーモン(2貫)",
     "nameEn": "Salmon (2pcs)",
-    "category": "Sushi",
+    "category": "Fish",
     "calories": 95,
     "protein": 6.2,
     "fat": 3.5,
@@ -1541,7 +1439,7 @@
     "id": "conv-onigiri-salmon",
     "name": "手巻おにぎり(鮭)",
     "nameEn": "Rice Ball (Salmon)",
-    "category": "Convenience",
+    "category": "Fish",
     "calories": 174,
     "protein": 4.5,
     "fat": 1.5,
@@ -1559,7 +1457,7 @@
     "id": "conv-onigiri-tuna",
     "name": "手巻おにぎり(ツナマヨ)",
     "nameEn": "Rice Ball (Tuna Mayo)",
-    "category": "Convenience",
+    "category": "Fish",
     "calories": 235,
     "protein": 4.8,
     "fat": 8.5,
@@ -1589,23 +1487,6 @@
       "#Conbini",
       "#Rice",
       "Convenience"
-    ]
-  },
-  {
-    "id": "conv-karaagekun-red",
-    "name": "からあげクン(レッド)",
-    "nameEn": "Karaage-kun (Red)",
-    "category": "Conbini",
-    "calories": 228,
-    "protein": 14.8,
-    "fat": 15.5,
-    "carbs": 8.5,
-    "fiber": 0.5,
-    "salt": 1.8,
-    "emoji": "🍗",
-    "tags": [
-      "#Lawson",
-      "#Chicken"
     ]
   },
   {
@@ -1699,92 +1580,6 @@
     ]
   },
   {
-    "id": "supple-ippon-manzoku",
-    "name": "一本満足バー(シリアルチョコ)",
-    "nameEn": "1pon Manzoku Bar",
-    "category": "Supplement",
-    "calories": 195,
-    "protein": 2.8,
-    "fat": 10.5,
-    "carbs": 22.5,
-    "fiber": 1.5,
-    "salt": 0.3,
-    "emoji": "🍫",
-    "tags": [
-      "#Snack",
-      "#Energy"
-    ]
-  },
-  {
-    "id": "supple-oikos-strawberry",
-    "name": "オイコス(ストロベリー)",
-    "nameEn": "Oikos (Strawberry)",
-    "category": "Supplement",
-    "calories": 92,
-    "protein": 10,
-    "fat": 0,
-    "carbs": 12.5,
-    "fiber": 0,
-    "salt": 0.1,
-    "emoji": "🥣",
-    "tags": [
-      "#Oikos",
-      "#HighProtein"
-    ]
-  },
-  {
-    "id": "goya-chanpuru",
-    "name": "ゴーヤチャンプルー",
-    "nameEn": "Goya Chanpuru",
-    "calories": 250,
-    "protein": 12,
-    "fat": 18,
-    "carbs": 8,
-    "fiber": 4,
-    "salt": 1.2,
-    "emoji": "🥒",
-    "category": "Regional"
-  },
-  {
-    "id": "hoto",
-    "name": "ほうとう",
-    "nameEn": "Hoto (Pumpkin Noodle Soup)",
-    "calories": 450,
-    "protein": 10,
-    "fat": 5,
-    "carbs": 85,
-    "fiber": 8,
-    "salt": 3.5,
-    "emoji": "🍲",
-    "category": "Regional"
-  },
-  {
-    "id": "kiritanpo",
-    "name": "きりたんぽ鍋",
-    "nameEn": "Kiritanpo Nabe",
-    "calories": 350,
-    "protein": 15,
-    "fat": 8,
-    "carbs": 50,
-    "fiber": 5,
-    "salt": 3,
-    "emoji": "🍲",
-    "category": "Regional"
-  },
-  {
-    "id": "zunda-mochi",
-    "name": "ずんだ餅",
-    "nameEn": "Zunda Mochi",
-    "calories": 220,
-    "protein": 5,
-    "fat": 1,
-    "carbs": 48,
-    "fiber": 3,
-    "salt": 0.1,
-    "emoji": "🍡",
-    "category": "Sweets"
-  },
-  {
     "id": "basashi",
     "name": "馬刺し",
     "nameEn": "Basashi (Horse Sashimi)",
@@ -1808,7 +1603,7 @@
     "fiber": 0,
     "salt": 6,
     "emoji": "🦑",
-    "category": "Side"
+    "category": "Fish"
   },
   {
     "id": "ankimo",
@@ -1821,7 +1616,7 @@
     "fiber": 0,
     "salt": 0.8,
     "emoji": "🐟",
-    "category": "Side"
+    "category": "Fish"
   },
   {
     "id": "umeboshi",
@@ -1941,123 +1736,6 @@
     "category": "Side"
   },
   {
-    "id": "tacos-beef",
-    "name": "タコス(ビーフ)",
-    "nameEn": "Beef Tacos",
-    "calories": 226,
-    "protein": 10,
-    "fat": 12,
-    "carbs": 18,
-    "fiber": 3,
-    "salt": 0.8,
-    "emoji": "🌮",
-    "category": "International"
-  },
-  {
-    "id": "burrito-bean",
-    "name": "ブリトー(豆)",
-    "nameEn": "Bean Burrito",
-    "calories": 380,
-    "protein": 14,
-    "fat": 12,
-    "carbs": 55,
-    "fiber": 8,
-    "salt": 1.2,
-    "emoji": "🌯",
-    "category": "International"
-  },
-  {
-    "id": "pho-beef",
-    "name": "フォー(牛肉)",
-    "nameEn": "Beef Pho",
-    "calories": 350,
-    "protein": 20,
-    "fat": 6,
-    "carbs": 55,
-    "fiber": 2,
-    "salt": 3.5,
-    "emoji": "🍜",
-    "category": "International"
-  },
-  {
-    "id": "kebab-sandwich",
-    "name": "ケバブサンド",
-    "nameEn": "Kebab Sandwich",
-    "calories": 550,
-    "protein": 25,
-    "fat": 30,
-    "carbs": 45,
-    "fiber": 4,
-    "salt": 2,
-    "emoji": "🥙",
-    "category": "International"
-  },
-  {
-    "id": "tom-yum-kung",
-    "name": "トムヤムクン",
-    "nameEn": "Tom Yum Kung",
-    "calories": 150,
-    "protein": 12,
-    "fat": 8,
-    "carbs": 10,
-    "fiber": 2,
-    "salt": 4.5,
-    "emoji": "🥘",
-    "category": "International"
-  },
-  {
-    "id": "naan-plain",
-    "name": "ナン(プレーン)",
-    "nameEn": "Naan Bread",
-    "calories": 320,
-    "protein": 9,
-    "fat": 6,
-    "carbs": 55,
-    "fiber": 2,
-    "salt": 0.8,
-    "emoji": "🫓",
-    "category": "International"
-  },
-  {
-    "id": "taiyaki",
-    "name": "たい焼き",
-    "nameEn": "Taiyaki",
-    "calories": 220,
-    "protein": 6,
-    "fat": 2,
-    "carbs": 45,
-    "fiber": 1,
-    "salt": 0.4,
-    "emoji": "🐟",
-    "category": "Sweets"
-  },
-  {
-    "id": "castella",
-    "name": "カステラ(1切れ)",
-    "nameEn": "Castella Cake",
-    "calories": 160,
-    "protein": 3,
-    "fat": 4,
-    "carbs": 28,
-    "fiber": 0,
-    "salt": 0.1,
-    "emoji": "🍰",
-    "category": "Sweets"
-  },
-  {
-    "id": "yokan-slice",
-    "name": "羊羹(1切れ)",
-    "nameEn": "Yokan",
-    "calories": 140,
-    "protein": 2,
-    "fat": 0,
-    "carbs": 34,
-    "fiber": 1,
-    "salt": 0,
-    "emoji": "🍵",
-    "category": "Sweets"
-  },
-  {
     "id": "shochu-rocks",
     "name": "焼酎(ロック)",
     "nameEn": "Shochu (Rocks)",
@@ -2068,7 +1746,7 @@
     "fiber": 0,
     "salt": 0,
     "emoji": "🍶",
-    "category": "Drink"
+    "category": "Alcohol"
   },
   {
     "id": "wine-red-glass",
@@ -2081,7 +1759,7 @@
     "fiber": 0,
     "salt": 0,
     "emoji": "🍷",
-    "category": "Drink"
+    "category": "Alcohol"
   },
   {
     "id": "ground-meat-mix",
@@ -2094,7 +1772,7 @@
     "fiber": 0,
     "salt": 0.1,
     "emoji": "🥩",
-    "category": "Ingredient"
+    "category": "Meat"
   },
   {
     "id": "pork-belly-raw",
@@ -2107,7 +1785,7 @@
     "fiber": 0,
     "salt": 0.1,
     "emoji": "🥓",
-    "category": "Ingredient"
+    "category": "Meat"
   },
   {
     "id": "bacon-slice",
@@ -2120,7 +1798,7 @@
     "fiber": 0,
     "salt": 2,
     "emoji": "🥓",
-    "category": "Ingredient"
+    "category": "Meat"
   },
   {
     "id": "sausage-wiener",
@@ -2133,7 +1811,7 @@
     "fiber": 0,
     "salt": 0.4,
     "emoji": "🌭",
-    "category": "Ingredient"
+    "category": "Meat"
   },
   {
     "id": "ham-slice",
@@ -2146,7 +1824,7 @@
     "fiber": 0,
     "salt": 0.5,
     "emoji": "🍖",
-    "category": "Ingredient"
+    "category": "Meat"
   },
   {
     "id": "salmon-filet",
@@ -2159,7 +1837,7 @@
     "fiber": 0,
     "salt": 0.1,
     "emoji": "🐟",
-    "category": "Ingredient"
+    "category": "Fish"
   },
   {
     "id": "mackerel-raw",
@@ -2172,7 +1850,7 @@
     "fiber": 0,
     "salt": 0.2,
     "emoji": "🐟",
-    "category": "Ingredient"
+    "category": "Fish"
   },
   {
     "id": "tuna-canned-oil",
@@ -2185,7 +1863,7 @@
     "fiber": 0,
     "salt": 0.8,
     "emoji": "🥫",
-    "category": "Ingredient"
+    "category": "Fish"
   },
   {
     "id": "shrimp-raw",
@@ -2198,7 +1876,7 @@
     "fiber": 0,
     "salt": 0.4,
     "emoji": "🦐",
-    "category": "Ingredient"
+    "category": "Fish"
   },
   {
     "id": "cucumber-raw",
@@ -2211,7 +1889,7 @@
     "fiber": 1,
     "salt": 0,
     "emoji": "🥒",
-    "category": "Ingredient"
+    "category": "Vegetable"
   },
   {
     "id": "eggplant-raw",
@@ -2224,7 +1902,7 @@
     "fiber": 2,
     "salt": 0,
     "emoji": "🍆",
-    "category": "Ingredient"
+    "category": "Vegetable"
   },
   {
     "id": "moyashi-pack",
@@ -2237,7 +1915,7 @@
     "fiber": 3,
     "salt": 0,
     "emoji": "🌱",
-    "category": "Ingredient"
+    "category": "Vegetable"
   },
   {
     "id": "daikon-raw",
@@ -2250,7 +1928,7 @@
     "fiber": 1.5,
     "salt": 0,
     "emoji": "🥢",
-    "category": "Ingredient"
+    "category": "Vegetable"
   },
   {
     "id": "lettuce-leaf",
@@ -2263,7 +1941,7 @@
     "fiber": 1,
     "salt": 0,
     "emoji": "🥬",
-    "category": "Ingredient"
+    "category": "Vegetable"
   },
   {
     "id": "milk-glass",
@@ -2536,7 +2214,7 @@
     "fiber": 0,
     "salt": 0.3,
     "emoji": "🐙",
-    "category": "Seafood"
+    "category": "Fish"
   },
   {
     "id": "squid-raw",
@@ -2549,7 +2227,7 @@
     "fiber": 0,
     "salt": 0.3,
     "emoji": "🦑",
-    "category": "Seafood"
+    "category": "Fish"
   },
   {
     "id": "scallop-raw",
@@ -2562,7 +2240,7 @@
     "fiber": 0,
     "salt": 0.1,
     "emoji": "🐚",
-    "category": "Seafood"
+    "category": "Fish"
   },
   {
     "id": "oyster-raw",
@@ -2575,7 +2253,7 @@
     "fiber": 0,
     "salt": 0.1,
     "emoji": "🦪",
-    "category": "Seafood"
+    "category": "Fish"
   },
   {
     "id": "eel-unagi",
@@ -2588,7 +2266,7 @@
     "fiber": 0,
     "salt": 1.3,
     "emoji": "🍱",
-    "category": "Seafood"
+    "category": "Fish"
   },
   {
     "id": "ground-chicken",
@@ -2795,7 +2473,7 @@
     "id": "kura-salmon",
     "name": "サーモン(くら寿司)",
     "nameEn": "Kura Sushi Salmon",
-    "category": "Restaurant",
+    "category": "Fish",
     "calories": 82,
     "protein": 5.2,
     "fat": 2.1,
@@ -2827,7 +2505,7 @@
     "id": "hama-maguro",
     "name": "まぐろ(はま寿司)",
     "nameEn": "Hama Sushi Tuna",
-    "category": "Restaurant",
+    "category": "Meat",
     "calories": 70,
     "protein": 6.1,
     "fat": 0.4,
@@ -2845,7 +2523,7 @@
     "id": "hama-salmon",
     "name": "サーモン(はま寿司)",
     "nameEn": "Hama Sushi Salmon",
-    "category": "Restaurant",
+    "category": "Meat",
     "calories": 85,
     "protein": 5.5,
     "fat": 2.3,
@@ -2861,7 +2539,7 @@
     "id": "hama-hamachi",
     "name": "はまち(はま寿司)",
     "nameEn": "Hama Sushi Yellowtail",
-    "category": "Restaurant",
+    "category": "Meat",
     "calories": 92,
     "protein": 5.8,
     "fat": 2.8,
@@ -2871,59 +2549,6 @@
     "emoji": "🍣",
     "tags": [
       "Restaurant"
-    ]
-  },
-  {
-    "id": "starbucks-latte-tall",
-    "name": "スターバックスラテ(Tall)",
-    "nameEn": "Starbucks Latte (Tall)",
-    "category": "Dessert",
-    "calories": 219,
-    "protein": 11.2,
-    "fat": 8.6,
-    "carbs": 21.7,
-    "fiber": 0,
-    "salt": 0.3,
-    "emoji": "☕",
-    "tags": [
-      "Drink",
-      "Dairy",
-      "Dessert"
-    ]
-  },
-  {
-    "id": "starbucks-caramel-frappuccino",
-    "name": "キャラメルフラペチーノ(Tall)",
-    "nameEn": "Starbucks Caramel Frappuccino (Tall)",
-    "category": "Dessert",
-    "calories": 302,
-    "protein": 4.1,
-    "fat": 3.9,
-    "carbs": 61.1,
-    "fiber": 0,
-    "salt": 0.4,
-    "emoji": "🥤",
-    "tags": [
-      "Drink",
-      "Dessert"
-    ]
-  },
-  {
-    "id": "starbucks-cheesecake",
-    "name": "ニューヨークチーズケーキ",
-    "nameEn": "Starbucks NY Cheesecake",
-    "category": "Dairy",
-    "calories": 414,
-    "protein": 7.2,
-    "fat": 30.1,
-    "carbs": 28.3,
-    "fiber": 0.5,
-    "salt": 0.5,
-    "emoji": "🍰",
-    "tags": [
-      "HighFat",
-      "Dessert",
-      "Dairy"
     ]
   },
   {
@@ -2973,39 +2598,6 @@
     "emoji": "🍩",
     "tags": [
       "Dessert"
-    ]
-  },
-  {
-    "id": "mac-teriyaki-burger",
-    "name": "てりやきマックバーガー",
-    "nameEn": "McDonald's Teriyaki McBurger",
-    "category": "FastFood",
-    "calories": 478,
-    "protein": 15.8,
-    "fat": 30.9,
-    "carbs": 33.4,
-    "fiber": 2.1,
-    "salt": 2.1,
-    "emoji": "🍔",
-    "tags": [
-      "FastFood"
-    ]
-  },
-  {
-    "id": "mac-chicken-nuggets-5",
-    "name": "チキンマックナゲット(5ピース)",
-    "nameEn": "McDonald's Chicken McNuggets (5pc)",
-    "category": "FastFood",
-    "calories": 270,
-    "protein": 15.8,
-    "fat": 17.2,
-    "carbs": 13.3,
-    "fiber": 0.9,
-    "salt": 1.3,
-    "emoji": "🍗",
-    "tags": [
-      "FastFood",
-      "HighProtein"
     ]
   },
   {

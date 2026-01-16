@@ -15,6 +15,7 @@ export const SUB_CATEGORIES = {
     vegetable: { label: '野菜', icon: '🥬', parent: 'ingredient' as const },
     fruit: { label: 'フルーツ', icon: '🍎', parent: 'ingredient' as const },
     dairy: { label: '乳製品', icon: '🥛', parent: 'ingredient' as const },
+    alcohol: { label: '酒', icon: '🍺', parent: 'ingredient' as const },
     other: { label: 'その他', icon: '🌾', parent: 'ingredient' as const },
 
     // 調理済みサブカテゴリー
@@ -84,15 +85,17 @@ export function categorizeFoodItem(food: FoodItem): {
         return { foodType: 'prepared', subCategory: 'fastfood' };
     }
 
-    // 食材分類
+    // カテゴリーベースの判定（食材）
     const categoryMap: Record<string, SubCategoryKey> = {
         'Meat': 'meat',
+        'Fish': 'meat',  // 魚も肉・魚カテゴリーに
         'Carb': 'carb',
         'Fruit': 'fruit',
         'Vegetable': 'vegetable',
         'Dairy': 'dairy',
+        'Alcohol': 'alcohol',
+        'Other': 'other',
     };
-
     const subCategory = categoryMap[food.category] || 'other';
     return { foodType: 'ingredient', subCategory };
 }
