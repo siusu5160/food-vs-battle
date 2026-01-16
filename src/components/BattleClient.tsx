@@ -7,6 +7,7 @@ import { judgeBattle, BattleResult } from '@/lib/battleLogic';
 import { checkSynergy, Synergy } from '@/lib/synergies';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { ProductRecommendations } from './ProductRecommendations';
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -175,6 +176,14 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                     </motion.div>
                 ))}
             </div>
+
+            {/* Product Recommendations - Show for winner */}
+            {result.winner !== 'Draw' && (
+                <ProductRecommendations
+                    food={result.winner === 'A' ? foodA : foodB}
+                    title={`${result.winner === 'A' ? foodA.name : foodB.name}をもっと楽しむために`}
+                />
+            )}
 
             <div className="h-12" />
         </div>
