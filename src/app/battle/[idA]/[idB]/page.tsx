@@ -150,5 +150,5 @@ export default async function BattlePage({ params }: { params: Promise<{ idA: st
 // Revalidate every week (data is mostly static)
 export const revalidate = 604800;
 export const dynamicParams = true; // Allow battles not in generateStaticParams
-export const runtime = 'edge'; // Use Edge Runtime for partial/dynamic generation on Cloudflare
+
 
