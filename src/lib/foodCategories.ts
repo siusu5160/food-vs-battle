@@ -58,7 +58,7 @@ export function categorizeFoodItem(food: FoodItem): {
         food.id.includes('sushiro-') || food.id.includes('gusto-') ||
         food.id.includes('sukiya-') || food.id.includes('matsuya-') ||
         food.id.includes('kura-') || food.id.includes('hama-') ||
-        food.id.includes('marugame-')) {
+        food.id.includes('marugame-') || food.id.includes('coco-')) {
         return { foodType: 'prepared', subCategory: 'restaurant' };
     }
 
