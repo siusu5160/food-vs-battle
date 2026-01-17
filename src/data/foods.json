@@ -1012,38 +1012,6 @@
     ]
   },
   {
-    "id": "shortcake",
-    "name": "ショートケーキ",
-    "nameEn": "Shortcake",
-    "category": "Snack",
-    "calories": 308,
-    "protein": 4,
-    "fat": 18,
-    "carbs": 32,
-    "fiber": 0.5,
-    "salt": 0.2,
-    "emoji": "🍰",
-    "tags": [
-      "Snack"
-    ]
-  },
-  {
-    "id": "pudding",
-    "name": "プリン",
-    "nameEn": "Pudding",
-    "category": "Snack",
-    "calories": 126,
-    "protein": 5,
-    "fat": 5,
-    "carbs": 15,
-    "fiber": 0,
-    "salt": 0.1,
-    "emoji": "🍮",
-    "tags": [
-      "Snack"
-    ]
-  },
-  {
     "id": "cream-puff",
     "name": "シュークリーム",
     "nameEn": "Cream Puff",
@@ -1075,94 +1043,6 @@
     "tags": [
       "Snack",
       "Dairy"
-    ]
-  },
-  {
-    "id": "dorayaki",
-    "name": "どら焼き",
-    "nameEn": "Dorayaki",
-    "category": "Snack",
-    "calories": 284,
-    "protein": 6.5,
-    "fat": 3,
-    "carbs": 56,
-    "fiber": 2,
-    "salt": 0.2,
-    "emoji": "🥞",
-    "tags": [
-      "Snack"
-    ]
-  },
-  {
-    "id": "chocolate",
-    "name": "ミルクチョコレート",
-    "nameEn": "Milk Chocolate",
-    "category": "Snack",
-    "calories": 557,
-    "protein": 6.9,
-    "fat": 34.1,
-    "carbs": 55.8,
-    "fiber": 3.9,
-    "salt": 0.2,
-    "emoji": "🍫",
-    "tags": [
-      "Snack",
-      "HighCalorie",
-      "HighFat"
-    ]
-  },
-  {
-    "id": "potato-chips",
-    "name": "ポテトチップス",
-    "nameEn": "Potato Chips",
-    "category": "Snack",
-    "calories": 554,
-    "protein": 4.7,
-    "fat": 35,
-    "carbs": 54,
-    "fiber": 4.2,
-    "salt": 1.2,
-    "emoji": "🥔",
-    "tags": [
-      "Snack",
-      "HighCalorie",
-      "HighFat"
-    ]
-  },
-  {
-    "id": "almond",
-    "name": "アーモンド",
-    "nameEn": "Almond",
-    "category": "Snack",
-    "calories": 598,
-    "protein": 18.6,
-    "fat": 54.2,
-    "carbs": 19.7,
-    "fiber": 10.4,
-    "salt": 0,
-    "emoji": "🥜",
-    "tags": [
-      "Snack",
-      "HighCalorie",
-      "HighFat"
-    ]
-  },
-  {
-    "id": "cookie",
-    "name": "クッキー",
-    "nameEn": "Cookie",
-    "category": "Snack",
-    "calories": 519,
-    "protein": 6,
-    "fat": 26,
-    "carbs": 64,
-    "fiber": 2,
-    "salt": 0.6,
-    "emoji": "🍪",
-    "tags": [
-      "Snack",
-      "HighCalorie",
-      "HighFat"
     ]
   },
   {
@@ -1317,40 +1197,6 @@
     ]
   },
   {
-    "id": "yoshi-gyudon-nami",
-    "name": "牛丼(並盛)",
-    "nameEn": "Gyudon (Regular)",
-    "category": "FastFood",
-    "calories": 635,
-    "protein": 20.1,
-    "fat": 28.5,
-    "carbs": 70.2,
-    "fiber": 1.5,
-    "salt": 2.5,
-    "emoji": "🍚",
-    "tags": [
-      "#Yoshinoya",
-      "#Beef"
-    ]
-  },
-  {
-    "id": "yoshi-curry-nami",
-    "name": "黒カレー(並盛)",
-    "nameEn": "Black Curry (Regular)",
-    "category": "FastFood",
-    "calories": 531,
-    "protein": 11.2,
-    "fat": 18.5,
-    "carbs": 76.5,
-    "fiber": 3.5,
-    "salt": 3.1,
-    "emoji": "🍛",
-    "tags": [
-      "#Yoshinoya",
-      "#Curry"
-    ]
-  },
-  {
     "id": "sushiro-maguro",
     "name": "まぐろ(2貫)",
     "nameEn": "Tuna (2pcs)",
@@ -1419,23 +1265,6 @@
     ]
   },
   {
-    "id": "saize-carbonara",
-    "name": "カルボナーラ",
-    "nameEn": "Carbonara",
-    "category": "Restaurant",
-    "calories": 745,
-    "protein": 25.5,
-    "fat": 42.1,
-    "carbs": 65.2,
-    "fiber": 2,
-    "salt": 2.8,
-    "emoji": "🍝",
-    "tags": [
-      "#Saizeriya",
-      "#Pasta"
-    ]
-  },
-  {
     "id": "conv-onigiri-salmon",
     "name": "手巻おにぎり(鮭)",
     "nameEn": "Rice Ball (Salmon)",
@@ -1468,96 +1297,6 @@
     "tags": [
       "#Conbini",
       "#Rice",
-      "Convenience"
-    ]
-  },
-  {
-    "id": "conv-onigiri-konbu",
-    "name": "手巻おにぎり(昆布)",
-    "nameEn": "Rice Ball (Kelp)",
-    "category": "Convenience",
-    "calories": 182,
-    "protein": 3.5,
-    "fat": 0.5,
-    "carbs": 40.5,
-    "fiber": 1.5,
-    "salt": 1.3,
-    "emoji": "🍙",
-    "tags": [
-      "#Conbini",
-      "#Rice",
-      "Convenience"
-    ]
-  },
-  {
-    "id": "conv-famichiki",
-    "name": "ファミチキ",
-    "nameEn": "Fami-Chiki",
-    "category": "Convenience",
-    "calories": 251,
-    "protein": 12.7,
-    "fat": 15.7,
-    "carbs": 14.8,
-    "fiber": 0.5,
-    "salt": 1.3,
-    "emoji": "🍗",
-    "tags": [
-      "#FamilyMart",
-      "#Chicken",
-      "Convenience"
-    ]
-  },
-  {
-    "id": "conv-nanachiki",
-    "name": "ななチキ",
-    "nameEn": "Nana-Chiki",
-    "category": "Convenience",
-    "calories": 173,
-    "protein": 14.3,
-    "fat": 9.8,
-    "carbs": 7.2,
-    "fiber": 0.3,
-    "salt": 1.2,
-    "emoji": "🍗",
-    "tags": [
-      "#SevenEleven",
-      "#Chicken",
-      "Convenience"
-    ]
-  },
-  {
-    "id": "conv-salad-chicken-plain",
-    "name": "サラダチキン(プレーン)",
-    "nameEn": "Salad Chicken (Plain)",
-    "category": "Convenience",
-    "calories": 115,
-    "protein": 24.5,
-    "fat": 1.2,
-    "carbs": 0.5,
-    "fiber": 0,
-    "salt": 1.2,
-    "emoji": "🐔",
-    "tags": [
-      "#Conbini",
-      "#HighProtein",
-      "Convenience"
-    ]
-  },
-  {
-    "id": "conv-salad-chicken-herb",
-    "name": "サラダチキン(ハーブ)",
-    "nameEn": "Salad Chicken (Herb)",
-    "category": "Convenience",
-    "calories": 118,
-    "protein": 23.8,
-    "fat": 1.5,
-    "carbs": 0.8,
-    "fiber": 0.2,
-    "salt": 1.4,
-    "emoji": "🐔",
-    "tags": [
-      "#Conbini",
-      "#HighProtein",
       "Convenience"
     ]
   },
@@ -1656,45 +1395,6 @@
     "salt": 0.1,
     "emoji": "🐗",
     "category": "Meat"
-  },
-  {
-    "id": "umaibo",
-    "name": "うまい棒(1本)",
-    "nameEn": "Umaibo",
-    "calories": 34,
-    "protein": 0.5,
-    "fat": 2,
-    "carbs": 4,
-    "fiber": 0,
-    "salt": 0.1,
-    "emoji": "💈",
-    "category": "Snack"
-  },
-  {
-    "id": "big-katsu",
-    "name": "ビッグカツ",
-    "nameEn": "Big Katsu",
-    "calories": 120,
-    "protein": 3,
-    "fat": 8,
-    "carbs": 10,
-    "fiber": 0,
-    "salt": 0.5,
-    "emoji": "🍘",
-    "category": "Snack"
-  },
-  {
-    "id": "baby-star",
-    "name": "ベビースターラーメン",
-    "nameEn": "Baby Star Ramen",
-    "calories": 150,
-    "protein": 3,
-    "fat": 7,
-    "carbs": 18,
-    "fiber": 1,
-    "salt": 0.8,
-    "emoji": "🍜",
-    "category": "Snack"
   },
   {
     "id": "natto-pack",
@@ -2347,111 +2047,6 @@
     "category": "Ingredient"
   },
   {
-    "id": "sukiya-gyudon-nami",
-    "name": "牛丼(並盛)",
-    "nameEn": "Sukiya Beef Bowl (Regular)",
-    "category": "Restaurant",
-    "calories": 733,
-    "protein": 23.8,
-    "fat": 25.3,
-    "carbs": 92.4,
-    "fiber": 2.1,
-    "salt": 2.8,
-    "emoji": "🍚",
-    "tags": [
-      "Restaurant",
-      "Carb"
-    ]
-  },
-  {
-    "id": "sukiya-gyudon-mega",
-    "name": "牛丼(メガ盛)",
-    "nameEn": "Sukiya Beef Bowl (Mega)",
-    "category": "Restaurant",
-    "calories": 1176,
-    "protein": 38.2,
-    "fat": 40.6,
-    "carbs": 148.3,
-    "fiber": 3.4,
-    "salt": 4.5,
-    "emoji": "🍚",
-    "tags": [
-      "Restaurant",
-      "Carb",
-      "HighCalorie"
-    ]
-  },
-  {
-    "id": "sukiya-karaage-curry",
-    "name": "から揚げカレー",
-    "nameEn": "Sukiya Fried Chicken Curry",
-    "category": "Restaurant",
-    "calories": 1051,
-    "protein": 32.4,
-    "fat": 42.1,
-    "carbs": 128.7,
-    "fiber": 3.2,
-    "salt": 4.1,
-    "emoji": "🍛",
-    "tags": [
-      "Restaurant",
-      "Carb"
-    ]
-  },
-  {
-    "id": "matsuya-gyudon-nami",
-    "name": "牛めし(並盛)",
-    "nameEn": "Matsuya Beef Rice (Regular)",
-    "category": "Restaurant",
-    "calories": 709,
-    "protein": 22.1,
-    "fat": 23.8,
-    "carbs": 94.5,
-    "fiber": 2.3,
-    "salt": 2.6,
-    "emoji": "🍚",
-    "tags": [
-      "Restaurant",
-      "Carb"
-    ]
-  },
-  {
-    "id": "matsuya-kalbi-yakiniku",
-    "name": "カルビ焼肉定食",
-    "nameEn": "Matsuya Kalbi Yakiniku Set",
-    "category": "Restaurant",
-    "calories": 1038,
-    "protein": 28.9,
-    "fat": 45.2,
-    "carbs": 112.3,
-    "fiber": 3.1,
-    "salt": 4.8,
-    "emoji": "🥩",
-    "tags": [
-      "Restaurant",
-      "Meat",
-      "HighFat"
-    ]
-  },
-  {
-    "id": "matsuya-chicken-nanban",
-    "name": "チキン南蛮定食",
-    "nameEn": "Matsuya Chicken Nanban Set",
-    "category": "Restaurant",
-    "calories": 1142,
-    "protein": 35.6,
-    "fat": 52.3,
-    "carbs": 118.7,
-    "fiber": 2.8,
-    "salt": 3.9,
-    "emoji": "🍗",
-    "tags": [
-      "Restaurant",
-      "Meat",
-      "HighCalorie"
-    ]
-  },
-  {
     "id": "kura-maguro",
     "name": "まぐろ(くら寿司)",
     "nameEn": "Kura Sushi Tuna",
@@ -2598,57 +2193,6 @@
     "emoji": "🍩",
     "tags": [
       "Dessert"
-    ]
-  },
-  {
-    "id": "mac-mcflurry-oreo",
-    "name": "マックフルーリーオレオ",
-    "nameEn": "McDonald's McFlurry Oreo",
-    "category": "Snack",
-    "calories": 294,
-    "protein": 6.4,
-    "fat": 9.8,
-    "carbs": 44.8,
-    "fiber": 0.5,
-    "salt": 0.4,
-    "emoji": "🍦",
-    "tags": [
-      "Snack",
-      "Dairy"
-    ]
-  },
-  {
-    "id": "marugame-tempura-udon",
-    "name": "天ぷらうどん(並)",
-    "nameEn": "Marugame Tempura Udon (Regular)",
-    "category": "Restaurant",
-    "calories": 558,
-    "protein": 14.2,
-    "fat": 15.8,
-    "carbs": 85.3,
-    "fiber": 3.8,
-    "salt": 5.2,
-    "emoji": "🍜",
-    "tags": [
-      "Restaurant",
-      "Carb"
-    ]
-  },
-  {
-    "id": "marugame-karaage",
-    "name": "鶏天(1個)",
-    "nameEn": "Marugame Chicken Tempura (1pc)",
-    "category": "Restaurant",
-    "calories": 145,
-    "protein": 8.9,
-    "fat": 8.2,
-    "carbs": 8.5,
-    "fiber": 0.3,
-    "salt": 0.8,
-    "emoji": "🍗",
-    "tags": [
-      "Restaurant",
-      "Meat"
     ]
   },
   {
@@ -3419,40 +2963,6 @@
     ]
   },
   {
-    "id": "pizza-margherita-m",
-    "name": "ピザ マルゲリータ(Mサイズ1切れ)",
-    "nameEn": "Pizza Margherita (1 slice M)",
-    "category": "FastFood",
-    "calories": 165,
-    "protein": 6.5,
-    "fat": 5.8,
-    "carbs": 21.5,
-    "fiber": 1.2,
-    "salt": 1.1,
-    "emoji": "🍕",
-    "tags": [
-      "Restaurant",
-      "FastFood"
-    ]
-  },
-  {
-    "id": "pizza-pepperoni-m",
-    "name": "ピザ ペパロニ(Mサイズ1切れ)",
-    "nameEn": "Pizza Pepperoni (1 slice M)",
-    "category": "FastFood",
-    "calories": 185,
-    "protein": 7.2,
-    "fat": 8.5,
-    "carbs": 20.8,
-    "fiber": 1.1,
-    "salt": 1.3,
-    "emoji": "🍕",
-    "tags": [
-      "Restaurant",
-      "FastFood"
-    ]
-  },
-  {
     "id": "coco-pork-curry",
     "name": "CoCo壱番屋 ポークカレー(普通)",
     "nameEn": "CoCo Ichi Pork Curry",
@@ -3834,55 +3344,493 @@
     ]
   },
   {
-    "id": "conv-bento-nori",
-    "name": "コンビニ 海苔弁当",
-    "nameEn": "Convenience Store Nori Bento",
-    "category": "FastFood",
-    "calories": 750,
-    "protein": 18.5,
-    "fat": 28.5,
-    "carbs": 105,
-    "fiber": 4.5,
-    "salt": 4.2,
-    "emoji": "🍱",
+    "id": "starbucks-star-latte-t",
+    "name": "スタバ スターバックスラテ(Tall)",
+    "nameEn": "Starbucks Latte (Tall)",
+    "category": "Restaurant",
+    "calories": 223,
+    "protein": 11.9,
+    "fat": 12.3,
+    "carbs": 16.5,
+    "fiber": 0,
+    "salt": 0.3,
+    "emoji": "☕",
     "tags": [
-      "Convenience",
-      "Carb"
+      "Restaurant",
+      "Drink"
     ]
   },
   {
-    "id": "conv-bento-katsudon",
-    "name": "コンビニ カツ丼",
-    "nameEn": "Convenience Store Katsudon",
-    "category": "FastFood",
-    "calories": 850,
-    "protein": 24.5,
-    "fat": 32.5,
-    "carbs": 115,
-    "fiber": 3.5,
-    "salt": 4.8,
-    "emoji": "🍱",
+    "id": "starbucks-matcha-frappucino-t",
+    "name": "スタバ 抹茶クリームフラペチーノ(Tall)",
+    "nameEn": "Starbucks Matcha Frappuccino (Tall)",
+    "category": "Restaurant",
+    "calories": 322,
+    "protein": 4.5,
+    "fat": 12.8,
+    "carbs": 48.5,
+    "fiber": 0.5,
+    "salt": 0.4,
+    "emoji": "🥤",
     "tags": [
-      "Convenience",
+      "Restaurant",
+      "Drink",
+      "Sweet",
+      "HighSugar"
+    ]
+  },
+  {
+    "id": "starbucks-dark-mocha-chip-frappucino-t",
+    "name": "スタバ ダークモカチップフラペチーノ(Tall)",
+    "nameEn": "Starbucks Dark Mocha Chip Frappuccino (Tall)",
+    "category": "Restaurant",
+    "calories": 348,
+    "protein": 4.8,
+    "fat": 14.5,
+    "carbs": 50.2,
+    "fiber": 1.2,
+    "salt": 0.3,
+    "emoji": "🥤",
+    "tags": [
+      "Restaurant",
+      "Drink",
+      "Sweet",
+      "HighSugar"
+    ]
+  },
+  {
+    "id": "starbucks-chocolate-scone",
+    "name": "スタバ チョコレートチャンクスコーン",
+    "nameEn": "Starbucks Chocolate Chunk Scone",
+    "category": "Snack",
+    "calories": 358,
+    "protein": 6.5,
+    "fat": 16.8,
+    "carbs": 45.2,
+    "fiber": 1.5,
+    "salt": 0.8,
+    "emoji": "🍪",
+    "tags": [
+      "Restaurant",
+      "Snack",
+      "Sweet",
+      "HighCarb"
+    ]
+  },
+  {
+    "id": "mac-bacon-lettuce",
+    "name": "マクドナルド ベーコンレタスバーガー",
+    "nameEn": "McDonald's Bacon Lettuce Burger",
+    "category": "FastFood",
+    "calories": 374,
+    "protein": 17.5,
+    "fat": 21.5,
+    "carbs": 27.8,
+    "fiber": 1.8,
+    "salt": 2.1,
+    "emoji": "🍔",
+    "tags": [
+      "Restaurant",
+      "FastFood",
+      "Meat"
+    ]
+  },
+  {
+    "id": "mac-ebi-filet",
+    "name": "マクドナルド えびフィレオ",
+    "nameEn": "McDonald's Shrimp Filet-O",
+    "category": "FastFood",
+    "calories": 395,
+    "protein": 12.8,
+    "fat": 17.5,
+    "carbs": 46.5,
+    "fiber": 2.5,
+    "salt": 2.4,
+    "emoji": "🍔",
+    "tags": [
+      "Restaurant",
+      "FastFood",
+      "Fish"
+    ]
+  },
+  {
+    "id": "mac-mcflurry-oreo",
+    "name": "マクドナルド マックフルーリー オレオ",
+    "nameEn": "McDonald's McFlurry Oreo",
+    "category": "FastFood",
+    "calories": 235,
+    "protein": 5.2,
+    "fat": 8.5,
+    "carbs": 34.5,
+    "fiber": 0.5,
+    "salt": 0.4,
+    "emoji": "🍦",
+    "tags": [
+      "Restaurant",
+      "FastFood",
+      "Sweet"
+    ]
+  },
+  {
+    "id": "saize-arosticini",
+    "name": "サイゼリヤ アロスティチーニ(ラムの串焼き)",
+    "nameEn": "Saizeriya Arrosticini",
+    "category": "Restaurant",
+    "calories": 224,
+    "protein": 18.5,
+    "fat": 16.5,
+    "carbs": 0.5,
+    "fiber": 0,
+    "salt": 1.2,
+    "emoji": "🍢",
+    "tags": [
+      "Restaurant",
+      "Meat",
+      "LowCarb"
+    ]
+  },
+  {
+    "id": "saize-spicy-chicken",
+    "name": "サイゼリヤ 辛味チキン",
+    "nameEn": "Saizeriya Spicy Chicken",
+    "category": "Restaurant",
+    "calories": 295,
+    "protein": 19.5,
+    "fat": 21.5,
+    "carbs": 4.5,
+    "fiber": 0.5,
+    "salt": 1.8,
+    "emoji": "🍗",
+    "tags": [
+      "Restaurant",
+      "Meat",
+      "LowCarb"
+    ]
+  },
+  {
+    "id": "sukiya-gyudon-nami",
+    "name": "すき家 牛丼(並盛)",
+    "nameEn": "Sukiya Beef Bowl (Regular)",
+    "category": "Restaurant",
+    "calories": 733,
+    "protein": 22.5,
+    "fat": 25.4,
+    "carbs": 104.2,
+    "fiber": 2.5,
+    "salt": 3.5,
+    "emoji": "🍚",
+    "tags": [
+      "Restaurant",
       "Carb",
+      "Meat"
+    ]
+  },
+  {
+    "id": "sukiya-cheese-gyudon",
+    "name": "すき家 とろ〜り3種のチーズ牛丼(並)",
+    "nameEn": "Sukiya 3-Cheese Beef Bowl",
+    "category": "Restaurant",
+    "calories": 911,
+    "protein": 35.8,
+    "fat": 42.5,
+    "carbs": 106.5,
+    "fiber": 2.5,
+    "salt": 4.5,
+    "emoji": "🍚",
+    "tags": [
+      "Restaurant",
+      "Carb",
+      "Meat",
       "HighCalorie"
     ]
   },
   {
-    "id": "conv-pasta-meat",
-    "name": "コンビニ ミートソースパスタ",
-    "nameEn": "Convenience Store Meat Pasta",
-    "category": "FastFood",
-    "calories": 650,
-    "protein": 22.5,
+    "id": "matsuya-gyumeshi-nami",
+    "name": "松屋 牛めし(並盛)",
+    "nameEn": "Matsuya Gyumeshi (Regular)",
+    "category": "Restaurant",
+    "calories": 692,
+    "protein": 19.5,
     "fat": 24.5,
-    "carbs": 85,
-    "fiber": 5.5,
-    "salt": 3.8,
-    "emoji": "🍝",
+    "carbs": 95.8,
+    "fiber": 2.1,
+    "salt": 3.2,
+    "emoji": "🍚",
+    "tags": [
+      "Restaurant",
+      "Carb",
+      "Meat"
+    ]
+  },
+  {
+    "id": "seven-pudding",
+    "name": "セブン きみだけのプリン",
+    "nameEn": "Seven-Eleven Pudding",
+    "category": "Snack",
+    "calories": 139,
+    "protein": 4.5,
+    "fat": 7.2,
+    "carbs": 14.5,
+    "fiber": 0,
+    "salt": 0.1,
+    "emoji": "🍮",
     "tags": [
       "Convenience",
-      "Carb"
+      "Snack",
+      "Sweet"
+    ]
+  },
+  {
+    "id": "seven-cafe-latte",
+    "name": "セブン カフェラテ(R)",
+    "nameEn": "Seven-Eleven Cafe Latte",
+    "category": "FastFood",
+    "calories": 92,
+    "protein": 4.5,
+    "fat": 4.8,
+    "carbs": 7.2,
+    "fiber": 0,
+    "salt": 0.2,
+    "emoji": "☕",
+    "tags": [
+      "Convenience",
+      "Drink"
+    ]
+  },
+  {
+    "id": "lawson-mochimochi-roll",
+    "name": "ローソン もち食感ロール",
+    "nameEn": "Lawson Mochi Roll",
+    "category": "Snack",
+    "calories": 585,
+    "protein": 7.5,
+    "fat": 34.5,
+    "carbs": 61.5,
+    "fiber": 0.5,
+    "salt": 0.8,
+    "emoji": "🍰",
+    "tags": [
+      "Convenience",
+      "Snack",
+      "Sweet",
+      "HighCalorie"
+    ]
+  },
+  {
+    "id": "lawson-egg-sandwich",
+    "name": "ローソン たまごサンド",
+    "nameEn": "Lawson Egg Sandwich",
+    "category": "FastFood",
+    "calories": 345,
+    "protein": 12.5,
+    "fat": 21.5,
+    "carbs": 24.5,
+    "fiber": 1.5,
+    "salt": 1.8,
+    "emoji": "🥪",
+    "tags": [
+      "Convenience",
+      "Carb",
+      "Egg"
+    ]
+  },
+  {
+    "id": "famima-frappe-cafe",
+    "name": "ファミマ カフェフラッペ",
+    "nameEn": "FamilyMart Cafe Frappe",
+    "category": "Snack",
+    "calories": 198,
+    "protein": 3.5,
+    "fat": 6.8,
+    "carbs": 32.5,
+    "fiber": 0.5,
+    "salt": 0.3,
+    "emoji": "🥤",
+    "tags": [
+      "Convenience",
+      "Drink",
+      "Sweet"
+    ]
+  },
+  {
+    "id": "famima-chou",
+    "name": "ファミマ クリームたっぷり！濃厚カスタードシュー",
+    "nameEn": "FamilyMart Custard Chou",
+    "category": "Snack",
+    "calories": 245,
+    "protein": 5.2,
+    "fat": 16.5,
+    "carbs": 18.5,
+    "fiber": 0.5,
+    "salt": 0.3,
+    "emoji": "🥧",
+    "tags": [
+      "Convenience",
+      "Snack",
+      "Sweet"
+    ]
+  },
+  {
+    "id": "ramen-jiro-regular",
+    "name": "ラーメン二郎 (並盛)",
+    "nameEn": "Ramen Jiro (Regular)",
+    "category": "Restaurant",
+    "calories": 1600,
+    "protein": 55,
+    "fat": 95,
+    "carbs": 140,
+    "fiber": 6,
+    "salt": 12.5,
+    "emoji": "🍜",
+    "tags": [
+      "Restaurant",
+      "Noodle",
+      "HighCalorie",
+      "HighFat",
+      "HighCarb"
+    ]
+  },
+  {
+    "id": "ramen-tenkaippin-kotteri",
+    "name": "天下一品 こってりラーメン(並)",
+    "nameEn": "Tenkaippin Kotteri Ramen",
+    "category": "Restaurant",
+    "calories": 949,
+    "protein": 32.5,
+    "fat": 58.2,
+    "carbs": 64.5,
+    "fiber": 3.2,
+    "salt": 6.8,
+    "emoji": "🍜",
+    "tags": [
+      "Restaurant",
+      "Noodle",
+      "HighFat"
+    ]
+  },
+  {
+    "id": "ramen-ichiran",
+    "name": "一蘭 天然とんこつラーメン",
+    "nameEn": "Ichiran Tonkotsu Ramen",
+    "category": "Restaurant",
+    "calories": 535,
+    "protein": 21.5,
+    "fat": 24.5,
+    "carbs": 55.5,
+    "fiber": 2.1,
+    "salt": 5.8,
+    "emoji": "🍜",
+    "tags": [
+      "Restaurant",
+      "Noodle"
+    ]
+  },
+  {
+    "id": "ramen-nakamoto",
+    "name": "蒙古タンメン中本 蒙古タンメン",
+    "nameEn": "Mouko Tanmen Nakamoto",
+    "category": "Restaurant",
+    "calories": 738,
+    "protein": 24.8,
+    "fat": 32.5,
+    "carbs": 78.5,
+    "fiber": 5.5,
+    "salt": 6.2,
+    "emoji": "🌶️",
+    "tags": [
+      "Restaurant",
+      "Noodle",
+      "Spicy"
+    ]
+  },
+  {
+    "id": "alc-asahi-superdry",
+    "name": "アサヒ スーパードライ(350ml)",
+    "nameEn": "Asahi Super Dry (350ml)",
+    "category": "Drink",
+    "calories": 147,
+    "protein": 1.1,
+    "fat": 0,
+    "carbs": 10.5,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "🍺",
+    "tags": [
+      "Drink",
+      "Alcohol",
+      "Beer"
+    ]
+  },
+  {
+    "id": "alc-strong-zero-lemon",
+    "name": "ストロングゼロ ダブルレモン(350ml)",
+    "nameEn": "Strong Zero Double Lemon (350ml)",
+    "category": "Drink",
+    "calories": 189,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 1.8,
+    "fiber": 0,
+    "salt": 0.2,
+    "emoji": "🍋",
+    "tags": [
+      "Drink",
+      "Alcohol",
+      "LowCarb"
+    ]
+  },
+  {
+    "id": "alc-kaku-highball",
+    "name": "サントリー 角ハイボール(350ml)",
+    "nameEn": "Suntory Kaku Highball (350ml)",
+    "category": "Drink",
+    "calories": 168,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 2.1,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "🥃",
+    "tags": [
+      "Drink",
+      "Alcohol",
+      "LowCarb"
+    ]
+  },
+  {
+    "id": "alc-lemon-dou",
+    "name": "こだわり酒場のレモンサワー(350ml)",
+    "nameEn": "Kodawari Sakaba Lemon Sour (350ml)",
+    "category": "Drink",
+    "calories": 147,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 2.5,
+    "fiber": 0,
+    "salt": 0.1,
+    "emoji": "🍋",
+    "tags": [
+      "Drink",
+      "Alcohol"
+    ]
+  },
+  {
+    "id": "alc-horoyoi-white",
+    "name": "ほろよい 白いサワー(350ml)",
+    "nameEn": "Horoyoi White Sour (350ml)",
+    "category": "Drink",
+    "calories": 203,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 32.2,
+    "fiber": 0,
+    "salt": 0.1,
+    "emoji": "🍹",
+    "tags": [
+      "Drink",
+      "Alcohol",
+      "Sweet",
+      "HighSugar"
     ]
   }
 ]
