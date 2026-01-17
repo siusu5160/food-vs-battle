@@ -142,10 +142,10 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
             </div>
 
             {/* Fighters */}
-            <div className="grid grid-cols-2 gap-2 md:gap-4">
+            <div className="grid grid-cols-2 gap-2 md:gap-4 relative mt-4">
                 <FighterCard food={foodA} isWinner={result.winner === 'A'} result={result} side="A" t={t} />
-                <div className="absolute left-1/2 top-32 -translate-x-1/2 -translate-y-1/2 z-10 text-sm font-bold bg-black/50 px-2 rounded-full border border-white/20">
-                    VS
+                <div className="absolute left-1/2 top-16 -translate-x-1/2 -translate-y-1/2 z-20 text-3xl font-black italic text-white drop-shadow-[0_0_10px_rgba(0,0,0,0.8)] pointer-events-none">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#d4af37] to-amber-700">VS</span>
                 </div>
                 <FighterCard food={foodB} isWinner={result.winner === 'B'} result={result} side="B" t={t} />
             </div>
@@ -271,39 +271,42 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
 
 const FighterCard = ({ food, isWinner, result, side, t }: { food: FoodItem, isWinner: boolean, result: BattleResult, side: 'A' | 'B', t: (ja: string, en: string) => string }) => {
     const isLoser = !isWinner && result.winner !== 'Draw';
-    const borderColor = isWinner ? 'border-[#d4af37]' : 'border-[#333]';
-    const shadowClass = isWinner ? 'shadow-[0_0_30px_rgba(212,175,55,0.2)]' : '';
+    const borderClass = isWinner ? 'border-2 border-[#d4af37]' : isLoser ? 'border border-gray-800' : 'border-2 border-gray-600';
+    const shadowClass = isWinner ? 'shadow-[0_0_50px_rgba(212,175,55,0.4)] scale-[1.02] z-10' : isLoser ? 'opacity-50 grayscale-[0.5] scale-95' : '';
+    const bgClass = isWinner ? 'bg-gradient-to-b from-gray-800 to-[#1a1500]' : 'bg-gray-900';
 
     return (
         <motion.div
-            className={`relative bg-gray-800 rounded-2xl border-2 ${borderColor} ${shadowClass} flex flex-col h-full`}
+            className={`relative rounded-2xl ${borderClass} ${shadowClass} ${bgClass} flex flex-col h-full transition-all duration-500`}
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: isLoser ? 0.6 : 1, scale: 1 }}
+            animate={{ opacity: 1, scale: isWinner ? 1.02 : isLoser ? 0.95 : 1 }}
         >
             {/* Header with Emoji */}
             <div className="h-32 bg-gray-700/50 flex items-center justify-center relative rounded-t-xl overflow-hidden shrink-0">
                 <span className="text-5xl drop-shadow-2xl filter">{food.emoji}</span>
 
-                {/* WIN/LOSE Badge - Always show for non-draw results */}
+                {/* WIN/LOSE Badge with stronger visibility */}
                 {result.winner !== 'Draw' && (
-                    <div className="absolute top-2 right-2 z-20">
+                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20 pointer-events-none">
                         {isWinner ? (
-                            <div className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-4 py-2 rounded-lg shadow-xl animate-pulse">
-                                🏆 WIN
+                            <div className="bg-gradient-to-r from-[#d4af37] via-yellow-400 to-[#d4af37] text-black font-black text-2xl tracking-widest px-6 py-2 transform -rotate-12 shadow-[0_0_20px_rgba(0,0,0,0.5)] border-4 border-white">
+                                WINNER!
                             </div>
                         ) : (
-                            <div className="bg-gray-700/90 text-gray-300 font-bold px-4 py-2 rounded-lg shadow-lg">
+                            <div className="bg-black/80 text-gray-500 font-bold text-xl px-4 py-1 transform rotate-12 border-2 border-gray-700">
                                 LOSE
                             </div>
                         )}
                     </div>
                 )}
 
-                <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-gray-900 to-transparent opacity-80" />
-                <div className="absolute bottom-2 right-3 text-white font-black text-2xl drop-shadow-md">
+                {/* Image Overlay for readability */}
+                <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-black via-black/50 to-transparent" />
+
+                <div className="absolute bottom-2 right-3 text-white font-black text-2xl drop-shadow-md z-10">
                     {food.calories}<span className="text-sm font-normal text-gray-300 ml-1">kcal</span>
                 </div>
-                <div className="absolute bottom-2 left-2 text-[10px] text-gray-400 bg-black/50 px-1 rounded backdrop-blur-sm">
+                <div className="absolute bottom-2 left-2 text-[10px] text-gray-300 bg-black/60 px-1.5 py-0.5 rounded backdrop-blur-md z-10">
                     /100g
                 </div>
             </div>
