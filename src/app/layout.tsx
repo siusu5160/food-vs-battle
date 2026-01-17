@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -66,15 +67,20 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-gray-950 text-gray-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-[#0a0a0a] text-[#e0e0e0] font-serif selection:bg-[#d4af37] selection:text-black overflow-x-hidden`}
       >
+        {/* Global Background Texture */}
+        <div className="fixed inset-0 z-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+
         <LanguageProvider>
           {/* Global Language Switcher - Fixed Top Right (Max Z-Index) */}
           <div className="fixed top-4 right-4 z-[9999]">
             <LanguageSwitcher />
           </div>
 
-          <main className="flex-grow">
+          <Header />
+
+          <main className="flex-grow pt-20 relative z-10 w-full overflow-hidden">
             {children}
           </main>
           <Footer />

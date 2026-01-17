@@ -93,29 +93,9 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#e0e0e0] font-serif selection:bg-[#d4af37] selection:text-black">
-      {/* Background Texture */}
-      <div className="fixed inset-0 z-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
+    <div className="">
 
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#333]">
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#d4af37] to-[#b4941f] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.4)]">
-              <span className="text-xl">⚔️</span>
-            </div>
-            <h1 className="text-2xl font-bold tracking-widest text-[#d4af37] font-serif">
-              FOOD VS BATTLE
-            </h1>
-          </div>
-          <div className="flex items-center gap-6">
-
-            {/* Language Switcher Removed as per 'Basic Japanese' request */}
-          </div>
-        </div>
-      </header>
-
-      <main className="relative z-10 pt-24 pb-10 container mx-auto px-4">
+      <div className="container mx-auto px-4 pt-4">
 
         {/* Hero Section */}
         <section className="text-center mb-6 relative">
@@ -164,8 +144,8 @@ export default function Home() {
               <button
                 onClick={() => setBattleMode('all')}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${battleMode === 'all'
-                    ? 'bg-[#d4af37] text-black shadow-[0_0_10px_rgba(212,175,55,0.4)]'
-                    : 'text-gray-500 hover:text-gray-300'
+                  ? 'bg-[#d4af37] text-black shadow-[0_0_10px_rgba(212,175,55,0.4)]'
+                  : 'text-gray-500 hover:text-gray-300'
                   }`}
               >
                 {t('すべて', 'All')}
@@ -173,8 +153,8 @@ export default function Home() {
               <button
                 onClick={() => setBattleMode('ingredient')}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1 ${battleMode === 'ingredient'
-                    ? 'bg-green-600 text-white shadow-[0_0_10px_rgba(22,163,74,0.4)]'
-                    : 'text-gray-500 hover:text-gray-300'
+                  ? 'bg-green-600 text-white shadow-[0_0_10px_rgba(22,163,74,0.4)]'
+                  : 'text-gray-500 hover:text-gray-300'
                   }`}
               >
                 <span>🥬</span>{t('食材のみ', 'Ingredients')}
@@ -182,8 +162,8 @@ export default function Home() {
               <button
                 onClick={() => setBattleMode('prepared')}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1 ${battleMode === 'prepared'
-                    ? 'bg-orange-600 text-white shadow-[0_0_10px_rgba(234,88,12,0.4)]'
-                    : 'text-gray-500 hover:text-gray-300'
+                  ? 'bg-orange-600 text-white shadow-[0_0_10px_rgba(234,88,12,0.4)]'
+                  : 'text-gray-500 hover:text-gray-300'
                   }`}
               >
                 <span>🍔</span>{t('料理のみ', 'Dishes')}
@@ -345,9 +325,11 @@ export default function Home() {
           </button>
         </section>
 
-      </main>
+      </section>
 
-      {/* Modals */}
+    </div>
+
+      {/* Modals */ }
       <FoodSelectorModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -375,6 +357,6 @@ export default function Home() {
         isOpen={isConfessionOpen}
         onClose={() => setIsConfessionOpen(false)}
       />
-    </div>
+    </div >
   );
 }

@@ -129,7 +129,7 @@ export default async function BattlePage({ params }: { params: Promise<{ idA: st
         };
 
         return (
-            <main className="min-h-screen bg-gray-900 pb-20">
+            <div className="pb-20 pt-4">
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -139,7 +139,7 @@ export default async function BattlePage({ params }: { params: Promise<{ idA: st
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
                 />
                 <BattleClient foodA={foodA} foodB={foodB} />
-            </main>
+            </div>
         );
     } catch (error) {
         console.error('Battle Page Error:', error);
