@@ -2618,42 +2618,6 @@
     ]
   },
   {
-    "id": "marugame-kake-udon",
-    "name": "かけうどん(並)",
-    "nameEn": "Marugame Kake Udon (Regular)",
-    "category": "Restaurant",
-    "calories": 302,
-    "protein": 8.1,
-    "fat": 1.2,
-    "carbs": 62.8,
-    "fiber": 2.3,
-    "salt": 4.8,
-    "emoji": "🍜",
-    "tags": [
-      "Restaurant",
-      "Carb",
-      "LowFat"
-    ]
-  },
-  {
-    "id": "marugame-kamaage-udon",
-    "name": "釜揚げうどん(並)",
-    "nameEn": "Marugame Kamaage Udon (Regular)",
-    "category": "Restaurant",
-    "calories": 328,
-    "protein": 8.9,
-    "fat": 1.5,
-    "carbs": 67.2,
-    "fiber": 2.5,
-    "salt": 3.2,
-    "emoji": "🍜",
-    "tags": [
-      "Restaurant",
-      "Carb",
-      "LowFat"
-    ]
-  },
-  {
     "id": "marugame-tempura-udon",
     "name": "天ぷらうどん(並)",
     "nameEn": "Marugame Tempura Udon (Regular)",
@@ -2685,39 +2649,6 @@
     "tags": [
       "Restaurant",
       "Meat"
-    ]
-  },
-  {
-    "id": "mac-teriyaki-burger",
-    "name": "てりやきマックバーガー",
-    "nameEn": "McDonald's Teriyaki McBurger",
-    "category": "FastFood",
-    "calories": 478,
-    "protein": 15.8,
-    "fat": 30.9,
-    "carbs": 33.4,
-    "fiber": 2.1,
-    "salt": 2.1,
-    "emoji": "🍔",
-    "tags": [
-      "FastFood"
-    ]
-  },
-  {
-    "id": "mac-chicken-nuggets-5",
-    "name": "チキンマックナゲット(5ピース)",
-    "nameEn": "McDonald's Chicken McNuggets (5pc)",
-    "category": "FastFood",
-    "calories": 270,
-    "protein": 15.8,
-    "fat": 17.2,
-    "carbs": 13.3,
-    "fiber": 0.9,
-    "salt": 1.3,
-    "emoji": "🍗",
-    "tags": [
-      "FastFood",
-      "HighProtein"
     ]
   },
   {
