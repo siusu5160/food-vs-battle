@@ -147,44 +147,44 @@ export default function PopularBattles() {
 
     return (
         <section className="mb-16">
-            <div className="flex items-center justify-between mb-6">
-                <h2 className="text-3xl font-black text-white">
+            <div className="flex items-center justify-between mb-4">
+                <h2 className="text-2xl font-black text-white">
                     🔥 {t('人気バトル', 'Popular Battles')}
                 </h2>
                 <Link
                     href="/ranking"
-                    className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors"
+                    className="text-emerald-400 hover:text-emerald-300 text-sm font-bold transition-colors"
                 >
                     {t('ランキングを見る', 'View Ranking')} →
                 </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {popularBattles.map((battle, index) => (
                     <Link
                         key={index}
                         href={`/battle/${battle.id1}/${battle.id2}`}
-                        className="group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-900/20 relative overflow-hidden"
+                        className="group bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 rounded-xl p-3 border border-gray-700 hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-900/20 relative overflow-hidden"
                     >
-                        <div className="absolute top-2 right-2 text-xs text-gray-500 font-mono border border-gray-700 px-2 py-0.5 rounded-full">
+                        <div className="absolute top-1.5 right-1.5 text-[10px] text-gray-500 font-mono border border-gray-700 px-1.5 py-0.5 rounded-full">
                             {t(battle.category, battle.categoryEn)}
                         </div>
-                        <div className="flex items-center justify-between mb-0 mt-2">
-                            <div className="flex items-center gap-3">
-                                <span className="text-4xl">{battle.emoji1}</span>
+                        <div className="flex items-center justify-between mt-1">
+                            <div className="flex items-center gap-2">
+                                <span className="text-3xl">{battle.emoji1}</span>
                                 <div>
-                                    <div className="font-bold text-lg text-white group-hover:text-emerald-400 transition-colors">
+                                    <div className="font-bold text-sm text-white group-hover:text-emerald-400 transition-colors">
                                         {t(battle.name1, battle.name1En)}
                                     </div>
                                 </div>
                             </div>
-                            <div className="text-xl font-black text-gray-600 italic px-2">VS</div>
-                            <div className="flex items-center gap-3 justify-end">
+                            <div className="text-lg font-black text-gray-600 italic px-1">VS</div>
+                            <div className="flex items-center gap-2 justify-end">
                                 <div className="text-right">
-                                    <div className="font-bold text-lg text-white group-hover:text-emerald-400 transition-colors">
+                                    <div className="font-bold text-sm text-white group-hover:text-emerald-400 transition-colors">
                                         {t(battle.name2, battle.name2En)}
                                     </div>
                                 </div>
-                                <span className="text-4xl">{battle.emoji2}</span>
+                                <span className="text-3xl">{battle.emoji2}</span>
                             </div>
                         </div>
                     </Link>
