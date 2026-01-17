@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { getAllFoods } from '@/lib/search';
 import { FoodSelectorModal } from '@/components/FoodSelectorModal';
 import { MenuGacha } from '@/components/MenuGacha';
@@ -223,20 +224,24 @@ export default function Home() {
         {/* Features Links */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 max-w-7xl mx-auto">
           {/* Ranking */}
-          <div className="group bg-[#111] border border-[#333] p-8 hover:border-[#d4af37] transition-colors relative overflow-hidden">
+          {/* Ranking */}
+          <div
+            onClick={() => router.push('/ranking')}
+            className="group bg-[#111] border border-[#333] p-8 hover:border-[#d4af37] transition-colors relative overflow-hidden cursor-pointer"
+          >
             <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:scale-110 transition-transform">🏆</div>
             <h3 className="text-xl font-bold text-white mb-2">{t('ランキング', 'Ranking')}</h3>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
               {t('低カロリー、高タンパク、塩分控えめ...。', 'Low calorie, high protein, low salt...')} <br />
               {t('全食品の頂点を確認しよう。', 'See the best foods in every category.')}
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2" onClick={(e) => e.stopPropagation()}>
               {['low-calorie', 'high-protein', 'low-carb'].map(type => (
-                <a href={`/ranking?type=${type}`} key={type} className="text-xs border border-[#333] px-2 py-1 text-gray-500 hover:text-[#d4af37] hover:border-[#d4af37] transition-colors">
+                <Link href={`/ranking?type=${type}`} key={type} className="text-xs border border-[#333] px-2 py-1 text-gray-500 hover:text-[#d4af37] hover:border-[#d4af37] transition-colors">
                   {type === 'low-calorie' && t('#低カロリー', '#LowCalorie')}
                   {type === 'high-protein' && t('#高タンパク', '#HighProtein')}
                   {type === 'low-carb' && t('#低糖質', '#LowCarb')}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -308,6 +313,21 @@ export default function Home() {
         }}
         foods={foods}
         opponentFood={activeSide === 'A' ? selectedB : selectedA}
+      />
+
+      <MenuGacha
+        isOpen={isGachaOpen}
+        onClose={() => setIsGachaOpen(false)}
+      />
+
+      <FoodPersonalityDiagnosis
+        isOpen={isDiagnosisOpen}
+        onClose={() => setIsDiagnosisOpen(false)}
+      />
+
+      <CalorieConfession
+        isOpen={isConfessionOpen}
+        onClose={() => setIsConfessionOpen(false)}
       />
     </div>
   );

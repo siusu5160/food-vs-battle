@@ -13,6 +13,9 @@ export default function ColumnsPage() {
     return (
         <div className="min-h-screen bg-gray-950 pt-24 pb-20 px-4">
             <div className="max-w-4xl mx-auto">
+                <Link href="/" className="inline-block mb-8 text-gray-400 hover:text-white transition-colors">
+                    ← {t('トップに戻る', 'Back to Top')}
+                </Link>
                 <div className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
                         📰 {t('フードコラム', 'Food Columns')}

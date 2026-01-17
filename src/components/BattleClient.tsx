@@ -150,6 +150,56 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                 <FighterCard food={foodB} isWinner={result.winner === 'B'} result={result} side="B" t={t} />
             </div>
 
+            {/* Random Match Button (Moved here) */}
+            <div className="flex justify-center mb-6">
+                <button
+                    onClick={() => {
+                        try {
+                            // Use imported getAllFoods function
+                            const allFoods = getAllFoods();
+
+                            if (!allFoods || allFoods.length < 2) {
+                                console.error('Not enough foods available');
+                                router.push('/');
+                                return;
+                            }
+
+                            let newA = allFoods[Math.floor(Math.random() * allFoods.length)];
+                            let newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                            let retries = 0;
+
+                            // Ensure different foods
+                            while ((!newA?.id || !newB?.id || newA.id === newB.id) && retries < 10) {
+                                newA = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                newB = allFoods[Math.floor(Math.random() * allFoods.length)];
+                                retries++;
+                            }
+
+                            // Final validation
+                            if (newA?.id && newB?.id && newA.id !== newB.id) {
+                                console.log('Random match:', { a: newA.id, b: newB.id });
+                                // Use replace instead of push to avoid history buildup
+                                router.replace(`/battle/${encodeURIComponent(newA.id)}/${encodeURIComponent(newB.id)}`);
+                            } else {
+                                console.error('Failed to generate valid random match');
+                                router.push('/');
+                            }
+                        } catch (error) {
+                            console.error('Random Match Error:', error);
+                            router.push('/');
+                        }
+                    }}
+                    className="group bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-emerald-500/50 transition-all transform hover:scale-105 text-sm md:text-base"
+                >
+                    <span className="flex items-center gap-2">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                        {t('もう一度ランダムマッチ', 'Random Match Again')}
+                    </span>
+                </button>
+            </div>
+
             {/* Comparison Graph */}
             <div className="bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
                 <h3 className="text-center text-gray-400 text-sm font-bold mb-4">{t('成分バランス比較 (相対比)', 'Nutrient Balance (Relative)')}</h3>
@@ -215,55 +265,7 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
                 battleText={`${foodA.emoji}${foodA.name} VS ${foodB.emoji}${foodB.name} の対決結果！\n勝者は...【${result.winner === 'A' ? foodA.name : result.winner === 'B' ? foodB.name : '引き分け'}】${result.winner === 'A' ? foodA.emoji : result.winner === 'B' ? foodB.emoji : '🤝'}🏆\n\n#FOODVS #カロリー対決 #栄養比較`}
             />
 
-            {/* Random Match Button */}
-            <div className="mt-8 flex justify-center">
-                <button
-                    onClick={() => {
-                        try {
-                            // Use imported getAllFoods function
-                            const allFoods = getAllFoods();
 
-                            if (!allFoods || allFoods.length < 2) {
-                                console.error('Not enough foods available');
-                                router.push('/');
-                                return;
-                            }
-
-                            let newA = allFoods[Math.floor(Math.random() * allFoods.length)];
-                            let newB = allFoods[Math.floor(Math.random() * allFoods.length)];
-                            let retries = 0;
-
-                            // Ensure different foods
-                            while ((!newA?.id || !newB?.id || newA.id === newB.id) && retries < 10) {
-                                newA = allFoods[Math.floor(Math.random() * allFoods.length)];
-                                newB = allFoods[Math.floor(Math.random() * allFoods.length)];
-                                retries++;
-                            }
-
-                            // Final validation
-                            if (newA?.id && newB?.id && newA.id !== newB.id) {
-                                console.log('Random match:', { a: newA.id, b: newB.id });
-                                // Use replace instead of push to avoid history buildup
-                                router.replace(`/battle/${encodeURIComponent(newA.id)}/${encodeURIComponent(newB.id)}`);
-                            } else {
-                                console.error('Failed to generate valid random match');
-                                router.push('/');
-                            }
-                        } catch (error) {
-                            console.error('Random Match Error:', error);
-                            router.push('/');
-                        }
-                    }}
-                    className="group bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-emerald-500/50 transition-all transform hover:scale-105"
-                >
-                    <span className="flex items-center gap-2">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                        {t('もう一度ランダムマッチ', 'Random Match Again')}
-                    </span>
-                </button>
-            </div>
 
             <div className="h-12" />
         </div>
