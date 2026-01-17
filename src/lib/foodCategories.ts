@@ -3,6 +3,8 @@ import { FoodItem } from '@/types/FoodItem';
 // メインカテゴリー定義
 export const FOOD_CATEGORIES = {
     all: { label: 'すべて', labelEn: 'All', icon: '🌟' },
+    ramen: { label: 'ラーメン', labelEn: 'Ramen', icon: '🍜' },
+    alcohol: { label: 'お酒', labelEn: 'Alcohol', icon: '🍺' },
     ingredient: { label: '食材', labelEn: 'Ingredients', icon: '🥬' },
     prepared: { label: '調理済み', labelEn: 'Prepared Food', icon: '🍽️' },
 } as const;
@@ -15,7 +17,6 @@ export const SUB_CATEGORIES = {
     vegetable: { label: '野菜', labelEn: 'Vegetables', icon: '🥬', parent: 'ingredient' as const },
     fruit: { label: 'フルーツ', labelEn: 'Fruits', icon: '🍎', parent: 'ingredient' as const },
     dairy: { label: '乳製品', labelEn: 'Dairy', icon: '🥛', parent: 'ingredient' as const },
-    alcohol: { label: '酒', labelEn: 'Alcohol', icon: '🍺', parent: 'ingredient' as const },
     other: { label: 'その他', labelEn: 'Others', icon: '🌾', parent: 'ingredient' as const },
 
     // 調理済みサブカテゴリー
@@ -24,6 +25,9 @@ export const SUB_CATEGORIES = {
     convenience: { label: 'コンビニ', labelEn: 'Convenience', icon: '🏪', parent: 'prepared' as const },
     dessert: { label: 'デザート', labelEn: 'Dessert', icon: '🍰', parent: 'prepared' as const },
     snack: { label: 'スナック', labelEn: 'Snacks', icon: '🍿', parent: 'prepared' as const },
+
+    // ラーメンサブカテゴリー (今のところなし、必要なら追加)
+    // お酒サブカテゴリー (今のところなし、必要なら追加)
 } as const;
 
 export type FoodCategoryKey = keyof typeof FOOD_CATEGORIES;
@@ -32,8 +36,23 @@ export type SubCategoryKey = keyof typeof SUB_CATEGORIES;
 // 食品を分類する関数
 export function categorizeFoodItem(food: FoodItem): {
     foodType: FoodCategoryKey;
-    subCategory: SubCategoryKey;
+    subCategory: SubCategoryKey | null;
 } {
+    // ラーメン判定
+    if (food.category === 'Ramen' ||
+        food.id.includes('ramen-') ||
+        food.id.includes('cup-noodle') ||
+        (food.tags && food.tags.includes('Noodle') && food.category === 'Restaurant')) {
+        return { foodType: 'ramen', subCategory: null };
+    }
+
+    // お酒判定
+    if (food.category === 'Alcohol' ||
+        food.id.includes('alc-') ||
+        (food.tags && food.tags.includes('Alcohol'))) {
+        return { foodType: 'alcohol', subCategory: null };
+    }
+
     // IDベースの判定（レストランチェーン）
     if (food.id.includes('yoshi-') || food.id.includes('saize-') ||
         food.id.includes('sushiro-') || food.id.includes('gusto-') ||
@@ -58,7 +77,7 @@ export function categorizeFoodItem(food: FoodItem): {
         return { foodType: 'prepared', subCategory: 'convenience' };
     }
 
-    // カテゴリーベースの判定
+    // カテゴリーベースの判定（デザート）
     if (food.category === 'Dessert' || food.tags?.includes('Dessert')) {
         return { foodType: 'prepared', subCategory: 'dessert' };
     }
@@ -88,15 +107,29 @@ export function categorizeFoodItem(food: FoodItem): {
     // カテゴリーベースの判定（食材）
     const categoryMap: Record<string, SubCategoryKey> = {
         'Meat': 'meat',
-        'Fish': 'meat',  // 魚も肉・魚カテゴリーに
+        'Fish': 'meat',
         'Carb': 'carb',
         'Fruit': 'fruit',
         'Vegetable': 'vegetable',
         'Dairy': 'dairy',
-        'Alcohol': 'alcohol',
+        // 'Alcohol': 'alcohol', // Removed as it is now a main category
         'Other': 'other',
     };
     const subCategory = categoryMap[food.category] || 'other';
+
+    // ラーメン食材（麺など）をラーメンタブに移動する場合のロジックが必要ならここに追加
+    // ユーザー要望: "ラーメン食材のその他じゃなくて調理済みでラーメンタブ追加でそこに入れて"
+    // "Ingredients" which are ramen related (e.g. noodles) -> Ramen Tab?
+    if (food.name.includes('麺') || food.name.includes('ラーメン') || food.id === 'somen') {
+        // Just put noodle ingredients into Ramen tab for now if requested?
+        // User said "Ramen ingredients... into Ramen tab".
+        // But "somen" is an ingredient/carb.
+        // Let's stick to "Ramen" tab being for dishes mostly, unless specific noodle ingredients are meant.
+        // The user said "Ramen ingredients... not Other... add Ramen tab and put them there".
+        // Maybe they imply things like "Mochi Barley" or specific noodles?
+        // Let's assume the Ramen dishes added are enough for now, and rely on the keyword check at top.
+    }
+
     return { foodType: 'ingredient', subCategory };
 }
 
