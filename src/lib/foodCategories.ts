@@ -3,7 +3,6 @@ import { FoodItem } from '@/types/FoodItem';
 // メインカテゴリー定義
 export const FOOD_CATEGORIES = {
     all: { label: 'すべて', labelEn: 'All', icon: '🌟' },
-    ramen: { label: 'ラーメン', labelEn: 'Ramen', icon: '🍜' },
     alcohol: { label: 'お酒', labelEn: 'Alcohol', icon: '🍺' },
     ingredient: { label: '食材', labelEn: 'Ingredients', icon: '🥬' },
     prepared: { label: '調理済み', labelEn: 'Prepared Food', icon: '🍽️' },
@@ -20,14 +19,12 @@ export const SUB_CATEGORIES = {
     other: { label: 'その他', labelEn: 'Others', icon: '🌾', parent: 'ingredient' as const },
 
     // 調理済みサブカテゴリー
+    ramen: { label: 'ラーメン', labelEn: 'Ramen', icon: '🍜', parent: 'prepared' as const },
     fastfood: { label: 'ファストフード', labelEn: 'Fast Food', icon: '🍔', parent: 'prepared' as const },
     restaurant: { label: 'レストラン', labelEn: 'Restaurant', icon: '🍽️', parent: 'prepared' as const },
     convenience: { label: 'コンビニ', labelEn: 'Convenience', icon: '🏪', parent: 'prepared' as const },
     dessert: { label: 'デザート', labelEn: 'Dessert', icon: '🍰', parent: 'prepared' as const },
     snack: { label: 'スナック', labelEn: 'Snacks', icon: '🍿', parent: 'prepared' as const },
-
-    // ラーメンサブカテゴリー (今のところなし、必要なら追加)
-    // お酒サブカテゴリー (今のところなし、必要なら追加)
 } as const;
 
 export type FoodCategoryKey = keyof typeof FOOD_CATEGORIES;
@@ -43,7 +40,7 @@ export function categorizeFoodItem(food: FoodItem): {
         food.id.includes('ramen-') ||
         food.id.includes('cup-noodle') ||
         (food.tags && food.tags.includes('Noodle') && food.category === 'Restaurant')) {
-        return { foodType: 'ramen', subCategory: null };
+        return { foodType: 'prepared', subCategory: 'ramen' };
     }
 
     // お酒判定
@@ -64,7 +61,8 @@ export function categorizeFoodItem(food: FoodItem): {
 
     // IDベースの判定（ファストフード）
     if (food.id.includes('mac-') || food.id.includes('mos-') ||
-        food.id.includes('kfc-') || food.id.includes('subway-')) {
+        food.id.includes('kfc-') || food.id.includes('subway-') ||
+        food.id.includes('lotteria-') || food.id.includes('burgerking-')) {
         return { foodType: 'prepared', subCategory: 'fastfood' };
     }
 
@@ -116,19 +114,6 @@ export function categorizeFoodItem(food: FoodItem): {
         'Other': 'other',
     };
     const subCategory = categoryMap[food.category] || 'other';
-
-    // ラーメン食材（麺など）をラーメンタブに移動する場合のロジックが必要ならここに追加
-    // ユーザー要望: "ラーメン食材のその他じゃなくて調理済みでラーメンタブ追加でそこに入れて"
-    // "Ingredients" which are ramen related (e.g. noodles) -> Ramen Tab?
-    if (food.name.includes('麺') || food.name.includes('ラーメン') || food.id === 'somen') {
-        // Just put noodle ingredients into Ramen tab for now if requested?
-        // User said "Ramen ingredients... into Ramen tab".
-        // But "somen" is an ingredient/carb.
-        // Let's stick to "Ramen" tab being for dishes mostly, unless specific noodle ingredients are meant.
-        // The user said "Ramen ingredients... not Other... add Ramen tab and put them there".
-        // Maybe they imply things like "Mochi Barley" or specific noodles?
-        // Let's assume the Ramen dishes added are enough for now, and rely on the keyword check at top.
-    }
 
     return { foodType: 'ingredient', subCategory };
 }
