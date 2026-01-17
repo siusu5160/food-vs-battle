@@ -325,11 +325,9 @@ export default function Home() {
           </button>
         </section>
 
-      </section>
+      </div>
 
-    </div>
-
-      {/* Modals */ }
+      {/* Modals */}
       <FoodSelectorModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
