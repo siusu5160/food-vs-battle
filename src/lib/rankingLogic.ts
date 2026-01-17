@@ -63,6 +63,6 @@ export function getRanking(type: RankingType, limit: number = 20, t: (ja: string
         type,
         title,
         description,
-        items: sorted.slice(0, limit),
+        items: sortedFoods.slice(0, limit),
     };
 }
