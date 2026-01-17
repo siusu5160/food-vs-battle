@@ -92,7 +92,21 @@ export function judgeBattle(foodA: FoodItem, foodB: FoodItem): BattleResult {
 
     let winner: Winner = 'Draw';
     if (scoreA > scoreB) winner = 'A';
-    if (scoreB > scoreA) winner = 'B';
+    else if (scoreB > scoreA) winner = 'B';
+    else {
+        // Tie-breaker: Favor Diet (Low Calories) if scores are tied
+        // This aligns with user expectation for "Calorie Battle"
+        if (Math.abs(calDiff) > calorieThreshold) {
+            winner = calDiff < 0 ? 'A' : 'B';
+            // Add a tie-breaker judgment note
+            judgments.push({
+                badge: "⚖️ 判定",
+                title: "延長戦: カロリー判定",
+                content: "総合ポイントは互角でしたが、ダイエット対決の趣旨に則り、より低カロリーな方を勝者としました。",
+                reason: "【判定の根拠】スコア同点のため、サイトのテーマである「カロリー」を優先して決定しました。"
+            });
+        }
+    }
 
     if (judgments.length === 0) {
         judgments.push({
