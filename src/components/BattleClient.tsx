@@ -285,20 +285,22 @@ const FighterCard = ({ food, isWinner, result, side, t }: { food: FoodItem, isWi
             <div className="h-32 bg-gray-700/50 flex items-center justify-center relative rounded-t-xl overflow-hidden shrink-0">
                 <span className="text-5xl drop-shadow-2xl filter">{food.emoji}</span>
 
-                {/* WIN/LOSE Badge with stronger visibility */}
-                {result.winner !== 'Draw' && (
-                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20 pointer-events-none">
-                        {isWinner ? (
-                            <div className="bg-gradient-to-r from-[#d4af37] via-yellow-400 to-[#d4af37] text-black font-black text-2xl tracking-widest px-6 py-2 transform -rotate-12 shadow-[0_0_20px_rgba(0,0,0,0.5)] border-4 border-white">
-                                WINNER!
-                            </div>
-                        ) : (
-                            <div className="bg-black/80 text-gray-500 font-bold text-xl px-4 py-1 transform rotate-12 border-2 border-gray-700">
-                                LOSE
-                            </div>
-                        )}
-                    </div>
-                )}
+                {/* WIN/LOSE/DRAW Badge */}
+                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20 pointer-events-none">
+                    {result.winner === 'Draw' ? (
+                        <div className="bg-gray-600/90 text-white font-black text-xl px-6 py-2 border-2 border-gray-400 transform -rotate-6">
+                            DRAW
+                        </div>
+                    ) : isWinner ? (
+                        <div className="bg-gradient-to-r from-[#d4af37] via-yellow-400 to-[#d4af37] text-black font-black text-2xl tracking-widest px-6 py-2 transform -rotate-12 shadow-[0_0_20px_rgba(0,0,0,0.5)] border-4 border-white">
+                            WINNER!
+                        </div>
+                    ) : (
+                        <div className="bg-black/80 text-gray-500 font-bold text-xl px-4 py-1 transform rotate-12 border-2 border-gray-700">
+                            LOSE
+                        </div>
+                    )}
+                </div>
 
                 {/* Image Overlay for readability */}
                 <div className="absolute bottom-0 inset-x-0 h-2/3 bg-gradient-to-t from-black via-black/50 to-transparent" />
