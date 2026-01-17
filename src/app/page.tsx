@@ -101,19 +101,19 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
+      <main className="relative z-10 pt-24 pb-10 container mx-auto px-4">
 
         {/* Hero Section */}
-        <section className="text-center mb-24 relative">
+        <section className="text-center mb-6 relative">
           {/* Decorative lines */}
           <div className="absolute top-1/2 left-0 w-1/4 h-[1px] bg-gradient-to-r from-transparent to-[#333]"></div>
           <div className="absolute top-1/2 right-0 w-1/4 h-[1px] bg-gradient-to-l from-transparent to-[#333]"></div>
 
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight leading-tight">
-            <span className="block text-[#d4af37] text-2xl md:text-3xl mb-4 tracking-[0.2em] font-light">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white tracking-tight leading-tight">
+            <span className="block text-[#d4af37] text-xl md:text-2xl mb-2 tracking-[0.2em] font-light">
               {t('究極の美食対決', 'The Ultimate Food Battle')}
             </span>
-            Choose Your<br />Champion
+            Choose Your Champion
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
             {t('カロリー、栄養素、塩分...。', 'Calories, Nutrients, Salt...')}<br />
@@ -122,21 +122,21 @@ export default function Home() {
           </p>
 
           {/* サイトの特徴 */}
-          <div className="max-w-4xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
-              <div className="text-2xl mb-2">⚔️</div>
-              <h3 className="text-sm font-bold text-[#d4af37] mb-1">{t('栄養素バトル', 'Nutrient Battle')}</h3>
-              <p className="text-xs text-gray-500">{t('2つの食品を比較して栄養素の違いを視覚化', 'Visualize nutrient differences between two foods')}</p>
+          <div className="max-w-4xl mx-auto mb-8 grid grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="bg-[#111]/50 border border-[#333] p-2 rounded-lg">
+              <div className="text-xl mb-1">⚔️</div>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-0.5">{t('栄養素バトル', 'Nutrient Battle')}</h3>
+              <p className="text-[10px] text-gray-500">{t('2つの食品を比較して栄養素の違いを視覚化', 'Visualize nutrient differences between two foods')}</p>
             </div>
-            <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
-              <div className="text-2xl mb-2">🏆</div>
-              <h3 className="text-sm font-bold text-[#d4af37] mb-1">{t('ランキング', 'Ranking')}</h3>
-              <p className="text-xs text-gray-500">{t('カロリー・タンパク質・ダイエット向けで格付け', 'Rankings by calories, protein, and diet suitability')}</p>
+            <div className="bg-[#111]/50 border border-[#333] p-2 rounded-lg">
+              <div className="text-xl mb-1">🏆</div>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-0.5">{t('ランキング', 'Ranking')}</h3>
+              <p className="text-[10px] text-gray-500">{t('カロリー・タンパク質・ダイエット向けで格付け', 'Rankings by calories, protein, and diet suitability')}</p>
             </div>
-            <div className="bg-[#111]/50 border border-[#333] p-4 rounded-lg">
-              <div className="text-2xl mb-2">🎲</div>
-              <h3 className="text-sm font-bold text-[#d4af37] mb-1">{t('AIメニュー提案', 'AI Menu Suggestion')}</h3>
-              <p className="text-xs text-gray-500">{t('最適なバランスの食事メニューを自動生成', 'Automatically generate balanced meal plans')}</p>
+            <div className="bg-[#111]/50 border border-[#333] p-2 rounded-lg">
+              <div className="text-xl mb-1">🎲</div>
+              <h3 className="text-sm font-bold text-[#d4af37] mb-0.5">{t('AIメニュー提案', 'AI Menu Suggestion')}</h3>
+              <p className="text-[10px] text-gray-500">{t('最適なバランスの食事メニューを自動生成', 'Automatically generate balanced meal plans')}</p>
             </div>
           </div>
 
