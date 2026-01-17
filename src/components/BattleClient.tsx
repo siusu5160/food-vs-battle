@@ -51,6 +51,12 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
         }
     }, [foodA.id, foodB.id]);
 
+    const [shareUrl, setShareUrl] = useState('');
+
+    useEffect(() => {
+        setShareUrl(`${window.location.origin}/battle/${encodeURIComponent(foodA.id)}/${encodeURIComponent(foodB.id)}`);
+    }, [foodA.id, foodB.id]);
+
     if (!result) return <div className="p-8 text-center text-white">{t('判定中...', 'Judging...')}</div>;
 
     // Normalization for Radar Chart
@@ -259,6 +265,7 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
             {/* Share Buttons */}
             <ShareButtons
                 title={`${foodA.name} VS ${foodB.name} | FOOD VS BATTLE`}
+                url={shareUrl}
                 battleText={`${foodA.emoji}${foodA.name} VS ${foodB.emoji}${foodB.name} の対決結果！\n勝者は...【${result.winner === 'A' ? foodA.name : result.winner === 'B' ? foodB.name : '引き分け'}】${result.winner === 'A' ? foodA.emoji : result.winner === 'B' ? foodB.emoji : '🤝'}🏆\n\n#FOODVS #カロリー対決 #栄養比較`}
             />
 
