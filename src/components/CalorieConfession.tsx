@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { getAllFoods } from '@/lib/search';
+import { getAllFoods, searchFoods } from '@/lib/search';
 import { calculateAllExercises, formatDuration } from '@/lib/exerciseCalculator';
 import type { FoodItem } from '@/types/FoodItem';
 
@@ -17,10 +17,22 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
     const [selectedFoods, setSelectedFoods] = useState<string[]>([]);
     const [showResult, setShowResult] = useState(false);
     const [foods, setFoods] = useState<FoodItem[]>([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [displayLimit, setDisplayLimit] = useState(100);
 
     useEffect(() => {
-        setFoods(getAllFoods());
+        // Initial load: High calorie items first, preferably prepared foods
+        const allFoods = getAllFoods();
+        // Sort by calories desc for the "Confession" vibe
+        const sorted = [...allFoods].sort((a, b) => b.calories - a.calories);
+        setFoods(sorted);
     }, []);
+
+    const displayedFoods = searchTerm
+        ? searchFoods(searchTerm)
+        : foods;
+
+    const currentFoods = displayedFoods.slice(0, displayLimit);
 
     if (!isOpen) return null;
 
@@ -78,24 +90,63 @@ export const CalorieConfession: React.FC<CalorieConfessionProps> = ({ isOpen, on
                                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                                     <span>🍽️</span> {t('食べたものを選択', 'Select food you ate')}
                                 </h3>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-96 overflow-y-auto p-2">
-                                    {foods.slice(0, 100).map(food => (
+                                <div className="mb-4">
+                                    <input
+                                        type="text"
+                                        placeholder={t('メニューを検索 (例: ラーメン, マック...)', 'Search menu (e.g. Ramen, Mac...)')}
+                                        className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg p-3 text-white focus:border-red-500 focus:outline-none transition-colors"
+                                        value={searchTerm}
+                                        onChange={(e) => {
+                                            setSearchTerm(e.target.value);
+                                            setDisplayLimit(100); // Reset limit on search
+                                        }}
+                                    />
+                                </div>
+                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-96 overflow-y-auto p-2" onScroll={(e) => {
+                                    const bottom = e.currentTarget.scrollHeight - e.currentTarget.scrollTop === e.currentTarget.clientHeight;
+                                    if (bottom && currentFoods.length < displayedFoods.length) {
+                                        setDisplayLimit(prev => prev + 50);
+                                    }
+                                }}>
+                                    {currentFoods.map(food => (
                                         <button
                                             key={food.id}
                                             onClick={() => handleFoodToggle(food.id)}
-                                            className={`p-3 rounded-lg border-2 transition-all text-left ${selectedFoods.includes(food.id)
+                                            className={`p-3 rounded-lg border-2 transition-all text-left relative overflow-hidden group ${selectedFoods.includes(food.id)
                                                 ? 'border-red-500 bg-red-500/20'
                                                 : 'border-gray-700 bg-gray-800/50 hover:border-gray-600'
                                                 }`}
                                         >
-                                            <div className="text-xs font-bold text-gray-400 mb-1">
-                                                {food.calories} kcal
+                                            <div className="text-xs font-bold text-gray-400 mb-1 flex justify-between">
+                                                <span>{food.calories} kcal</span>
+                                                <span className="text-[10px] opacity-50">{food.category}</span>
                                             </div>
-                                            <div className="text-sm font-bold truncate">
-                                                {food.name}
+                                            <div className="text-sm font-bold truncate leading-tight">
+                                                {t(food.name, food.nameEn)}
                                             </div>
+                                            {/* Selection Marker */}
+                                            {selectedFoods.includes(food.id) && (
+                                                <div className="absolute top-1 right-1 text-red-500">
+                                                    ✔
+                                                </div>
+                                            )}
                                         </button>
                                     ))}
+                                    {currentFoods.length === 0 && (
+                                        <div className="col-span-full text-center text-gray-500 py-8">
+                                            {t('見つかりませんでした...', 'Not found...')}
+                                        </div>
+                                    )}
+                                    {currentFoods.length < displayedFoods.length && (
+                                        <div className="col-span-full text-center py-2">
+                                            <button
+                                                onClick={() => setDisplayLimit(prev => prev + 50)}
+                                                className="text-gray-400 hover:text-white text-sm"
+                                            >
+                                                {t('もっと見る', 'Load more')}
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 

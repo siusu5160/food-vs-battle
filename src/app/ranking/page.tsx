@@ -8,13 +8,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function RankingPage() {
     const { t } = useLanguage();
 
-    const highCalorie = getRanking('high-calorie', 50);
-    const highProtein = getRanking('high-protein', 50);
-    const lowCalorie = getRanking('low-calorie', 50);
-    const lowCarb = getRanking('low-carb', 50);
-    const highFiber = getRanking('high-fiber', 50);
-    const lowSalt = getRanking('low-salt', 50);
-    const lowFat = getRanking('low-fat', 50);
+    const highCalorie = getRanking('high-calorie', 50, t);
+    const highProtein = getRanking('high-protein', 50, t);
+    const lowCalorie = getRanking('low-calorie', 50, t);
+    const lowCarb = getRanking('low-carb', 50, t);
+    const highFiber = getRanking('high-fiber', 50, t);
+    const lowSalt = getRanking('low-salt', 50, t);
+    const lowFat = getRanking('low-fat', 50, t);
 
     return (
         <main className="min-h-screen bg-gray-900 pb-20 pt-8 px-4">

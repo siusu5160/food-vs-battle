@@ -10,53 +10,52 @@ export interface RankingResult {
     items: FoodItem[];
 }
 
-export function getRanking(type: RankingType, limit = 50): RankingResult {
-    const foods = getAllFoods();
-    let sorted: FoodItem[] = [];
+export function getRanking(type: RankingType, limit: number = 20, t: (ja: string, en: string) => string): RankingResult {
+    const allFoods = getAllFoods();
+    let sortedFoods = [...allFoods];
     let title = '';
     let description = '';
 
     switch (type) {
         case 'high-calorie':
-            sorted = [...foods].sort((a, b) => b.calories - a.calories);
-            title = 'カロリーモンスター TOP50 😈';
-            description = '決して一人で食べてはいけない、禁断の高カロリー食品たち。';
+            sortedFoods.sort((a, b) => b.calories - a.calories);
+            title = t('カロリーモンスター (高カロリー)', 'Calorie Monsters (High Calorie)');
+            description = t('エネルギーの塊。食べ過ぎ注意！', 'Pure energy. Watch out for overeating!');
             break;
         case 'low-calorie':
-            // Filter out drinks or 0kcal items if needed
-            sorted = [...foods].filter(f => f.calories > 0).sort((a, b) => a.calories - b.calories);
-            title = 'ダイエットの味方 TOP50 🥗';
-            description = 'いくら食べても大丈夫！？低カロリーなヘルシー食品。';
+            sortedFoods.sort((a, b) => a.calories - b.calories);
+            title = t('ダイエットの味方 (低カロリー)', 'Diet Allies (Low Calorie)');
+            description = t('たくさん食べても罪悪感なし。', 'Eat a lot without guilt.');
             break;
         case 'high-protein':
-            sorted = [...foods].sort((a, b) => b.protein - a.protein);
-            title = '筋肉ビルダー TOP50 💪';
-            description = '筋トレ民必見。タンパク質含有量が多い最強の食品はこれだ！';
+            sortedFoods.sort((a, b) => b.protein - a.protein);
+            title = t('筋肉の源 (高タンパク)', 'Muscle Source (High Protein)');
+            description = t('ボディメイクに最適な食品たち。', 'Perfect foods for body making.');
             break;
-        case 'high-salt':
-            sorted = [...foods].sort((a, b) => b.salt - a.salt);
-            title = '塩分過多注意報 🧂';
-            description = '美味しいけれど要注意。塩分が高い食品ランキング。';
+        case 'high-salt': // Hidden category for fun?
+            sortedFoods.sort((a, b) => b.salt - a.salt);
+            title = t('塩分過多 (高塩分)', 'Salt Overload (High Salt)');
+            description = t('しょっぱいのが好きでも程々に。', 'Moderation even if you like it salty.');
             break;
         case 'low-carb':
-            sorted = [...foods].filter(f => f.carbs >= 0).sort((a, b) => a.carbs - b.carbs);
-            title = 'ロカボ生活 TOP50 📉';
-            description = '糖質制限中の方へ。糖質が少ない食品ランキング。';
+            sortedFoods.sort((a, b) => a.carbs - b.carbs);
+            title = t('糖質制限の強い味方 (低糖質)', 'Low Carb Warriors');
+            description = t('ケトジェニックダイエットにも最適。', 'Great for ketogenic diets.');
             break;
         case 'high-fiber':
-            sorted = [...foods].sort((a, b) => b.fiber - a.fiber);
-            title = '腸活ファイバー TOP50 🌾';
-            description = '食物繊維が豊富な食品で、お腹の調子を整えよう。';
+            sortedFoods.sort((a, b) => b.fiber - a.fiber);
+            title = t('腸活マイスター (高食物繊維)', 'Gut Health Masters (High Fiber)');
+            description = t('お腹の調子を整える強い味方。', 'Strong allies for gut health.');
             break;
         case 'low-salt':
-            sorted = [...foods].filter(f => f.salt >= 0).sort((a, b) => a.salt - b.salt);
-            title = '減塩の優等生 TOP50 💧';
-            description = '高血圧対策に。塩分を控えた体に優しい食品。';
+            sortedFoods.sort((a, b) => a.salt - b.salt);
+            title = t('塩分控えめ (低塩分)', 'Low Salt');
+            description = t('むくみ防止や高血圧対策に。', 'Prevent swelling and high blood pressure.');
             break;
         case 'low-fat':
-            sorted = [...foods].filter(f => f.fat >= 0).sort((a, b) => a.fat - b.fat);
-            title = 'ローファット・ダイエット TOP50 🏃';
-            description = '脂質制限中の方におすすめ。さっぱりヘルシーな食品。';
+            sortedFoods.sort((a, b) => a.fat - b.fat);
+            title = t('脂質オフ (低脂質)', 'Low Fat');
+            description = t('ローファットダイエットの食事に。', 'For low fat diet meals.');
             break;
     }
 
