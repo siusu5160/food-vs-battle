@@ -12,6 +12,7 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PopularBattles from '@/components/PopularBattles';
 import type { FoodItem } from '@/types/FoodItem';
+import { categorizeFoodItem, FoodCategoryKey } from '@/lib/foodCategories';
 
 import { POPULAR_BATTLES } from '@/lib/constants';
 
@@ -28,6 +29,7 @@ export default function Home() {
   const [activeSide, setActiveSide] = useState<'A' | 'B'>('A');
   const [mounted, setMounted] = useState(false);
   const [foods, setFoods] = useState<FoodItem[]>([]);
+  const [battleMode, setBattleMode] = useState<FoodCategoryKey>('all');
 
   useEffect(() => {
     setMounted(true);
@@ -53,14 +55,26 @@ export default function Home() {
       }
 
       const maxRetries = 10;
-      let a = foods[Math.floor(Math.random() * foods.length)];
-      let b = foods[Math.floor(Math.random() * foods.length)];
+
+      // Filter foods based on battle mode
+      let candidateFoods = foods;
+      if (battleMode !== 'all') {
+        candidateFoods = foods.filter(f => categorizeFoodItem(f).foodType === battleMode);
+      }
+
+      if (candidateFoods.length < 2) {
+        console.warn('Not enough foods in this category for random battle');
+        return;
+      }
+
+      let a = candidateFoods[Math.floor(Math.random() * candidateFoods.length)];
+      let b = candidateFoods[Math.floor(Math.random() * candidateFoods.length)];
       let retries = 0;
 
       // IDが存在し、かつ異なるアイテムになるまでリトライ（無限ループ防止付き）
       while ((!a?.id || !b?.id || a.id === b.id) && retries < maxRetries) {
-        a = foods[Math.floor(Math.random() * foods.length)];
-        b = foods[Math.floor(Math.random() * foods.length)];
+        a = candidateFoods[Math.floor(Math.random() * candidateFoods.length)];
+        b = candidateFoods[Math.floor(Math.random() * candidateFoods.length)];
         retries++;
       }
 
@@ -144,6 +158,37 @@ export default function Home() {
           <div className="max-w-4xl mx-auto bg-[#111] border border-[#333] p-8 md:p-12 rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
             {/* Gold Frame Effect */}
             <div className="absolute inset-0 border border-[#d4af37] opacity-20 pointer-events-none m-2"></div>
+
+            {/* Battle Mode Switcher */}
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-[#0a0a0a] border border-[#333] p-1 rounded-full flex gap-1 shadow-lg">
+              <button
+                onClick={() => setBattleMode('all')}
+                className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${battleMode === 'all'
+                    ? 'bg-[#d4af37] text-black shadow-[0_0_10px_rgba(212,175,55,0.4)]'
+                    : 'text-gray-500 hover:text-gray-300'
+                  }`}
+              >
+                {t('すべて', 'All')}
+              </button>
+              <button
+                onClick={() => setBattleMode('ingredient')}
+                className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1 ${battleMode === 'ingredient'
+                    ? 'bg-green-600 text-white shadow-[0_0_10px_rgba(22,163,74,0.4)]'
+                    : 'text-gray-500 hover:text-gray-300'
+                  }`}
+              >
+                <span>🥬</span>{t('食材のみ', 'Ingredients')}
+              </button>
+              <button
+                onClick={() => setBattleMode('prepared')}
+                className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all flex items-center gap-1 ${battleMode === 'prepared'
+                    ? 'bg-orange-600 text-white shadow-[0_0_10px_rgba(234,88,12,0.4)]'
+                    : 'text-gray-500 hover:text-gray-300'
+                  }`}
+              >
+                <span>🍔</span>{t('料理のみ', 'Dishes')}
+              </button>
+            </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 relative z-10">
               {/* Left Fighter */}
@@ -313,6 +358,7 @@ export default function Home() {
         }}
         foods={foods}
         opponentFood={activeSide === 'A' ? selectedB : selectedA}
+        initialCategory={battleMode}
       />
 
       <MenuGacha

@@ -16,13 +16,23 @@ interface Props {
     onSelect: (food: FoodItem) => void;
     foods: FoodItem[];
     opponentFood?: FoodItem | null;
+    initialCategory?: FoodCategoryKey;
 }
 
-export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, foods, opponentFood }) => {
+export const FoodSelectorModal: React.FC<Props> = ({ isOpen, onClose, onSelect, foods, opponentFood, initialCategory = 'all' }) => {
     const { t } = useLanguage();
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState<FoodCategoryKey>('all');
+    const [selectedCategory, setSelectedCategory] = useState<FoodCategoryKey>(initialCategory);
     const [selectedSubCategory, setSelectedSubCategory] = useState<SubCategoryKey | null>(null);
+
+    // Reset category when modal opens or initialCategory changes
+    React.useEffect(() => {
+        if (isOpen) {
+            setSelectedCategory(initialCategory);
+            setSelectedSubCategory(null);
+            setSearchTerm('');
+        }
+    }, [isOpen, initialCategory]);
 
     const filteredFoods = useMemo(() => {
         let result = foods;
