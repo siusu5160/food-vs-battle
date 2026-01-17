@@ -132,19 +132,19 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
     return (
         <div className="w-full max-w-4xl mx-auto p-4 space-y-8 pb-20">
             {/* VS Header */}
-            <div className="flex justify-between items-center relative py-4">
-                <button onClick={() => router.back()} className="text-gray-400 hover:text-white">
+            <div className="flex justify-between items-center relative py-2">
+                <button onClick={() => router.back()} className="text-gray-400 hover:text-white text-sm">
                     {t('← 戻る', '← Back')}
                 </button>
-                <div className="absolute left-1/2 -translate-x-1/2 text-4xl font-black italic text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                <div className="absolute left-1/2 -translate-x-1/2 text-2xl font-black italic text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                     BATTLE
                 </div>
             </div>
 
             {/* Fighters */}
-            <div className="grid grid-cols-2 gap-4 md:gap-8">
+            <div className="grid grid-cols-2 gap-2 md:gap-4">
                 <FighterCard food={foodA} isWinner={result.winner === 'A'} result={result} side="A" t={t} />
-                <div className="absolute left-1/2 top-48 -translate-x-1/2 -translate-y-1/2 z-10 text-xl font-bold bg-black/50 px-2 rounded-full border border-white/20">
+                <div className="absolute left-1/2 top-32 -translate-x-1/2 -translate-y-1/2 z-10 text-sm font-bold bg-black/50 px-2 rounded-full border border-white/20">
                     VS
                 </div>
                 <FighterCard food={foodB} isWinner={result.winner === 'B'} result={result} side="B" t={t} />
@@ -281,8 +281,8 @@ const FighterCard = ({ food, isWinner, result, side, t }: { food: FoodItem, isWi
             animate={{ opacity: isLoser ? 0.6 : 1, scale: 1 }}
         >
             {/* Header with Emoji */}
-            <div className="aspect-square bg-gray-700/50 flex items-center justify-center relative rounded-t-xl overflow-hidden shrink-0">
-                <span className="text-6xl sm:text-7xl drop-shadow-2xl filter">{food.emoji}</span>
+            <div className="h-32 bg-gray-700/50 flex items-center justify-center relative rounded-t-xl overflow-hidden shrink-0">
+                <span className="text-5xl drop-shadow-2xl filter">{food.emoji}</span>
 
                 {/* WIN/LOSE Badge - Always show for non-draw results */}
                 {result.winner !== 'Draw' && (
