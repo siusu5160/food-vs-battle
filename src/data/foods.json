@@ -3803,7 +3803,7 @@
     "nameEn": "Seven-Eleven Age-Dori",
     "category": "Convenience",
     "calories": 182,
-    "protein": 14.0,
+    "protein": 14,
     "fat": 11.5,
     "carbs": 5.8,
     "fiber": 0.2,
@@ -3878,7 +3878,7 @@
     "calories": 154,
     "protein": 10.5,
     "fat": 8.5,
-    "carbs": 8.0,
+    "carbs": 8,
     "fiber": 0.5,
     "salt": 1.4,
     "emoji": "🍢",
@@ -3894,9 +3894,9 @@
     "nameEn": "Lawson Karaage-kun Regular",
     "category": "Convenience",
     "calories": 220,
-    "protein": 14.0,
-    "fat": 16.0,
-    "carbs": 8.0,
+    "protein": 14,
+    "fat": 16,
+    "carbs": 8,
     "fiber": 0.5,
     "salt": 1.6,
     "emoji": "🐓",
@@ -3932,8 +3932,8 @@
     "category": "Convenience",
     "calories": 235,
     "protein": 13.8,
-    "fat": 17.0,
-    "carbs": 9.0,
+    "fat": 17,
+    "carbs": 9,
     "fiber": 0.5,
     "salt": 1.8,
     "emoji": "🧀",
@@ -3949,9 +3949,9 @@
     "nameEn": "Lawson L-Chiki Red",
     "category": "Convenience",
     "calories": 270,
-    "protein": 15.0,
-    "fat": 18.0,
-    "carbs": 12.0,
+    "protein": 15,
+    "fat": 18,
+    "carbs": 12,
     "fiber": 0.5,
     "salt": 2.2,
     "emoji": "🍗",
@@ -3960,6 +3960,169 @@
       "Meat",
       "HotSnack",
       "Spicy"
+    ]
+  },
+  {
+    "id": "aojiru",
+    "name": "青汁",
+    "nameEn": "Green Juice (Aojiru)",
+    "category": "Drink",
+    "calories": 30,
+    "protein": 1,
+    "fat": 0.2,
+    "carbs": 6,
+    "fiber": 3,
+    "salt": 0.05,
+    "emoji": "🍵",
+    "tags": [
+      "Drink",
+      "Vegetable",
+      "Health",
+      "Ingredient"
+    ]
+  },
+  {
+    "id": "cola",
+    "name": "コーラ",
+    "nameEn": "Cola",
+    "category": "Drink",
+    "calories": 225,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 56.5,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "🥤",
+    "tags": [
+      "Drink",
+      "Sugar",
+      "Carb"
+    ]
+  },
+  {
+    "id": "energy-drink",
+    "name": "エナジードリンク (355ml)",
+    "nameEn": "Energy Drink (355ml)",
+    "category": "Drink",
+    "calories": 170,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 42,
+    "fiber": 0,
+    "salt": 0.2,
+    "emoji": "⚡",
+    "tags": [
+      "Drink",
+      "Sugar",
+      "Caffeine"
+    ]
+  },
+  {
+    "id": "coffee-black",
+    "name": "ブラックコーヒー (350ml)",
+    "nameEn": "Black Coffee",
+    "category": "Drink",
+    "calories": 12,
+    "protein": 0.5,
+    "fat": 0,
+    "carbs": 2.5,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "☕",
+    "tags": [
+      "Drink",
+      "LowCalorie",
+      "Caffeine"
+    ]
+  },
+  {
+    "id": "cafe-latte",
+    "name": "カフェラテ (Mサイズ)",
+    "nameEn": "Cafe Latte (M)",
+    "category": "Drink",
+    "calories": 100,
+    "protein": 5.2,
+    "fat": 5.5,
+    "carbs": 7.8,
+    "fiber": 0,
+    "salt": 0.2,
+    "emoji": "🥛",
+    "tags": [
+      "Drink",
+      "Dairy"
+    ]
+  },
+  {
+    "id": "orange-juice",
+    "name": "オレンジジュース (100%)",
+    "nameEn": "Orange Juice (100%)",
+    "category": "Drink",
+    "calories": 84,
+    "protein": 1.4,
+    "fat": 0.2,
+    "carbs": 21,
+    "fiber": 0.4,
+    "salt": 0,
+    "emoji": "🍊",
+    "tags": [
+      "Drink",
+      "Fruit",
+      "Sugar"
+    ]
+  },
+  {
+    "id": "green-tea-bottle",
+    "name": "緑茶 (ペットボトル)",
+    "nameEn": "Green Tea (Bottle)",
+    "category": "Drink",
+    "calories": 0,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 0,
+    "fiber": 0,
+    "salt": 0.03,
+    "emoji": "🍵",
+    "tags": [
+      "Drink",
+      "ZeroCalorie",
+      "Health"
+    ]
+  },
+  {
+    "id": "tapioca-milk-tea",
+    "name": "タピオカミルクティー",
+    "nameEn": "Tapioca Milk Tea",
+    "category": "Drink",
+    "calories": 400,
+    "protein": 2,
+    "fat": 10,
+    "carbs": 75,
+    "fiber": 1,
+    "salt": 0.1,
+    "emoji": "🧋",
+    "tags": [
+      "Drink",
+      "Sugar",
+      "Carb",
+      "Dessert"
+    ]
+  },
+  {
+    "id": "beer-can",
+    "name": "ビール (350ml缶)",
+    "nameEn": "Beer (350ml)",
+    "category": "Alcohol",
+    "calories": 140,
+    "protein": 1,
+    "fat": 0,
+    "carbs": 10.5,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "🍺",
+    "tags": [
+      "Drink",
+      "Alcohol",
+      "Carb"
     ]
   }
 ]

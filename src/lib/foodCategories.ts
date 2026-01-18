@@ -3,6 +3,7 @@ import { FoodItem } from '@/types/FoodItem';
 // メインカテゴリー定義
 export const FOOD_CATEGORIES = {
     all: { label: 'すべて', labelEn: 'All', icon: '🌟' },
+    drink: { label: '飲み物', labelEn: 'Drinks', icon: '🥤' },
     alcohol: { label: 'お酒', labelEn: 'Alcohol', icon: '🍺' },
     ingredient: { label: '食材', labelEn: 'Ingredients', icon: '🥬' },
     prepared: { label: '調理済み', labelEn: 'Prepared Food', icon: '🍽️' },
@@ -25,6 +26,7 @@ export const SUB_CATEGORIES = {
     convenience: { label: 'コンビニ', labelEn: 'Convenience', icon: '🏪', parent: 'prepared' as const },
     dessert: { label: 'デザート', labelEn: 'Dessert', icon: '🍰', parent: 'prepared' as const },
     snack: { label: 'スナック', labelEn: 'Snacks', icon: '🍿', parent: 'prepared' as const },
+    other_prepared: { label: 'その他', labelEn: 'Others', icon: '🎸', parent: 'prepared' as const },
 } as const;
 
 export type FoodCategoryKey = keyof typeof FOOD_CATEGORIES;
@@ -35,6 +37,16 @@ export function categorizeFoodItem(food: FoodItem): {
     foodType: FoodCategoryKey;
     subCategory: SubCategoryKey | null;
 } {
+    // タピオカは「その他」
+    if (food.id === 'tapioca-milk-tea') {
+        return { foodType: 'prepared', subCategory: 'other_prepared' };
+    }
+
+    // 飲み物判定
+    if (food.category === 'Drink' || (food.tags?.includes('Drink') && food.category !== 'Alcohol')) {
+        return { foodType: 'drink', subCategory: null };
+    }
+
     // カテゴリーベースの判定（コンビニ）
     if (food.category === 'Convenience' || food.tags?.includes('Convenience') ||
         food.id.includes('onigiri') || food.id.includes('karaage-kun') ||
