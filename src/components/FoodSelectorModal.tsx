@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import type { FoodItem } from '@/types/FoodItem';
+// Force rebuild for category logic update
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
     FOOD_CATEGORIES,
