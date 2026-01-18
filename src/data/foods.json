@@ -1,7 +1,7 @@
 [
   {
     "id": "coco-cheese-curry",
-    "name": "CoCo壱番屋 チーズカレー(普通)",
+    "name": "CoCo壱番屋 チーズカレー",
     "nameEn": "CoCo Ichi Cheese Curry",
     "category": "Restaurant",
     "calories": 928,
@@ -18,7 +18,7 @@
   },
   {
     "id": "coco-pork-curry",
-    "name": "CoCo壱番屋 ポークカレー(普通)",
+    "name": "CoCo壱番屋 ポークカレー",
     "nameEn": "CoCo Ichi Pork Curry",
     "category": "Restaurant",
     "calories": 755,
@@ -35,7 +35,7 @@
   },
   {
     "id": "coco-katsu-curry",
-    "name": "CoCo壱番屋 ロースカツカレー(普通)",
+    "name": "CoCo壱番屋 ロースカツカレー",
     "nameEn": "CoCo Ichi Katsu Curry",
     "category": "Restaurant",
     "calories": 1184,
@@ -53,7 +53,7 @@
   },
   {
     "id": "kfc-original",
-    "name": "KFC オリジナルチキン(1P)",
+    "name": "KFC オリジナルチキン",
     "nameEn": "KFC Original Chicken",
     "category": "FastFood",
     "calories": 237,
@@ -71,8 +71,8 @@
   },
   {
     "id": "kfc-coleslaw-s",
-    "name": "KFC コールスロー(S)",
-    "nameEn": "KFC Coleslaw (S)",
+    "name": "KFC コールスロー",
+    "nameEn": "KFC Coleslaw",
     "category": "FastFood",
     "calories": 92,
     "protein": 0.8,
@@ -142,8 +142,8 @@
   },
   {
     "id": "alc-asahi-superdry",
-    "name": "アサヒ スーパードライ(350ml)",
-    "nameEn": "Asahi Super Dry (350ml)",
+    "name": "アサヒ スーパードライ",
+    "nameEn": "Asahi Super Dry",
     "category": "Drink",
     "calories": 147,
     "protein": 1.1,
@@ -298,7 +298,7 @@
   },
   {
     "id": "sausage-wiener",
-    "name": "ウインナー(1本)",
+    "name": "ウインナー",
     "nameEn": "Wiener Sausage",
     "calories": 60,
     "protein": 2,
@@ -321,6 +321,24 @@
     "salt": 1.3,
     "emoji": "🍱",
     "category": "Fish"
+  },
+  {
+    "id": "energy-drink",
+    "name": "エナジードリンク",
+    "nameEn": "Energy Drink",
+    "category": "Drink",
+    "calories": 170,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 42,
+    "fiber": 0,
+    "salt": 0.2,
+    "emoji": "⚡",
+    "tags": [
+      "Drink",
+      "Sugar",
+      "Caffeine"
+    ]
   },
   {
     "id": "shrimp",
@@ -373,8 +391,26 @@
     ]
   },
   {
+    "id": "orange-juice",
+    "name": "オレンジジュース",
+    "nameEn": "Orange Juice",
+    "category": "Drink",
+    "calories": 84,
+    "protein": 1.4,
+    "fat": 0.2,
+    "carbs": 21,
+    "fiber": 0.4,
+    "salt": 0,
+    "emoji": "🍊",
+    "tags": [
+      "Drink",
+      "Fruit",
+      "Sugar"
+    ]
+  },
+  {
     "id": "oyster-raw",
-    "name": "カキ(1個)",
+    "name": "カキ",
     "nameEn": "Oyster",
     "calories": 12,
     "protein": 1.3,
@@ -386,8 +422,25 @@
     "category": "Fish"
   },
   {
+    "id": "cafe-latte",
+    "name": "カフェラテ",
+    "nameEn": "Cafe Latte",
+    "category": "Drink",
+    "calories": 100,
+    "protein": 5.2,
+    "fat": 5.5,
+    "carbs": 7.8,
+    "fiber": 0,
+    "salt": 0.2,
+    "emoji": "🥛",
+    "tags": [
+      "Drink",
+      "Dairy"
+    ]
+  },
+  {
     "id": "pumpkin-slice",
-    "name": "かぼちゃ(100g)",
+    "name": "かぼちゃ",
     "nameEn": "Pumpkin",
     "calories": 90,
     "protein": 2,
@@ -400,7 +453,7 @@
   },
   {
     "id": "cheese-camembert",
-    "name": "カマンベールチーズ(1切)",
+    "name": "カマンベールチーズ",
     "nameEn": "Camembert Cheese",
     "calories": 60,
     "protein": 4,
@@ -430,7 +483,7 @@
   },
   {
     "id": "calbee-chips-usushio",
-    "name": "カルビー ポテトチップス うすしお味(60g)",
+    "name": "カルビー ポテトチップス うすしお味",
     "nameEn": "Calbee Potato Chips Light Salt",
     "category": "Snack",
     "calories": 336,
@@ -465,7 +518,7 @@
   },
   {
     "id": "kiwi-whole",
-    "name": "キウイ(1個)",
+    "name": "キウイ",
     "nameEn": "Kiwi",
     "calories": 50,
     "protein": 1,
@@ -513,7 +566,7 @@
   },
   {
     "id": "cucumber-raw",
-    "name": "きゅうり(1本)",
+    "name": "きゅうり",
     "nameEn": "Cucumber",
     "calories": 14,
     "protein": 1,
@@ -595,6 +648,24 @@
     ]
   },
   {
+    "id": "cola",
+    "name": "コーラ",
+    "nameEn": "Cola",
+    "category": "Drink",
+    "calories": 225,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 56.5,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "🥤",
+    "tags": [
+      "Drink",
+      "Sugar",
+      "Carb"
+    ]
+  },
+  {
     "id": "corn-flakes",
     "name": "コーンフレーク",
     "nameEn": "Corn Flakes",
@@ -612,8 +683,8 @@
   },
   {
     "id": "alc-lemon-dou",
-    "name": "こだわり酒場のレモンサワー(350ml)",
-    "nameEn": "Kodawari Sakaba Lemon Sour (350ml)",
+    "name": "こだわり酒場のレモンサワー",
+    "nameEn": "Kodawari Sakaba Lemon Sour",
     "category": "Drink",
     "calories": 147,
     "protein": 0,
@@ -629,7 +700,7 @@
   },
   {
     "id": "gobo-raw",
-    "name": "ごぼう(1本)",
+    "name": "ごぼう",
     "nameEn": "Burdock Root",
     "calories": 65,
     "protein": 1.5,
@@ -914,7 +985,7 @@
   },
   {
     "id": "sweet-potato-raw",
-    "name": "さつまいも(1本)",
+    "name": "さつまいも",
     "nameEn": "Sweet Potato",
     "calories": 260,
     "protein": 2,
@@ -992,8 +1063,8 @@
   },
   {
     "id": "alc-kaku-highball",
-    "name": "サントリー 角ハイボール(350ml)",
-    "nameEn": "Suntory Kaku Highball (350ml)",
+    "name": "サントリー 角ハイボール",
+    "nameEn": "Suntory Kaku Highball",
     "category": "Drink",
     "calories": 168,
     "protein": 0,
@@ -1010,7 +1081,7 @@
   },
   {
     "id": "shiitake",
-    "name": "しいたけ(2個)",
+    "name": "しいたけ",
     "nameEn": "Shiitake Mushroom",
     "calories": 10,
     "protein": 1,
@@ -1023,7 +1094,7 @@
   },
   {
     "id": "potato-raw",
-    "name": "じゃがいも(1個)",
+    "name": "じゃがいも",
     "nameEn": "Potato",
     "calories": 110,
     "protein": 3,
@@ -1283,8 +1354,8 @@
   },
   {
     "id": "alc-strong-zero-lemon",
-    "name": "ストロングゼロ ダブルレモン(350ml)",
-    "nameEn": "Strong Zero Double Lemon (350ml)",
+    "name": "ストロングゼロ ダブルレモン",
+    "nameEn": "Strong Zero Double Lemon",
     "category": "Drink",
     "calories": 189,
     "protein": 0,
@@ -1297,6 +1368,60 @@
       "Drink",
       "Alcohol",
       "LowCarb"
+    ]
+  },
+  {
+    "id": "seven-american-dog",
+    "name": "セブンイレブン アメリカンドッグ",
+    "nameEn": "Seven-Eleven Corn Dog",
+    "category": "Convenience",
+    "calories": 297,
+    "protein": 6.8,
+    "fat": 14.5,
+    "carbs": 34.6,
+    "fiber": 1.5,
+    "salt": 1.1,
+    "emoji": "🌭",
+    "tags": [
+      "Convenience",
+      "Snack",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "seven-nana-chiki",
+    "name": "セブンイレブン ななチキ",
+    "nameEn": "Seven-Eleven Nana-Chiki",
+    "category": "Convenience",
+    "calories": 173,
+    "protein": 14.2,
+    "fat": 10.3,
+    "carbs": 6.8,
+    "fiber": 0.5,
+    "salt": 1.4,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "seven-age-dori",
+    "name": "セブンイレブン 揚げ鶏",
+    "nameEn": "Seven-Eleven Age-Dori",
+    "category": "Convenience",
+    "calories": 182,
+    "protein": 14,
+    "fat": 11.5,
+    "carbs": 5.8,
+    "fiber": 0.2,
+    "salt": 1.3,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
     ]
   },
   {
@@ -1347,8 +1472,27 @@
     "category": "Fish"
   },
   {
+    "id": "tapioca-milk-tea",
+    "name": "タピオカミルクティー",
+    "nameEn": "Tapioca Milk Tea",
+    "category": "Drink",
+    "calories": 400,
+    "protein": 2,
+    "fat": 10,
+    "carbs": 75,
+    "fiber": 1,
+    "salt": 0.1,
+    "emoji": "🧋",
+    "tags": [
+      "Drink",
+      "Sugar",
+      "Carb",
+      "Dessert"
+    ]
+  },
+  {
     "id": "chikuwa",
-    "name": "ちくわ(1本)",
+    "name": "ちくわ",
     "nameEn": "Chikuwa",
     "calories": 50,
     "protein": 6,
@@ -1391,7 +1535,7 @@
   },
   {
     "id": "corn-ear",
-    "name": "とうもろこし(1本)",
+    "name": "とうもろこし",
     "nameEn": "Corn",
     "calories": 150,
     "protein": 5,
@@ -1422,7 +1566,7 @@
   },
   {
     "id": "eggplant-raw",
-    "name": "なす(1個)",
+    "name": "なす",
     "nameEn": "Eggplant",
     "calories": 18,
     "protein": 1,
@@ -1465,7 +1609,7 @@
   },
   {
     "id": "nestle-kitkat",
-    "name": "ネスレ キットカット ミニ(1枚)",
+    "name": "ネスレ キットカット ミニ",
     "nameEn": "Nestle KitKat Mini",
     "category": "Snack",
     "calories": 62,
@@ -1606,7 +1750,7 @@
   },
   {
     "id": "butter-pat",
-    "name": "バター(10g)",
+    "name": "バター",
     "nameEn": "Butter",
     "calories": 75,
     "protein": 0,
@@ -1686,7 +1830,7 @@
   },
   {
     "id": "green-pepper",
-    "name": "ピーマン(1個)",
+    "name": "ピーマン",
     "nameEn": "Green Pepper",
     "calories": 5,
     "protein": 0.3,
@@ -1696,6 +1840,24 @@
     "salt": 0,
     "emoji": "🫑",
     "category": "Vegetable"
+  },
+  {
+    "id": "beer-can",
+    "name": "ビール",
+    "nameEn": "Beer",
+    "category": "Alcohol",
+    "calories": 140,
+    "protein": 1,
+    "fat": 0,
+    "carbs": 10.5,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "🍺",
+    "tags": [
+      "Drink",
+      "Alcohol",
+      "Carb"
+    ]
   },
   {
     "id": "famima-spam-musubi",
@@ -1769,6 +1931,61 @@
     ]
   },
   {
+    "id": "famima-spicy-chicken",
+    "name": "ファミリーマート スパイシーチキン",
+    "nameEn": "FamilyMart Spicy Chicken",
+    "category": "Convenience",
+    "calories": 196,
+    "protein": 11.8,
+    "fat": 10.5,
+    "carbs": 13.5,
+    "fiber": 0.8,
+    "salt": 1.5,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack",
+      "Spicy"
+    ]
+  },
+  {
+    "id": "famima-chiki",
+    "name": "ファミリーマート ファミチキ",
+    "nameEn": "FamilyMart Fami-Chiki",
+    "category": "Convenience",
+    "calories": 251,
+    "protein": 12.7,
+    "fat": 15.7,
+    "carbs": 14.8,
+    "fiber": 0.5,
+    "salt": 1.3,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "famima-tsukune",
+    "name": "ファミリーマート 炭火焼きとり つくねタレ",
+    "nameEn": "FamilyMart Yakitori Tsukune",
+    "category": "Convenience",
+    "calories": 154,
+    "protein": 10.5,
+    "fat": 8.5,
+    "carbs": 8,
+    "fiber": 0.5,
+    "salt": 1.4,
+    "emoji": "🍢",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
     "id": "grape",
     "name": "ぶどう",
     "nameEn": "Grape",
@@ -1797,6 +2014,24 @@
     "salt": 0,
     "emoji": "🍇",
     "category": "Fruit"
+  },
+  {
+    "id": "coffee-black",
+    "name": "ブラックコーヒー",
+    "nameEn": "Black Coffee",
+    "category": "Drink",
+    "calories": 12,
+    "protein": 0.5,
+    "fat": 0,
+    "carbs": 2.5,
+    "fiber": 0,
+    "salt": 0,
+    "emoji": "☕",
+    "tags": [
+      "Drink",
+      "LowCalorie",
+      "Caffeine"
+    ]
   },
   {
     "id": "french-bread",
@@ -1952,7 +2187,7 @@
   },
   {
     "id": "scallop-raw",
-    "name": "ホタテ(1個)",
+    "name": "ホタテ",
     "nameEn": "Scallop",
     "calories": 40,
     "protein": 7,
@@ -1965,8 +2200,8 @@
   },
   {
     "id": "alc-horoyoi-white",
-    "name": "ほろよい 白いサワー(350ml)",
-    "nameEn": "Horoyoi White Sour (350ml)",
+    "name": "ほろよい 白いサワー",
+    "nameEn": "Horoyoi White Sour",
     "category": "Drink",
     "calories": 203,
     "protein": 0,
@@ -2161,7 +2396,7 @@
   {
     "id": "mac-shake-vanilla-m",
     "name": "マクドナルド マックシェイク バニラ(M)",
-    "nameEn": "McDonald's McShake Vanilla (M)",
+    "nameEn": "McDonald's McShake Vanilla",
     "category": "FastFood",
     "calories": 348,
     "protein": 7.2,
@@ -2179,7 +2414,7 @@
   {
     "id": "mac-fries-m",
     "name": "マクドナルド マックフライポテト(M)",
-    "nameEn": "McDonald's Fries (M)",
+    "nameEn": "McDonald's Fries",
     "category": "FastFood",
     "calories": 410,
     "protein": 5.3,
@@ -2321,7 +2556,7 @@
   },
   {
     "id": "mikan",
-    "name": "みかん(1個)",
+    "name": "みかん",
     "nameEn": "Mandarin Orange",
     "calories": 45,
     "protein": 0.7,
@@ -2730,7 +2965,7 @@
   },
   {
     "id": "lemon-whole",
-    "name": "レモン(1個)",
+    "name": "レモン",
     "nameEn": "Lemon",
     "calories": 30,
     "protein": 1,
@@ -2773,7 +3008,7 @@
   },
   {
     "id": "ham-slice",
-    "name": "ロースハム(1枚)",
+    "name": "ロースハム",
     "nameEn": "Ham Slice",
     "calories": 40,
     "protein": 3,
@@ -2783,6 +3018,80 @@
     "salt": 0.5,
     "emoji": "🍖",
     "category": "Meat"
+  },
+  {
+    "id": "lawson-l-chiki-red",
+    "name": "ローソン Lチキ レッド",
+    "nameEn": "Lawson L-Chiki Red",
+    "category": "Convenience",
+    "calories": 270,
+    "protein": 15,
+    "fat": 18,
+    "carbs": 12,
+    "fiber": 0.5,
+    "salt": 2.2,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack",
+      "Spicy"
+    ]
+  },
+  {
+    "id": "lawson-karaagekun-reg",
+    "name": "ローソン からあげクン レギュラー",
+    "nameEn": "Lawson Karaage-kun Regular",
+    "category": "Convenience",
+    "calories": 220,
+    "protein": 14,
+    "fat": 16,
+    "carbs": 8,
+    "fiber": 0.5,
+    "salt": 1.6,
+    "emoji": "🐓",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "lawson-karaagekun-red",
+    "name": "ローソン からあげクン レッド",
+    "nameEn": "Lawson Karaage-kun Red",
+    "category": "Convenience",
+    "calories": 230,
+    "protein": 14.5,
+    "fat": 16.5,
+    "carbs": 8.5,
+    "fiber": 0.6,
+    "salt": 1.7,
+    "emoji": "🐓",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack",
+      "Spicy"
+    ]
+  },
+  {
+    "id": "lawson-karaagekun-cheese",
+    "name": "ローソン からあげクン 北海道チーズ",
+    "nameEn": "Lawson Karaage-kun Cheese",
+    "category": "Convenience",
+    "calories": 235,
+    "protein": 13.8,
+    "fat": 17,
+    "carbs": 9,
+    "fiber": 0.5,
+    "salt": 1.8,
+    "emoji": "🧀",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
   },
   {
     "id": "lotteria-ebi",
@@ -2892,7 +3201,7 @@
   },
   {
     "id": "seaweed-nori",
-    "name": "海苔(1枚)",
+    "name": "海苔",
     "nameEn": "Nori Seaweed",
     "calories": 6,
     "protein": 1,
@@ -3164,7 +3473,7 @@
   },
   {
     "id": "milk-glass",
-    "name": "牛乳(200ml)",
+    "name": "牛乳",
     "nameEn": "Milk",
     "calories": 134,
     "protein": 6.6,
@@ -3259,7 +3568,7 @@
   },
   {
     "id": "koikeya-chips-norishio",
-    "name": "湖池屋 ポテトチップス のり塩(60g)",
+    "name": "湖池屋 ポテトチップス のり塩",
     "nameEn": "Koikeya Potato Chips Seaweed Salt",
     "category": "Snack",
     "calories": 337,
@@ -3396,6 +3705,25 @@
     ]
   },
   {
+    "id": "aojiru",
+    "name": "青汁",
+    "nameEn": "Green Juice (Aojiru)",
+    "category": "Drink",
+    "calories": 30,
+    "protein": 1,
+    "fat": 0.2,
+    "carbs": 6,
+    "fiber": 3,
+    "salt": 0.05,
+    "emoji": "🍵",
+    "tags": [
+      "Drink",
+      "Vegetable",
+      "Health",
+      "Ingredient"
+    ]
+  },
+  {
     "id": "wine-red",
     "name": "赤ワイン",
     "nameEn": "Red Wine",
@@ -3462,7 +3790,7 @@
   },
   {
     "id": "daikon-raw",
-    "name": "大根(100g)",
+    "name": "大根",
     "nameEn": "Daikon Radish",
     "calories": 18,
     "protein": 0.5,
@@ -3506,7 +3834,7 @@
   },
   {
     "id": "peach-whole",
-    "name": "桃(1個)",
+    "name": "桃",
     "nameEn": "Peach",
     "calories": 80,
     "protein": 1.5,
@@ -3640,7 +3968,7 @@
   },
   {
     "id": "umeboshi",
-    "name": "梅干し(1個)",
+    "name": "梅干し",
     "nameEn": "Umeboshi",
     "calories": 5,
     "protein": 0.1,
@@ -3763,317 +4091,9 @@
     ]
   },
   {
-    "id": "pear",
-    "name": "和梨",
-    "nameEn": "Japanese Pear",
-    "category": "Fruit",
-    "calories": 43,
-    "protein": 0.3,
-    "fat": 0.1,
-    "carbs": 11.3,
-    "fiber": 0.9,
-    "salt": 0,
-    "emoji": "🍐",
-    "tags": [
-      "Fruit",
-      "LowCalorie"
-    ]
-  },
-  {
-    "id": "seven-nana-chiki",
-    "name": "セブンイレブン ななチキ",
-    "nameEn": "Seven-Eleven Nana-Chiki",
-    "category": "Convenience",
-    "calories": 173,
-    "protein": 14.2,
-    "fat": 10.3,
-    "carbs": 6.8,
-    "fiber": 0.5,
-    "salt": 1.4,
-    "emoji": "🍗",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack"
-    ]
-  },
-  {
-    "id": "seven-age-dori",
-    "name": "セブンイレブン 揚げ鶏",
-    "nameEn": "Seven-Eleven Age-Dori",
-    "category": "Convenience",
-    "calories": 182,
-    "protein": 14,
-    "fat": 11.5,
-    "carbs": 5.8,
-    "fiber": 0.2,
-    "salt": 1.3,
-    "emoji": "🍗",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack"
-    ]
-  },
-  {
-    "id": "seven-american-dog",
-    "name": "セブンイレブン アメリカンドッグ",
-    "nameEn": "Seven-Eleven Corn Dog",
-    "category": "Convenience",
-    "calories": 297,
-    "protein": 6.8,
-    "fat": 14.5,
-    "carbs": 34.6,
-    "fiber": 1.5,
-    "salt": 1.1,
-    "emoji": "🌭",
-    "tags": [
-      "Convenience",
-      "Snack",
-      "HotSnack"
-    ]
-  },
-  {
-    "id": "famima-chiki",
-    "name": "ファミリーマート ファミチキ",
-    "nameEn": "FamilyMart Fami-Chiki",
-    "category": "Convenience",
-    "calories": 251,
-    "protein": 12.7,
-    "fat": 15.7,
-    "carbs": 14.8,
-    "fiber": 0.5,
-    "salt": 1.3,
-    "emoji": "🍗",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack"
-    ]
-  },
-  {
-    "id": "famima-spicy-chicken",
-    "name": "ファミリーマート スパイシーチキン",
-    "nameEn": "FamilyMart Spicy Chicken",
-    "category": "Convenience",
-    "calories": 196,
-    "protein": 11.8,
-    "fat": 10.5,
-    "carbs": 13.5,
-    "fiber": 0.8,
-    "salt": 1.5,
-    "emoji": "🍗",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack",
-      "Spicy"
-    ]
-  },
-  {
-    "id": "famima-tsukune",
-    "name": "ファミリーマート 炭火焼きとり つくねタレ",
-    "nameEn": "FamilyMart Yakitori Tsukune",
-    "category": "Convenience",
-    "calories": 154,
-    "protein": 10.5,
-    "fat": 8.5,
-    "carbs": 8,
-    "fiber": 0.5,
-    "salt": 1.4,
-    "emoji": "🍢",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack"
-    ]
-  },
-  {
-    "id": "lawson-karaagekun-reg",
-    "name": "ローソン からあげクン レギュラー",
-    "nameEn": "Lawson Karaage-kun Regular",
-    "category": "Convenience",
-    "calories": 220,
-    "protein": 14,
-    "fat": 16,
-    "carbs": 8,
-    "fiber": 0.5,
-    "salt": 1.6,
-    "emoji": "🐓",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack"
-    ]
-  },
-  {
-    "id": "lawson-karaagekun-red",
-    "name": "ローソン からあげクン レッド",
-    "nameEn": "Lawson Karaage-kun Red",
-    "category": "Convenience",
-    "calories": 230,
-    "protein": 14.5,
-    "fat": 16.5,
-    "carbs": 8.5,
-    "fiber": 0.6,
-    "salt": 1.7,
-    "emoji": "🐓",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack",
-      "Spicy"
-    ]
-  },
-  {
-    "id": "lawson-karaagekun-cheese",
-    "name": "ローソン からあげクン 北海道チーズ",
-    "nameEn": "Lawson Karaage-kun Cheese",
-    "category": "Convenience",
-    "calories": 235,
-    "protein": 13.8,
-    "fat": 17,
-    "carbs": 9,
-    "fiber": 0.5,
-    "salt": 1.8,
-    "emoji": "🧀",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack"
-    ]
-  },
-  {
-    "id": "lawson-l-chiki-red",
-    "name": "ローソン Lチキ レッド",
-    "nameEn": "Lawson L-Chiki Red",
-    "category": "Convenience",
-    "calories": 270,
-    "protein": 15,
-    "fat": 18,
-    "carbs": 12,
-    "fiber": 0.5,
-    "salt": 2.2,
-    "emoji": "🍗",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HotSnack",
-      "Spicy"
-    ]
-  },
-  {
-    "id": "aojiru",
-    "name": "青汁",
-    "nameEn": "Green Juice (Aojiru)",
-    "category": "Drink",
-    "calories": 30,
-    "protein": 1,
-    "fat": 0.2,
-    "carbs": 6,
-    "fiber": 3,
-    "salt": 0.05,
-    "emoji": "🍵",
-    "tags": [
-      "Drink",
-      "Vegetable",
-      "Health",
-      "Ingredient"
-    ]
-  },
-  {
-    "id": "cola",
-    "name": "コーラ",
-    "nameEn": "Cola",
-    "category": "Drink",
-    "calories": 225,
-    "protein": 0,
-    "fat": 0,
-    "carbs": 56.5,
-    "fiber": 0,
-    "salt": 0,
-    "emoji": "🥤",
-    "tags": [
-      "Drink",
-      "Sugar",
-      "Carb"
-    ]
-  },
-  {
-    "id": "energy-drink",
-    "name": "エナジードリンク (355ml)",
-    "nameEn": "Energy Drink (355ml)",
-    "category": "Drink",
-    "calories": 170,
-    "protein": 0,
-    "fat": 0,
-    "carbs": 42,
-    "fiber": 0,
-    "salt": 0.2,
-    "emoji": "⚡",
-    "tags": [
-      "Drink",
-      "Sugar",
-      "Caffeine"
-    ]
-  },
-  {
-    "id": "coffee-black",
-    "name": "ブラックコーヒー (350ml)",
-    "nameEn": "Black Coffee",
-    "category": "Drink",
-    "calories": 12,
-    "protein": 0.5,
-    "fat": 0,
-    "carbs": 2.5,
-    "fiber": 0,
-    "salt": 0,
-    "emoji": "☕",
-    "tags": [
-      "Drink",
-      "LowCalorie",
-      "Caffeine"
-    ]
-  },
-  {
-    "id": "cafe-latte",
-    "name": "カフェラテ (Mサイズ)",
-    "nameEn": "Cafe Latte (M)",
-    "category": "Drink",
-    "calories": 100,
-    "protein": 5.2,
-    "fat": 5.5,
-    "carbs": 7.8,
-    "fiber": 0,
-    "salt": 0.2,
-    "emoji": "🥛",
-    "tags": [
-      "Drink",
-      "Dairy"
-    ]
-  },
-  {
-    "id": "orange-juice",
-    "name": "オレンジジュース (100%)",
-    "nameEn": "Orange Juice (100%)",
-    "category": "Drink",
-    "calories": 84,
-    "protein": 1.4,
-    "fat": 0.2,
-    "carbs": 21,
-    "fiber": 0.4,
-    "salt": 0,
-    "emoji": "🍊",
-    "tags": [
-      "Drink",
-      "Fruit",
-      "Sugar"
-    ]
-  },
-  {
     "id": "green-tea-bottle",
-    "name": "緑茶 (ペットボトル)",
-    "nameEn": "Green Tea (Bottle)",
+    "name": "緑茶",
+    "nameEn": "Green Tea",
     "category": "Drink",
     "calories": 0,
     "protein": 0,
@@ -4089,40 +4109,20 @@
     ]
   },
   {
-    "id": "tapioca-milk-tea",
-    "name": "タピオカミルクティー",
-    "nameEn": "Tapioca Milk Tea",
-    "category": "Drink",
-    "calories": 400,
-    "protein": 2,
-    "fat": 10,
-    "carbs": 75,
-    "fiber": 1,
-    "salt": 0.1,
-    "emoji": "🧋",
-    "tags": [
-      "Drink",
-      "Sugar",
-      "Carb",
-      "Dessert"
-    ]
-  },
-  {
-    "id": "beer-can",
-    "name": "ビール (350ml缶)",
-    "nameEn": "Beer (350ml)",
-    "category": "Alcohol",
-    "calories": 140,
-    "protein": 1,
-    "fat": 0,
-    "carbs": 10.5,
-    "fiber": 0,
+    "id": "pear",
+    "name": "和梨",
+    "nameEn": "Japanese Pear",
+    "category": "Fruit",
+    "calories": 43,
+    "protein": 0.3,
+    "fat": 0.1,
+    "carbs": 11.3,
+    "fiber": 0.9,
     "salt": 0,
-    "emoji": "🍺",
+    "emoji": "🍐",
     "tags": [
-      "Drink",
-      "Alcohol",
-      "Carb"
+      "Fruit",
+      "LowCalorie"
     ]
   }
 ]
