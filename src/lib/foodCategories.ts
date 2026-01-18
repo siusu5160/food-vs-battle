@@ -37,11 +37,6 @@ export function categorizeFoodItem(food: FoodItem): {
     foodType: FoodCategoryKey;
     subCategory: SubCategoryKey | null;
 } {
-    // タピオカは「その他」
-    if (food.id === 'tapioca-milk-tea') {
-        return { foodType: 'prepared', subCategory: 'other_prepared' };
-    }
-
     // 飲み物判定
     if (food.category === 'Drink' || (food.tags?.includes('Drink') && food.category !== 'Alcohol')) {
         return { foodType: 'drink', subCategory: null };
