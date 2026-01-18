@@ -146,25 +146,24 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                                 battleText={`【AI栄養ガチャ結果】\n本日のラッキー定食は... ${menu.score}点！✨\n\n主食: ${menu.main.name}\n主菜: ${menu.protein.name}\n副菜: ${menu.side.name}\n合計: ${menu.totalCalories}kcal\n\n#FoodVSガチャ #AI栄養ガチャ`}
                             />
                         </div>
-                    </div>
                     </motion.div>
                 )}
-        </AnimatePresence>
-        </div >
-    );
-
-// If modal props are provided, wrap in overlay
-if (isOpen !== undefined) {
-    return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto" onClick={onClose}>
-            <div className="w-full max-w-5xl" onClick={e => e.stopPropagation()}>
-                {content}
-            </div>
+            </AnimatePresence>
         </div>
     );
-}
 
-return content;
+    // If modal props are provided, wrap in overlay
+    if (isOpen !== undefined) {
+        return (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto" onClick={onClose}>
+                <div className="w-full max-w-5xl" onClick={e => e.stopPropagation()}>
+                    {content}
+                </div>
+            </div>
+        );
+    }
+
+    return content;
 };
 
 const MenuItemCard = ({ role, food, color, bg }: { role: string, food: any, color: string, bg: string }) => (
