@@ -263,10 +263,11 @@ export const BattleClient: React.FC<Props> = ({ foodA, foodB }) => {
             )}
 
             {/* Share Buttons */}
+            {/* Share Buttons */}
             <ShareButtons
                 title={`${foodA.name} VS ${foodB.name} | FOOD VS BATTLE`}
                 url={shareUrl}
-                battleText={`${foodA.emoji}${foodA.name} VS ${foodB.emoji}${foodB.name} の対決結果！\n勝者は...【${result.winner === 'A' ? foodA.name : result.winner === 'B' ? foodB.name : '引き分け'}】${result.winner === 'A' ? foodA.emoji : result.winner === 'B' ? foodB.emoji : '🤝'}🏆\n\n#FOODVS #カロリー対決 #栄養比較`}
+                battleText={`${foodA.emoji}${foodA.name} VS ${foodB.emoji}${foodB.name} の対決結果！\n勝者は...【${result.winner === 'A' ? foodA.name : result.winner === 'B' ? foodB.name : '引き分け'}】${result.winner === 'A' ? foodA.emoji : result.winner === 'B' ? foodB.emoji : '🤝'}🏆\n\n#どっち派 #${foodA.name.replace(/\s+/g, '')}vs${foodB.name.replace(/\s+/g, '')} #FOODVS #カロリー対決`}
             />
 
 
