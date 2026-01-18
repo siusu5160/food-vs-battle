@@ -4,13 +4,16 @@ import { FoodItem } from '@/types/FoodItem';
 export const FOOD_CATEGORIES = {
     all: { label: 'すべて', labelEn: 'All', icon: '🌟' },
     drink: { label: '飲み物', labelEn: 'Drinks', icon: '🥤' },
-    alcohol: { label: 'お酒', labelEn: 'Alcohol', icon: '🍺' },
     ingredient: { label: '食材', labelEn: 'Ingredients', icon: '🥬' },
     prepared: { label: '調理済み', labelEn: 'Prepared Food', icon: '🍽️' },
 } as const;
 
 // サブカテゴリー定義
 export const SUB_CATEGORIES = {
+    // 飲み物サブカテゴリー
+    alcohol: { label: 'お酒', labelEn: 'Alcohol', icon: '🍺', parent: 'drink' as const },
+    softdrink: { label: 'ソフトドリンク', labelEn: 'Soft Drinks', icon: '🧃', parent: 'drink' as const },
+
     // 食材サブカテゴリー
     meat: { label: '肉・魚', labelEn: 'Meat/Fish', icon: '🥩', parent: 'ingredient' as const },
     carb: { label: '炭水化物', labelEn: 'Carbs', icon: '🍚', parent: 'ingredient' as const },
@@ -37,9 +40,16 @@ export function categorizeFoodItem(food: FoodItem): {
     foodType: FoodCategoryKey;
     subCategory: SubCategoryKey | null;
 } {
-    // 飲み物判定
-    if (food.category === 'Drink' || (food.tags?.includes('Drink') && food.category !== 'Alcohol')) {
-        return { foodType: 'drink', subCategory: null };
+    // お酒判定 (Drink > Alcohol)
+    if (food.category === 'Alcohol' ||
+        food.id.includes('alc-') ||
+        (food.tags && food.tags.includes('Alcohol'))) {
+        return { foodType: 'drink', subCategory: 'alcohol' };
+    }
+
+    // 飲み物判定 (Drink > Soft Drink)
+    if (food.category === 'Drink' || (food.tags?.includes('Drink'))) {
+        return { foodType: 'drink', subCategory: 'softdrink' };
     }
 
     // カテゴリーベースの判定（コンビニ）
