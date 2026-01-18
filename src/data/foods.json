@@ -178,7 +178,7 @@
   },
   {
     "id": "asparagus",
-    "name": "アスパラガス(1束)",
+    "name": "アスパラガス",
     "nameEn": "Asparagus",
     "calories": 25,
     "protein": 3,
@@ -517,19 +517,6 @@
     ]
   },
   {
-    "id": "kiwi-whole",
-    "name": "キウイ",
-    "nameEn": "Kiwi",
-    "calories": 50,
-    "protein": 1,
-    "fat": 0.5,
-    "carbs": 12,
-    "fiber": 2.5,
-    "salt": 0,
-    "emoji": "🥝",
-    "category": "Fruit"
-  },
-  {
     "id": "cabbage",
     "name": "キャベツ",
     "nameEn": "Cabbage",
@@ -563,19 +550,6 @@
       "LowCalorie",
       "LowCarb"
     ]
-  },
-  {
-    "id": "cucumber-raw",
-    "name": "きゅうり",
-    "nameEn": "Cucumber",
-    "calories": 14,
-    "protein": 1,
-    "fat": 0,
-    "carbs": 3,
-    "fiber": 1,
-    "salt": 0,
-    "emoji": "🥒",
-    "category": "Vegetable"
   },
   {
     "id": "glico-pretz-salad",
@@ -1596,7 +1570,7 @@
   },
   {
     "id": "garlic-clove",
-    "name": "にんにく(1片)",
+    "name": "にんにく",
     "nameEn": "Garlic",
     "calories": 10,
     "protein": 0.5,
@@ -1734,19 +1708,6 @@
       "Fruit",
       "LowCalorie"
     ]
-  },
-  {
-    "id": "pineapple-slice",
-    "name": "パイナップル(カット)",
-    "nameEn": "Pineapple",
-    "calories": 50,
-    "protein": 0.5,
-    "fat": 0,
-    "carbs": 13,
-    "fiber": 1.5,
-    "salt": 0,
-    "emoji": "🍍",
-    "category": "Fruit"
   },
   {
     "id": "butter-pat",
@@ -2001,19 +1962,6 @@
       "Fruit",
       "LowCalorie"
     ]
-  },
-  {
-    "id": "grape-bunch",
-    "name": "ぶどう(1房)",
-    "nameEn": "Grapes",
-    "calories": 120,
-    "protein": 1,
-    "fat": 0.2,
-    "carbs": 30,
-    "fiber": 1,
-    "salt": 0,
-    "emoji": "🍇",
-    "category": "Fruit"
   },
   {
     "id": "coffee-black",
@@ -2555,19 +2503,6 @@
     ]
   },
   {
-    "id": "mikan",
-    "name": "みかん",
-    "nameEn": "Mandarin Orange",
-    "calories": 45,
-    "protein": 0.7,
-    "fat": 0.1,
-    "carbs": 11,
-    "fiber": 1,
-    "salt": 0,
-    "emoji": "🍊",
-    "category": "Fruit"
-  },
-  {
     "id": "mister-angel-french",
     "name": "ミスド エンゼルフレンチ",
     "nameEn": "Mister Donut Angel French",
@@ -2650,19 +2585,6 @@
       "Fruit",
       "LowCalorie"
     ]
-  },
-  {
-    "id": "melon-slice",
-    "name": "メロン(1切れ)",
-    "nameEn": "Melon",
-    "calories": 50,
-    "protein": 1,
-    "fat": 0.1,
-    "carbs": 12,
-    "fiber": 1,
-    "salt": 0,
-    "emoji": "🍈",
-    "category": "Fruit"
   },
   {
     "id": "mos-spicy-mos",
@@ -2783,24 +2705,6 @@
     ]
   },
   {
-    "id": "mos-mosburger",
-    "name": "モスバーガー",
-    "nameEn": "Mos Burger",
-    "category": "FastFood",
-    "calories": 367,
-    "protein": 14.8,
-    "fat": 15.5,
-    "carbs": 41.8,
-    "fiber": 2.5,
-    "salt": 2.5,
-    "emoji": "🍔",
-    "tags": [
-      "FastFood",
-      "Meat",
-      "Vegetable"
-    ]
-  },
-  {
     "id": "mochi-barley",
     "name": "もち麦(ゆで)",
     "nameEn": "Mochi Barley (Boiled)",
@@ -2835,7 +2739,7 @@
   },
   {
     "id": "moyashi-pack",
-    "name": "もやし(1袋)",
+    "name": "もやし",
     "nameEn": "Bean Sprouts",
     "calories": 30,
     "protein": 4,
@@ -2977,25 +2881,8 @@
     "category": "Fruit"
   },
   {
-    "id": "lemon",
-    "name": "レモン(全果)",
-    "nameEn": "Lemon (Whole)",
-    "category": "Fruit",
-    "calories": 54,
-    "protein": 1.1,
-    "fat": 0.3,
-    "carbs": 12.5,
-    "fiber": 4.9,
-    "salt": 0,
-    "emoji": "🍋",
-    "tags": [
-      "Fruit",
-      "LowCalorie"
-    ]
-  },
-  {
     "id": "renkon-raw",
-    "name": "レンコン(1節)",
+    "name": "レンコン",
     "nameEn": "Lotus Root",
     "calories": 70,
     "protein": 2,
@@ -3472,19 +3359,6 @@
     ]
   },
   {
-    "id": "milk-glass",
-    "name": "牛乳",
-    "nameEn": "Milk",
-    "calories": 134,
-    "protein": 6.6,
-    "fat": 7.6,
-    "carbs": 9.6,
-    "fiber": 0,
-    "salt": 0.2,
-    "emoji": "🥛",
-    "category": "Dairy"
-  },
-  {
     "id": "onion",
     "name": "玉ねぎ",
     "nameEn": "Onion",
@@ -3939,19 +3813,6 @@
     "tags": [
       "Side"
     ]
-  },
-  {
-    "id": "natto-pack",
-    "name": "納豆(1パック)",
-    "nameEn": "Natto",
-    "calories": 100,
-    "protein": 8,
-    "fat": 5,
-    "carbs": 6,
-    "fiber": 3,
-    "salt": 0,
-    "emoji": "🥢",
-    "category": "Soy"
   },
   {
     "id": "basashi",
