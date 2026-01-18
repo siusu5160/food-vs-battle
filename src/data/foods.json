@@ -4180,5 +4180,188 @@
       "Fruit",
       "LowCalorie"
     ]
+  },
+  {
+    "id": "seven-nana-chiki",
+    "name": "ななチキ",
+    "nameEn": "Nana-Chiki (7-Eleven)",
+    "category": "Meat",
+    "calories": 173,
+    "protein": 14.2,
+    "fat": 10.3,
+    "carbs": 6.8,
+    "fiber": 0.5,
+    "salt": 1.4,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "seven-age-dori",
+    "name": "揚げ鶏",
+    "nameEn": "Age-Dori (7-Eleven)",
+    "category": "Meat",
+    "calories": 182,
+    "protein": 14.0,
+    "fat": 11.5,
+    "carbs": 5.8,
+    "fiber": 0.2,
+    "salt": 1.3,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "seven-american-dog",
+    "name": "アメリカンドッグ",
+    "nameEn": "Corn Dog (7-Eleven)",
+    "category": "Snack",
+    "calories": 297,
+    "protein": 6.8,
+    "fat": 14.5,
+    "carbs": 34.6,
+    "fiber": 1.5,
+    "salt": 1.1,
+    "emoji": "🌭",
+    "tags": [
+      "Convenience",
+      "Snack",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "famima-chiki",
+    "name": "ファミチキ",
+    "nameEn": "Fami-Chiki",
+    "category": "Meat",
+    "calories": 251,
+    "protein": 12.7,
+    "fat": 15.7,
+    "carbs": 14.8,
+    "fiber": 0.5,
+    "salt": 1.3,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "famima-spicy-chicken",
+    "name": "スパイシーチキン",
+    "nameEn": "Spicy Chicken (FamilyMart)",
+    "category": "Meat",
+    "calories": 196,
+    "protein": 11.8,
+    "fat": 10.5,
+    "carbs": 13.5,
+    "fiber": 0.8,
+    "salt": 1.5,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack",
+      "Spicy"
+    ]
+  },
+  {
+    "id": "famima-tsukune",
+    "name": "炭火焼きとり つくねタレ",
+    "nameEn": "Yakitori Tsukune (FamilyMart)",
+    "category": "Meat",
+    "calories": 154,
+    "protein": 10.5,
+    "fat": 8.5,
+    "carbs": 8.0,
+    "fiber": 0.5,
+    "salt": 1.4,
+    "emoji": "🍢",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "lawson-karaagekun-reg",
+    "name": "からあげクン レギュラー",
+    "nameEn": "Karaage-kun Regular",
+    "category": "Meat",
+    "calories": 220,
+    "protein": 14.0,
+    "fat": 16.0,
+    "carbs": 8.0,
+    "fiber": 0.5,
+    "salt": 1.6,
+    "emoji": "🐓",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "lawson-karaagekun-red",
+    "name": "からあげクン レッド",
+    "nameEn": "Karaage-kun Red",
+    "category": "Meat",
+    "calories": 230,
+    "protein": 14.5,
+    "fat": 16.5,
+    "carbs": 8.5,
+    "fiber": 0.6,
+    "salt": 1.7,
+    "emoji": "🐓",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack",
+      "Spicy"
+    ]
+  },
+  {
+    "id": "lawson-karaagekun-cheese",
+    "name": "からあげクン 北海道チーズ",
+    "nameEn": "Karaage-kun Cheese",
+    "category": "Meat",
+    "calories": 235,
+    "protein": 13.8,
+    "fat": 17.0,
+    "carbs": 9.0,
+    "fiber": 0.5,
+    "salt": 1.8,
+    "emoji": "🧀",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack"
+    ]
+  },
+  {
+    "id": "lawson-l-chiki-red",
+    "name": "Lチキ レッド",
+    "nameEn": "L-Chiki Red",
+    "category": "Meat",
+    "calories": 270,
+    "protein": 15.0,
+    "fat": 18.0,
+    "carbs": 12.0,
+    "fiber": 0.5,
+    "salt": 2.2,
+    "emoji": "🍗",
+    "tags": [
+      "Convenience",
+      "Meat",
+      "HotSnack",
+      "Spicy"
+    ]
   }
 ]
