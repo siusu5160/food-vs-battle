@@ -45,10 +45,11 @@ export function categorizeFoodItem(food: FoodItem): {
     }
 
     // ラーメン判定
-    if (food.category === 'Ramen' ||
+    if ((food.category === 'Ramen' ||
         food.id.includes('ramen-') ||
         food.id.includes('cup-noodle') ||
-        (food.tags && food.tags.includes('Noodle') && food.category === 'Restaurant')) {
+        (food.tags && food.tags.includes('Noodle') && food.category === 'Restaurant')) &&
+        !food.tags?.includes('Convenience')) {
         return { foodType: 'prepared', subCategory: 'ramen' };
     }
 
@@ -60,18 +61,20 @@ export function categorizeFoodItem(food: FoodItem): {
     }
 
     // IDベースの判定（レストランチェーン）
-    if (food.id.includes('yoshi-') || food.id.includes('saize-') ||
+    if ((food.id.includes('yoshi-') || food.id.includes('saize-') ||
         food.id.includes('sushiro-') || food.id.includes('gusto-') ||
         food.id.includes('sukiya-') || food.id.includes('matsuya-') ||
         food.id.includes('kura-') || food.id.includes('hama-') ||
-        food.id.includes('marugame-') || food.id.includes('coco-')) {
+        food.id.includes('marugame-') || food.id.includes('coco-')) &&
+        !food.tags?.includes('Convenience')) {
         return { foodType: 'prepared', subCategory: 'restaurant' };
     }
 
     // IDベースの判定（ファストフード）
-    if (food.id.includes('mac-') || food.id.includes('mos-') ||
+    if ((food.id.includes('mac-') || food.id.includes('mos-') ||
         food.id.includes('kfc-') || food.id.includes('subway-') ||
-        food.id.includes('lotteria-') || food.id.includes('burgerking-')) {
+        food.id.includes('lotteria-') || food.id.includes('burgerking-')) &&
+        !food.tags?.includes('Convenience')) {
         return { foodType: 'prepared', subCategory: 'fastfood' };
     }
 
