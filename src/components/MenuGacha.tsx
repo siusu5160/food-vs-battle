@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { generateBalancedMenu, type MenuSet } from '@/lib/gachaLogic';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ShareButtons from './ShareButtons';
 
 interface MenuGachaProps {
     isOpen?: boolean;
@@ -136,24 +137,34 @@ export const MenuGacha: React.FC<MenuGachaProps> = ({ isOpen, onClose }) => {
                                 </button>
                             </div>
                         </div>
+
+                        <div className="mt-6 border-t border-gray-800 pt-6">
+                            <p className="text-gray-500 text-sm mb-2 text-center">{t('結果をシェアする', 'Share Result')}</p>
+                            <ShareButtons
+                                title={`AI栄養ガチャ | FOOD VS BATTLE`}
+                                url={typeof window !== 'undefined' ? window.location.href : ''}
+                                battleText={`【AI栄養ガチャ結果】\n本日のラッキー定食は... ${menu.score}点！✨\n\n主食: ${menu.main.name}\n主菜: ${menu.protein.name}\n副菜: ${menu.side.name}\n合計: ${menu.totalCalories}kcal\n\n#FoodVSガチャ #AI栄養ガチャ`}
+                            />
+                        </div>
+                    </div>
                     </motion.div>
                 )}
-            </AnimatePresence>
-        </div>
+        </AnimatePresence>
+        </div >
     );
 
-    // If modal props are provided, wrap in overlay
-    if (isOpen !== undefined) {
-        return (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto" onClick={onClose}>
-                <div className="w-full max-w-5xl" onClick={e => e.stopPropagation()}>
-                    {content}
-                </div>
+// If modal props are provided, wrap in overlay
+if (isOpen !== undefined) {
+    return (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto" onClick={onClose}>
+            <div className="w-full max-w-5xl" onClick={e => e.stopPropagation()}>
+                {content}
             </div>
-        );
-    }
+        </div>
+    );
+}
 
-    return content;
+return content;
 };
 
 const MenuItemCard = ({ role, food, color, bg }: { role: string, food: any, color: string, bg: string }) => (

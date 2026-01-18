@@ -21,30 +21,51 @@ const geistMono = Geist_Mono({
   preload: true,
 });
 
+// Viewport moved to valid nextjs export in metadata or separate export if needed, 
+// using separate export is cleaner for static analysis but metadata.viewport is deprecated in newer versions? 
+// Actually Next.js 14+ recommends `export const viewport: Viewport` separately. 
+// Let's keep the `viewport` export but update it.
+
 export const viewport: Viewport = {
   themeColor: "#d4af37",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5,
 };
 
 export const metadata: Metadata = {
-  title: "FOOD VS BATTLE | 食べ物同士の究極の対決",
-  description: "FOOD VS BATTLEは、様々な食べ物同士を戦わせて最強を決めるエンターテインメント投票サイトです。あなたの推しフードを応援しよう！",
+  title: {
+    default: "FOOD VS BATTLE - 食品栄養素比較データベース",
+    template: "%s | FOOD VS BATTLE"
+  },
+  description: "外食や食材の栄養素を比較できる専門データベースサイト。カロリー、タンパク質、脂質などを徹底比較して、あなたの健康的な食生活をサポートします。ダイエットや筋トレ中の方に最適。",
+  keywords: ["カロリー比較", "栄養素", "PFCバランス", "外食", "ダイエット", "高タンパク"],
   manifest: "/manifest.json",
   icons: {
     icon: "/icon-192.png",
     apple: "/icon-192.png",
   },
   openGraph: {
-    title: "FOOD VS BATTLE | 食べ物同士の究極の対決",
-    description: "様々な食べ物同士を戦わせて最強を決めるエンターテインメント投票サイト",
-    images: ['/opengraph-image'],
+    title: "FOOD VS BATTLE - 食品栄養素比較データベース",
+    description: "外食や食材の栄養素を比較できる専門データベースサイト。どっちが太る？どっちが筋肉にいい？をデータで決着。",
+    url: "https://food-vs-battle.pages.dev",
+    siteName: "FOOD VS BATTLE",
+    locale: "ja_JP",
+    type: "website",
+    images: [{
+      url: '/opengraph-image', // Dynamic OG image route
+      width: 1200,
+      height: 630,
+    }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "FOOD VS BATTLE",
-    description: "食べ物同士の究極の対決",
+    description: "食品栄養素比較データベース。カロリー対決で勝敗を決めよう！",
+    images: ['/opengraph-image'], // Fallback to OG image
+  },
+  verification: {
+    google: "LfthHJ8M16ADRokn5lDH4a6vKyZkhkJmCDzM5uVffGU",
   },
 };
 
@@ -58,7 +79,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <meta name="google-site-verification" content="LfthHJ8M16ADRokn5lDH4a6vKyZkhkJmCDzM5uVffGU" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5409964582648687"
