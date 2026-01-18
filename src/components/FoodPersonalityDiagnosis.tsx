@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ShareButtons from './ShareButtons';
 
 const QUESTIONS = [
     {
@@ -196,10 +197,19 @@ export const FoodPersonalityDiagnosis: React.FC<Props> = ({ isOpen, onClose }) =
                             </p>
                             <button
                                 onClick={reset}
-                                className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black font-bold py-3 px-8 rounded-full transition-all"
+                                className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black font-bold py-3 px-8 rounded-full transition-all mb-6"
                             >
                                 {t('もう一度診断する', 'Diagnose Again')}
                             </button>
+
+                            <div className="border-t border-gray-800 pt-6">
+                                <p className="text-gray-500 text-sm mb-2">{t('結果をシェアする', 'Share Result')}</p>
+                                <ShareButtons
+                                    title={`食の性格診断 | FOOD VS BATTLE`}
+                                    url={typeof window !== 'undefined' ? window.location.href : ''}
+                                    battleText={`【食の性格診断】\n私は... ${results[result].emoji} ${results[result].title} でした！\n\n${results[result].desc}\n\n#FoodVS診断 #食の性格診断`}
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
