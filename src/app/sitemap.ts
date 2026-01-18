@@ -20,6 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'daily' as const,
             priority: 0.9,
         },
+        // Individual Ranking Pages
+        ...['high-calorie', 'low-calorie', 'high-protein', 'low-carb', 'high-fiber', 'low-salt', 'low-fat', 'high-salt'].map(category => ({
+            url: `${baseUrl}/ranking/${category}`,
+            lastModified: currentDate,
+            changeFrequency: 'daily' as const,
+            priority: 0.8,
+        })),
         {
             url: `${baseUrl}/gacha`,
             lastModified: currentDate,

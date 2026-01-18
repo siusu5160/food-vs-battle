@@ -1,5 +1,6 @@
 import { getAllFoods, getFoodById } from '@/lib/search';
 import { BattleClient } from '@/components/BattleClient';
+import { StructuredData } from '@/components/StructuredData';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
@@ -39,20 +40,13 @@ export async function generateMetadata({ params }: { params: Promise<{ idA: stri
             siteName: 'FOOD VS BATTLE',
             locale: 'ja_JP',
             type: 'website',
-            images: [
-                {
-                    url: '/og-image.png', // TODO: Generate dynamic OG image
-                    width: 1200,
-                    height: 630,
-                    alt: `${foodA.name} vs ${foodB.name}`,
-                },
-            ],
+            // images: handled by opengraph-image.tsx
         },
         twitter: {
             card: 'summary_large_image',
             title,
             description,
-            images: ['/og-image.png'],
+            // images: handled by opengraph-image.tsx
         },
     };
 }
@@ -130,13 +124,13 @@ export default async function BattlePage({ params }: { params: Promise<{ idA: st
 
         return (
             <div className="pb-20 pt-4">
+                <StructuredData type="Breadcrumb" data={[
+                    { name: 'Home', item: '/' },
+                    { name: 'Battle', item: `/battle/${cleanIdA}/${cleanIdB}` }
+                ]} />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
                 />
                 <BattleClient foodA={foodA} foodB={foodB} />
             </div>
