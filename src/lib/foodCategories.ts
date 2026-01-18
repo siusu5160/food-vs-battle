@@ -35,6 +35,15 @@ export function categorizeFoodItem(food: FoodItem): {
     foodType: FoodCategoryKey;
     subCategory: SubCategoryKey | null;
 } {
+    // カテゴリーベースの判定（コンビニ）
+    if (food.category === 'Convenience' || food.tags?.includes('Convenience') ||
+        food.id.includes('onigiri') || food.id.includes('karaage-kun') ||
+        food.id.includes('famichiki') || food.id.includes('nanachiki') ||
+        food.id.includes('salad-chicken') || food.id.includes('lawson') ||
+        food.id.includes('familymart') || food.id.includes('seven')) {
+        return { foodType: 'prepared', subCategory: 'convenience' };
+    }
+
     // ラーメン判定
     if (food.category === 'Ramen' ||
         food.id.includes('ramen-') ||
@@ -64,15 +73,6 @@ export function categorizeFoodItem(food: FoodItem): {
         food.id.includes('kfc-') || food.id.includes('subway-') ||
         food.id.includes('lotteria-') || food.id.includes('burgerking-')) {
         return { foodType: 'prepared', subCategory: 'fastfood' };
-    }
-
-    // カテゴリーベースの判定（コンビニ）
-    if (food.category === 'Convenience' || food.tags?.includes('Convenience') ||
-        food.id.includes('onigiri') || food.id.includes('karaage-kun') ||
-        food.id.includes('famichiki') || food.id.includes('nanachiki') ||
-        food.id.includes('salad-chicken') || food.id.includes('lawson') ||
-        food.id.includes('familymart') || food.id.includes('seven')) {
-        return { foodType: 'prepared', subCategory: 'convenience' };
     }
 
     // カテゴリーベースの判定（デザート）
