@@ -1751,41 +1751,6 @@
     ]
   },
   {
-    "id": "famima-spicy-chiki",
-    "name": "ファミマ スパイシーチキン",
-    "nameEn": "FamilyMart Spicy Chicken",
-    "category": "FastFood",
-    "calories": 196,
-    "protein": 11.5,
-    "fat": 10.8,
-    "carbs": 13.2,
-    "fiber": 0.5,
-    "salt": 1.5,
-    "emoji": "🍗",
-    "tags": [
-      "Convenience",
-      "Meat"
-    ]
-  },
-  {
-    "id": "famima-chiki",
-    "name": "ファミマ ファミチキ",
-    "nameEn": "FamilyMart Famichiki",
-    "category": "FastFood",
-    "calories": 251,
-    "protein": 12.7,
-    "fat": 15.7,
-    "carbs": 14.8,
-    "fiber": 0.8,
-    "salt": 1.3,
-    "emoji": "🍗",
-    "tags": [
-      "Convenience",
-      "Meat",
-      "HighFat"
-    ]
-  },
-  {
     "id": "famima-oreno-pudding",
     "name": "ファミマ 俺のプリン",
     "nameEn": "FamilyMart Ore no Pudding",
