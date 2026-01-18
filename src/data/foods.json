@@ -1804,23 +1804,6 @@
     ]
   },
   {
-    "id": "famima-tsukune",
-    "name": "ファミマ 鶏つくね串",
-    "nameEn": "FamilyMart Chicken Meatball Skewer",
-    "category": "FastFood",
-    "calories": 145,
-    "protein": 8.5,
-    "fat": 7.2,
-    "carbs": 10.5,
-    "fiber": 0.5,
-    "salt": 1.2,
-    "emoji": "🍢",
-    "tags": [
-      "Convenience",
-      "Meat"
-    ]
-  },
-  {
     "id": "grape",
     "name": "ぶどう",
     "nameEn": "Grape",

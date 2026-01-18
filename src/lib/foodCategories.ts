@@ -40,7 +40,10 @@ export function categorizeFoodItem(food: FoodItem): {
         food.id.includes('onigiri') || food.id.includes('karaage-kun') ||
         food.id.includes('famichiki') || food.id.includes('nanachiki') ||
         food.id.includes('salad-chicken') || food.id.includes('lawson') ||
-        food.id.includes('familymart') || food.id.includes('seven')) {
+        food.id.includes('familymart') || food.id.includes('seven') ||
+        // 日本語名での判定（データの揺らぎ対策）
+        food.name.includes('ファミマ') || food.name.includes('ファミリーマート') ||
+        food.name.includes('ローソン') || food.name.includes('セブン')) {
         return { foodType: 'prepared', subCategory: 'convenience' };
     }
 
