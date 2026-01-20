@@ -334,26 +334,25 @@ export const ARTICLES: Article[] = [
             <p>Ingredient called Tryptophan supports good sleep. Adding a little honey increases relaxation effect.</p>
         `
         }
-    }
     },
-{
-    slug: 'coffee-vs-tea',
+    {
+        slug: 'coffee-vs-tea',
         title: {
-        ja: 'コーヒー派？紅茶派？どちらが健康に良いか対決！',
+            ja: 'コーヒー派？紅茶派？どちらが健康に良いか対決！',
             en: 'Coffee vs Tea? Battle for Health Benefits!'
-    },
-    emoji: '☕',
+        },
+        emoji: '☕',
         excerpt: {
-        ja: '毎日のカフェイン摂取、どっちが正解？集中力アップのコーヒー、リラックスの紅茶。それぞれのメリットを比較しました。',
+            ja: '毎日のカフェイン摂取、どっちが正解？集中力アップのコーヒー、リラックスの紅茶。それぞれのメリットを比較しました。',
             en: 'Daily caffeine intake, which is the right answer? Coffee for concentration, Tea for relaxation. We compared their benefits.'
-    },
-    date: '2025-01-20',
+        },
+        date: '2025-01-20',
         tags: {
-        ja: ['比較', '健康', '飲み物'],
+            ja: ['比較', '健康', '飲み物'],
             en: ['Comparison', 'Health', 'Drink']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>朝の一杯、どちらを選びますか？</h2>
             <p>世界中で愛される2大飲料。どちらにも素晴らしい健康効果がありますが、目的によって飲み分けるのが賢い選択です。</p>
 
@@ -379,26 +378,26 @@ export const ARTICLES: Article[] = [
             <h3>Comparison of Caffeine Content</h3>
             <p>Generally, coffee has more caffeine for the same amount. If you want to "get fired up today", coffee is recommended, and if it's "afternoon tea time", tea is recommended.</p>
             `
-    }
-},
-{
-    slug: 'white-rice-vs-brown-rice',
+        }
+    },
+    {
+        slug: 'white-rice-vs-brown-rice',
         title: {
-        ja: '白米 vs 玄米！ダイエット中に食べるならどっち？',
+            ja: '白米 vs 玄米！ダイエット中に食べるならどっち？',
             en: 'White Rice vs Brown Rice! Which should you eat while dieting?'
-    },
-    emoji: '🍚',
+        },
+        emoji: '🍚',
         excerpt: {
-        ja: '「白米は太る」は本当？玄米の栄養価は？GI値の違いから、あなたに合ったお米の選び方を解説します。',
+            ja: '「白米は太る」は本当？玄米の栄養価は？GI値の違いから、あなたに合ったお米の選び方を解説します。',
             en: 'Is "White rice makes you fat" true? What is the nutritional value of brown rice? We explain how to choose the right rice for you from the difference in GI values.'
-    },
-    date: '2025-01-19',
+        },
+        date: '2025-01-19',
         tags: {
-        ja: ['ダイエット', '糖質制限', '主食'],
+            ja: ['ダイエット', '糖質制限', '主食'],
             en: ['Diet', 'Low Carb', 'Staple Food']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>やっぱり白米が好き！でも太る？</h2>
             <p>日本人のソウルフード、白米。しかしダイエットの敵とされることも多いです。玄米に変えるだけで本当に痩せるのでしょうか？</p>
 
@@ -424,26 +423,26 @@ export const ARTICLES: Article[] = [
             <h3>Advice for White Rice Lovers</h3>
             <p>You don't have to force yourself to eat brown rice. By eating it as "cold rice", starch changes to "resistant starch", and calorie absorption is suppressed. Onigiri might be the strongest diet food?</p>
             `
-    }
-},
-{
-    slug: 'banana-benefits',
+        }
+    },
+    {
+        slug: 'banana-benefits',
         title: {
-        ja: '1日1本のバナナが体を変える！驚くべき健康効果',
+            ja: '1日1本のバナナが体を変える！驚くべき健康効果',
             en: 'One banana a day changes your body! Amazing health benefits'
-    },
-    emoji: '🍌',
+        },
+        emoji: '🍌',
         excerpt: {
-        ja: '安くて手軽なスーパーフード、バナナ。筋トレ前のエネルギー補給や、むくみ解消に効果的な理由とは？',
+            ja: '安くて手軽なスーパーフード、バナナ。筋トレ前のエネルギー補給や、むくみ解消に効果的な理由とは？',
             en: 'Cheap and easy superfood, banana. Why is it effective for energy supply before muscle training and eliminating swelling?'
-    },
-    date: '2025-01-19',
+        },
+        date: '2025-01-19',
         tags: {
-        ja: ['フルーツ', '健康', '筋トレ'],
+            ja: ['フルーツ', '健康', '筋トレ'],
             en: ['Fruit', 'Health', 'Muscle Training']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>アスリートがバナナを食べる理由</h2>
             <p>スポーツ選手が試合の合間にバナナを食べているのを見たことがありませんか？あれには科学的な理由があります。</p>
 
@@ -469,26 +468,26 @@ export const ARTICLES: Article[] = [
             <h3>Happiness hormone "Serotonin"</h3>
             <p>Bananas contain tryptophan, which is the material for serotonin. Eat a banana in the morning to start a happy day.</p>
             `
-    }
-},
-{
-    slug: 'nuts-diet',
+        }
+    },
+    {
+        slug: 'nuts-diet',
         title: {
-        ja: '「脂質が高いから太る」は嘘？ナッツがダイエットに最強な理由',
+            ja: '「脂質が高いから太る」は嘘？ナッツがダイエットに最強な理由',
             en: 'Is "High fat makes you fat" a lie? Why nuts are strongest for diet'
-    },
-    emoji: '🥜',
+        },
+        emoji: '🥜',
         excerpt: {
-        ja: 'アーモンド、くるみ、カシューナッツ...。高カロリーなのに痩せる「魔法の間食」の選び方と食べ方。',
+            ja: 'アーモンド、くるみ、カシューナッツ...。高カロリーなのに痩せる「魔法の間食」の選び方と食べ方。',
             en: 'Almonds, walnuts, cashews... How to choose and eat "magical snacks" that help you lose weight despite being high calorie.'
-    },
-    date: '2025-01-18',
+        },
+        date: '2025-01-18',
         tags: {
-        ja: ['ダイエット', 'おやつ', '美容'],
+            ja: ['ダイエット', 'おやつ', '美容'],
             en: ['Diet', 'Snack', 'Beauty']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>良質な脂質は味方です</h2>
             <p>「ナッツはカロリーが高いから...」と敬遠していませんか？実は、ナッツの脂質は体に蓄積されにくい「不飽和脂肪酸」が中心です。</p>
 
@@ -522,26 +521,26 @@ export const ARTICLES: Article[] = [
                 <li><strong>Eat before meals</strong>: It suppresses the sudden rise in blood sugar.</li>
             </ul>
             `
-    }
-},
-{
-    slug: 'hydration-importance',
+        }
+    },
+    {
+        slug: 'hydration-importance',
         title: {
-        ja: '「水2リットル」の真実。水を飲むだけで痩せるって本当？',
+            ja: '「水2リットル」の真実。水を飲むだけで痩せるって本当？',
             en: 'The truth about "2 liters of water". Is it true you lose weight just by drinking water?'
-    },
-    emoji: '💧',
+        },
+        emoji: '💧',
         excerpt: {
-        ja: 'モデルが水をたくさん飲むのには理由がある。代謝アップ、デトックス、食欲抑制...水のパワーを解説。',
+            ja: 'モデルが水をたくさん飲むのには理由がある。代謝アップ、デトックス、食欲抑制...水のパワーを解説。',
             en: 'There is a reason why models drink a lot of water. Metabolism boost, detox, appetite suppression... Explaining the power of water.'
-    },
-    date: '2025-01-18',
+        },
+        date: '2025-01-18',
         tags: {
-        ja: ['ダイエット', '健康', 'デトックス'],
+            ja: ['ダイエット', '健康', 'デトックス'],
             en: ['Diet', 'Health', 'Detox']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>身体の60%は水分です</h2>
             <p>水分不足は代謝の低下を招き、太りやすい体質を作ります。逆に、適切に水を飲めば「痩せ体質」に近づけます。</p>
 
@@ -567,26 +566,26 @@ export const ARTICLES: Article[] = [
             <h3>Correct way to drink</h3>
             <p>Drinking all at once is NG. Drink a cup (200ml) frequently, such as when waking up, before meals, before and after bathing. Room temperature water is recommended over cold water.</p>
             `
-    }
-},
-{
-    slug: 'avocado-benefits',
+        }
+    },
+    {
+        slug: 'avocado-benefits',
         title: {
-        ja: '「森のバター」アボカドは食べる美容液！カロリーは無視してOK？',
+            ja: '「森のバター」アボカドは食べる美容液！カロリーは無視してOK？',
             en: '"Forest Butter" Avocado is an edible beauty serum! Is it OK to ignore calories?'
-    },
-    emoji: '🥑',
+        },
+        emoji: '🥑',
         excerpt: {
-        ja: '世界一栄養価の高い果実、アボカド。高カロリーなのにダイエットや美容に推奨される驚きの理由。',
+            ja: '世界一栄養価の高い果実、アボカド。高カロリーなのにダイエットや美容に推奨される驚きの理由。',
             en: 'The world\'s most nutritious fruit, avocado. Surprisingly recommended for diet and beauty despite high calories.'
-    },
-    date: '2025-01-18',
+        },
+        date: '2025-01-18',
         tags: {
-        ja: ['美容', 'スーパーフード', '脂質'],
+            ja: ['美容', 'スーパーフード', '脂質'],
             en: ['Beauty', 'Superfood', 'Fat']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>脂肪を燃やす脂肪！？</h2>
             <p>アボカド1個で約250kcalとご飯大盛り並み。しかし、アボカドの脂質は「オレイン酸」。悪玉コレステロールを減らし、脂肪をつきにくくする働きがあります。</p>
 
@@ -612,26 +611,26 @@ export const ARTICLES: Article[] = [
             <h3>Caution</h3>
             <p>Even though it is good for the body, the calories are real. Aim for half a piece a day, and enjoy it on salad or toast.</p>
             `
-    }
-},
-{
-    slug: 'oatmeal-breakfast',
+        }
+    },
+    {
+        slug: 'oatmeal-breakfast',
         title: {
-        ja: '朝食をオートミールに変えるだけで痩せる？話題の腸活メニュー',
+            ja: '朝食をオートミールに変えるだけで痩せる？話題の腸活メニュー',
             en: 'Lose weight just by changing breakfast to Oatmeal? Trendy gut activity menu'
-    },
-    emoji: '🥣',
+        },
+        emoji: '🥣',
         excerpt: {
-        ja: 'モデルやアスリートがこぞって食べるオートミール。美味しくないイメージを覆す、簡単アレンジとダイエット効果。',
+            ja: 'モデルやアスリートがこぞって食べるオートミール。美味しくないイメージを覆す、簡単アレンジとダイエット効果。',
             en: 'Models and athletes all eat oatmeal. Easy arrangements and diet effects that overturn the image of not being tasty.'
-    },
-    date: '2025-01-18',
+        },
+        date: '2025-01-18',
         tags: {
-        ja: ['朝食', '腸活', 'ダイエット'],
+            ja: ['朝食', '腸活', 'ダイエット'],
             en: ['Breakfast', 'Gut Health', 'Diet']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>食物繊維は白米の20倍！</h2>
             <p>オートミール（オーツ麦）は、全粒穀物の王様です。水溶性と不溶性の食物繊維がバランスよく含まれており、腸内を掃除してくれます。</p>
 
@@ -651,26 +650,26 @@ export const ARTICLES: Article[] = [
             <h3>Delicious way to eat: Overnight Oats</h3>
             <p>"It looks like bird feed and I don't like it..." If you are like that, soak it in yogurt or soy milk the night before and put it in the fridge. The next morning it becomes like a creamy sweet. Perfect breakfast if you add honey and fruits!</p>
             `
-    }
-},
-{
-    slug: 'cheat-day-guide',
+        }
+    },
+    {
+        slug: 'cheat-day-guide',
         title: {
-        ja: '【チートデイ】ダイエット中に「ドカ食い」しても許される魔法の日？',
+            ja: '【チートデイ】ダイエット中に「ドカ食い」しても許される魔法の日？',
             en: '[Cheat Day] A magical day when "binge eating" is allowed during a diet?'
-    },
-    emoji: '🍰',
+        },
+        emoji: '🍰',
         excerpt: {
-        ja: '停滞期を打破するためのチートデイ。失敗しないやり方と、絶対に守るべき3つのルールを解説。',
+            ja: '停滞期を打破するためのチートデイ。失敗しないやり方と、絶対に守るべき3つのルールを解説。',
             en: 'Cheat day to break through the plateau. Explaining how not to fail and 3 rules you must follow.'
-    },
-    date: '2025-01-18',
+        },
+        date: '2025-01-18',
         tags: {
-        ja: ['ダイエット', 'メンタル', '知識'],
+            ja: ['ダイエット', 'メンタル', '知識'],
             en: ['Diet', 'Mental', 'Knowledge']
-    },
-    content: {
-        ja: `
+        },
+        content: {
+            ja: `
             <h2>食べて代謝スイッチをオンにする</h2>
             <p>ダイエットを続けると、体は「飢餓状態だ！」と勘違いして省エネモードになり、体重が落ちなくなります（停滞期）。そこで大量のカロリーを入れて「安心しろ、エネルギーはあるぞ！」と脳を騙すのがチートデイです。</p>
 
@@ -698,7 +697,7 @@ export const ARTICLES: Article[] = [
                 <li><strong>Do it after entering the plateau</strong>: No need to do it when you are losing weight smoothly.</li>
             </ol>
             `
+        }
     }
-}
 ];
 
