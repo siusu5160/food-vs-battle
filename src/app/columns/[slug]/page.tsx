@@ -60,9 +60,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
                     </div>
                 </header>
 
-                <div className="mb-10 flex justify-center">
-                    <ShareButtons title={title} url={shareUrl} />
-                </div>
+
 
                 <div
                     className="prose prose-invert prose-lg max-w-none prose-headings:text-[#d4af37] prose-a:text-[#d4af37] prose-strong:text-white prose-li:text-gray-300"
