@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
                     Amazonのアソシエイトとして、FOOD VS BATTLEは適格販売により収入を得ています。
                 </p>
                 <p className="mb-4 text-sm leading-relaxed">
-                    また、楽天アフィリエイト、A8.netなどのアフィリエイトプログラムを利用し、適格販売により収入を得ています。
+                    また、もしもアフィリエイト、楽天アフィリエイト、A8.netなどのアフィリエイトプログラムを利用し、適格販売により収入を得ています。
                     第三者がコンテンツおよび宣伝を提供し、訪問者から直接情報を収集し、訪問者のブラウザにCookieを設定したりこれを認識したりする場合があります。
                 </p>
             </section>
