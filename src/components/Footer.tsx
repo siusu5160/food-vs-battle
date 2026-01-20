@@ -23,6 +23,10 @@ export default function Footer() {
                     <Link href="/contact" className="hover:text-[#d4af37] transition-colors">{t('お問い合わせ', 'Contact')}</Link>
                 </div>
 
+                <p className="text-gray-600 text-xs mb-2">
+                    Amazonのアソシエイトとして、FOOD VS BATTLEは適格販売により収入を得ています。
+                </p>
+
                 <p className="text-gray-600 text-xs">
                     &copy; {new Date().getFullYear()} FOOD VS BATTLE. All rights reserved.
                 </p>

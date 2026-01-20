@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
                 <h2 className="text-xl font-bold mb-3 border-b border-gray-600 pb-2">2. 広告の配信について</h2>
                 <p className="mb-4 text-sm leading-relaxed">
-                    当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+                    Amazonのアソシエイトとして、FOOD VS BATTLEは適格販売により収入を得ています。
                 </p>
                 <p className="mb-4 text-sm leading-relaxed">
                     また、楽天アフィリエイト、A8.netなどのアフィリエイトプログラムを利用し、適格販売により収入を得ています。
