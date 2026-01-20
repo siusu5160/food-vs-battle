@@ -8,6 +8,9 @@ import { notFound } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import React, { use } from 'react';
 
+import AuthorProfile from '@/components/AuthorProfile';
+import ShareButtons from '@/components/ShareButtons';
+
 export default function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params);
     const { language, t } = useLanguage();
@@ -18,12 +21,19 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
         notFound();
     }
 
+    const title = article.title[lang];
+    const shareUrl = `https://food-vs-battle.pages.dev/columns/${article.slug}`;
+
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        'headline': article.title[lang],
+        'headline': title,
         'datePublished': article.date,
         'description': article.excerpt[lang],
+        'author': {
+            '@type': 'Organization',
+            'name': 'FOOD VS 運営事務局'
+        }
     };
 
     return (
@@ -37,12 +47,12 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
                     ← {t('コラム一覧に戻る', 'Back to Columns')}
                 </Link>
 
-                <header className="mb-10 text-center">
+                <header className="mb-8 text-center">
                     <div className="text-6xl mb-6">{article.emoji}</div>
                     <h1 className="text-2xl md:text-4xl font-black text-white mb-6 leading-tight">
-                        {article.title[lang]}
+                        {title}
                     </h1>
-                    <div className="flex justify-center gap-3 text-sm">
+                    <div className="flex justify-center gap-3 text-sm mb-6">
                         <span className="text-gray-400">{article.date}</span>
                         {article.tags[lang].map(tag => (
                             <span key={tag} className="text-[#d4af37]">#{tag}</span>
@@ -50,10 +60,20 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
                     </div>
                 </header>
 
+                <div className="mb-10 flex justify-center">
+                    <ShareButtons title={title} url={shareUrl} />
+                </div>
+
                 <div
                     className="prose prose-invert prose-lg max-w-none prose-headings:text-[#d4af37] prose-a:text-[#d4af37] prose-strong:text-white prose-li:text-gray-300"
                     dangerouslySetInnerHTML={{ __html: article.content[lang] }}
                 />
+
+                <div className="mt-12 mb-8 flex justify-center">
+                    <ShareButtons title={title} url={shareUrl} />
+                </div>
+
+                <AuthorProfile />
 
                 <div className="mt-16 pt-10 border-t border-gray-800 text-center">
                     <h3 className="text-xl font-bold text-white mb-6">{t('この記事を読んだ人におすすめ', 'Recommended for You')}</h3>
